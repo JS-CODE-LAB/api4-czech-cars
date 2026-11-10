@@ -1,0 +1,22 @@
+request:
+  fields:
+    path:
+      required: true
+      example: "/charging/start"
+      selector:
+        text:
+    method:
+      default: POST
+      selector:
+        select:
+          options: [GET, POST, PUT, PATCH, DELETE]
+    body:
+      selector:
+        object:
+    vin:
+      selector:
+        text:
+    refresh:
+      default: false
+      selector:
+        boolean:

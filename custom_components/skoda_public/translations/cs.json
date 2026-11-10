@@ -1,0 +1,70 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "API 4 Czech Cars (public API)",
+        "description": "API klíč vytvořte v aplikaci MyŠkoda (https://go.skoda.eu/api-keys) a vyberte tam své vozidlo.",
+        "data": {
+          "api_key": "API klíč",
+          "vin": "VIN"
+        }
+      },
+      "reauth_confirm": {
+        "title": "API klíč vypršel",
+        "description": "Zadejte nový API klíč z aplikace MyŠkoda.",
+        "data": {
+          "api_key": "API klíč"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "API klíč je neplatný, vypršel nebo nemá oprávnění k tomuto VIN.",
+      "cannot_connect": "Nelze se spojit s API Škoda."
+    },
+    "abort": {
+      "already_configured": "Toto vozidlo je již nastaveno.",
+      "reauth_successful": "API klíč byl aktualizován."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Interval aktualizace (sekundy, min. 300)",
+          "ac_without_external_power": "Povolit klimatizaci bez externího napájení",
+          "aux_heating_duration": "Délka přídavného topení (sekundy)",
+          "spin": "S-PIN (nutný pro přídavné topení)"
+        },
+        "description": "API povoluje zhruba 20 požadavků za hodinu na vozidlo; každý příkaz navíc vyvolá jedno obnovení stavu."
+      }
+    }
+  },
+  "services": {
+    "request": {
+      "name": "Odeslat požadavek na API",
+      "description": "Odešle surový požadavek na /api/v1/vehicles/{vin}{path}, např. vzdálený příkaz z API reference.",
+      "fields": {
+        "path": {
+          "name": "Cesta",
+          "description": "Relativně k /api/v1/vehicles/{vin}, začíná '/'."
+        },
+        "method": {
+          "name": "Metoda",
+          "description": "HTTP metoda."
+        },
+        "body": {
+          "name": "Tělo",
+          "description": "JSON tělo požadavku."
+        },
+        "vin": {
+          "name": "VIN",
+          "description": "Nutné jen při více vozidlech."
+        },
+        "refresh": {
+          "name": "Poté obnovit",
+          "description": "Po požadavku načte stav vozidla (spotřebuje limit)."
+        }
+      }
+    }
+  }
+}

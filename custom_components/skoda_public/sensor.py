@@ -1,0 +1,249 @@
+"""Sensors: every non-boolean scalar returned by the API + diagnostics."""
+from __future__ import annotations
+
+from datetime import datetime
+from typing import Any
+
+from homeassistant.components.sensor import (
+    SensorDeviceClass,
+    SensorEntity,
+    SensorStateClass,
+)
+from homeassistant.const import (
+    PERCENTAGE,
+    EntityCategory,
+    UnitOfEnergy,
+    UnitOfLength,
+    UnitOfPower,
+    UnitOfTemperature,
+    UnitOfTime,
+    UnitOfVolume,
+)
+from homeassistant.core import HomeAssistant, callback
+from homeassistant.helpers.entity_platform import AddEntitiesCallback
+from homeassistant.util import dt as dt_util
+
+from .coordinator import SkodaConfigEntry, SkodaCoordinator
+from .entity import KIND_SENSOR, SkodaEntity, classify, find_range_path, find_soc_path, humanize
+
+M = SensorStateClass.MEASUREMENT
+SD = SensorDeviceClass
+
+# (key suffix, unit, device class, state class) – matched on the lowercase last path segment.
+_UNIT_TABLE = (
+    ("inpercent", PERCENTAGE, None, M),
+    ("inkm", UnitOfLength.KILOMETERS, SD.DISTANCE, M),
+    ("inmeters", UnitOfLength.METERS, SD.DISTANCE, M),
+    ("inkw", UnitOfPower.KILO_WATT, SD.POWER, M),
+    ("inkwh", UnitOfEnergy.KILO_WATT_HOUR, SD.ENERGY, None),
+    ("inminutes", UnitOfTime.MINUTES, SD.DURATION, None),
+    ("inseconds", UnitOfTime.SECONDS, SD.DURATION, None),
+    ("incelsius", UnitOfTemperature.CELSIUS, SD.TEMPERATURE, M),
+    ("inliters", UnitOfVolume.LITERS, None, M),
+)
+
+
+def _describe(path: str, sample: Any) -> tuple[Any, Any, Any, bool]:
+    """Return (unit, device_class, state_class, is_timestamp)."""
+    if isinstance(sample, (int, float)) and not isinstance(sample, bool):
+        low = path.lower()
+        last = low.rsplit(".", 1)[-1]
+        for suffix, unit, dev, state in _UNIT_TABLE:
+            if last.endswith(suffix):
+                if dev == SD.DISTANCE and ("odometer" in low or "mileage" in low):
+                    state = SensorStateClass.TOTAL_INCREASING
+                return unit, dev, state, False
+        return None, None, None, False
+    if isinstance(sample, str) and len(sample) >= 19 and "T" in sample:
+        parsed = dt_util.parse_datetime(sample)
+        if parsed is not None and parsed.tzinfo is not None:
+            return None, SD.TIMESTAMP, None, True
+    return None, None, None, False
+
+
+async def async_setup_entry(
+    hass: HomeAssistant, entry: SkodaConfigEntry, async_add_entities: AddEntitiesCallback
+) -> None:
+    coordinator = entry.runtime_data
+    async_add_entities(
+        [
+            SkodaRateLimitSensor(coordinator),
+            SkodaKeyExpirySensor(coordinator),
+            SkodaOmittedPartsSensor(coordinator),
+        ]
+    )
+
+    known: set[str] = set()
+    battery_added = False
+    range_added = False
+
+    @callback
+    def _discover() -> None:
+        nonlocal battery_added, range_added
+        if coordinator.data is None:
+            return
+        if not range_added:
+            range_path = find_range_path(coordinator.data.flat)
+            if range_path:
+                range_added = True
+                async_add_entities([SkodaRangeSensor(coordinator, range_path)])
+        if not battery_added and find_soc_path(coordinator.data.flat):
+            battery_added = True
+            async_add_entities([SkodaBatterySensor(coordinator)])
+        new = [
+            SkodaFieldSensor(coordinator, path, value)
+            for path, value in coordinator.data.flat.items()
+            if path not in known and classify(value) == KIND_SENSOR
+        ]
+        known.update(e.field_path for e in new)
+        if new:
+            async_add_entities(new)
+
+    _discover()
+    entry.async_on_unload(coordinator.async_add_listener(_discover))
+
+
+class SkodaFieldSensor(SkodaEntity, SensorEntity):
+    """One API field exposed as a sensor."""
+
+    def __init__(self, coordinator: SkodaCoordinator, path: str, sample: Any) -> None:
+        super().__init__(coordinator)
+        self.field_path = path
+        self._attr_unique_id = f"{self._vin}_{path}"
+        self._attr_name = humanize(path)
+        unit, dev, state, is_ts = _describe(path, sample)
+        self._is_ts = is_ts
+        self._attr_native_unit_of_measurement = unit
+        self._attr_device_class = dev
+        self._attr_state_class = state
+
+    @property
+    def native_value(self) -> Any:
+        value = self.coordinator.data.flat.get(self.field_path)
+        if value is None:
+            return None
+        if self._is_ts:
+            return dt_util.parse_datetime(value) if isinstance(value, str) else None
+        if isinstance(value, bool):
+            return str(value).lower()
+        if isinstance(value, str):
+            return value[:255]
+        if self._attr_device_class is None and self._attr_native_unit_of_measurement is None:
+            return value
+        return value
+
+
+class SkodaBatterySensor(SkodaEntity, SensorEntity):
+    """Current battery level. Its battery device class makes HA show it next to the device."""
+
+    _attr_name = "Battery"
+    _attr_device_class = SD.BATTERY
+    _attr_native_unit_of_measurement = PERCENTAGE
+    _attr_state_class = SensorStateClass.MEASUREMENT
+
+    def __init__(self, coordinator: SkodaCoordinator) -> None:
+        super().__init__(coordinator)
+        self._attr_unique_id = f"{self._vin}_battery_level"
+
+    @property
+    def native_value(self) -> float | None:
+        flat = self.coordinator.data.flat
+        path = find_soc_path(flat)
+        return flat.get(path) if path else None
+
+    @property
+    def extra_state_attributes(self) -> dict[str, Any]:
+        """Show which API field feeds this sensor (and any similar fields) for diagnosis."""
+        flat = self.coordinator.data.flat
+        similar = {
+            p: v
+            for p, v in flat.items()
+            if any(k in p.lower() for k in ("soc", "stateofcharge", "batterylevel", "fuellevel"))
+        }
+        return {"source_path": find_soc_path(flat), "similar_fields": similar}
+
+
+class SkodaRangeSensor(SkodaEntity, SensorEntity):
+    """Current remaining range, always shown in km."""
+
+    _attr_name = "Range"
+    _attr_device_class = SD.DISTANCE
+    _attr_state_class = SensorStateClass.MEASUREMENT
+    _attr_suggested_unit_of_measurement = UnitOfLength.KILOMETERS
+    _attr_suggested_display_precision = 0
+
+    def __init__(self, coordinator: SkodaCoordinator, path: str) -> None:
+        super().__init__(coordinator)
+        self._attr_unique_id = f"{self._vin}_range"
+        self._attr_native_unit_of_measurement = (
+            UnitOfLength.METERS
+            if path.lower().endswith("inmeters")
+            else UnitOfLength.KILOMETERS
+        )
+
+    @property
+    def native_value(self) -> float | None:
+        flat = self.coordinator.data.flat
+        path = find_range_path(flat)
+        return flat.get(path) if path else None
+
+    @property
+    def extra_state_attributes(self) -> dict[str, Any]:
+        flat = self.coordinator.data.flat
+        return {
+            "source_path": find_range_path(flat),
+            "similar_fields": {p: v for p, v in flat.items() if "range" in p.lower()},
+        }
+
+
+class SkodaRateLimitSensor(SkodaEntity, SensorEntity):
+    _attr_entity_category = EntityCategory.DIAGNOSTIC
+    _attr_name = "API requests remaining"
+    _attr_icon = "mdi:speedometer"
+
+    def __init__(self, coordinator: SkodaCoordinator) -> None:
+        super().__init__(coordinator)
+        self._attr_unique_id = f"{self._vin}_api_ratelimit_remaining"
+
+    @property
+    def native_value(self) -> int | None:
+        return self.coordinator.data.meta.remaining
+
+    @property
+    def extra_state_attributes(self) -> dict[str, Any]:
+        meta = self.coordinator.data.meta
+        return {"limit": meta.limit, "reset_in_seconds": meta.reset}
+
+
+class SkodaKeyExpirySensor(SkodaEntity, SensorEntity):
+    _attr_entity_category = EntityCategory.DIAGNOSTIC
+    _attr_device_class = SD.TIMESTAMP
+    _attr_name = "API key expires at"
+
+    def __init__(self, coordinator: SkodaCoordinator) -> None:
+        super().__init__(coordinator)
+        self._attr_unique_id = f"{self._vin}_api_key_expires_at"
+
+    @property
+    def native_value(self) -> datetime | None:
+        return self.coordinator.data.meta.key_expires_at
+
+
+class SkodaOmittedPartsSensor(SkodaEntity, SensorEntity):
+    """Number of data parts the API reported as omitted (unsupported / unavailable)."""
+
+    _attr_entity_category = EntityCategory.DIAGNOSTIC
+    _attr_name = "Omitted data parts"
+    _attr_icon = "mdi:alert-circle-outline"
+
+    def __init__(self, coordinator: SkodaCoordinator) -> None:
+        super().__init__(coordinator)
+        self._attr_unique_id = f"{self._vin}_omitted_parts"
+
+    @property
+    def native_value(self) -> int:
+        return len(self.coordinator.data.errors)
+
+    @property
+    def extra_state_attributes(self) -> dict[str, Any]:
+        return {"errors": self.coordinator.data.errors}

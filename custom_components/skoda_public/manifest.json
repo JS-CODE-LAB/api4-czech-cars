@@ -1,0 +1,12 @@
+{
+  "domain": "skoda_public",
+  "name": "API 4 Czech Cars (public API)",
+  "codeowners": ["@JS-CODE-LAB"],
+  "config_flow": true,
+  "documentation": "https://github.com/JS-CODE-LAB/api4-czech-cars",
+  "integration_type": "device",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/JS-CODE-LAB/api4-czech-cars/issues",
+  "requirements": [],
+  "version": "0.2.0"
+}

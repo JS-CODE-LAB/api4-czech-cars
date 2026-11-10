@@ -1,0 +1,70 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "API 4 Czech Cars (public API)",
+        "description": "Create an API key in the MyŠkoda app (https://go.skoda.eu/api-keys) and select your vehicle there.",
+        "data": {
+          "api_key": "API key",
+          "vin": "VIN"
+        }
+      },
+      "reauth_confirm": {
+        "title": "API key expired",
+        "description": "Enter a new API key from the MyŠkoda app.",
+        "data": {
+          "api_key": "API key"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "API key is invalid, expired, or not authorized for this VIN.",
+      "cannot_connect": "Could not reach the Škoda API."
+    },
+    "abort": {
+      "already_configured": "This vehicle is already configured.",
+      "reauth_successful": "API key updated."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Update interval (seconds, min 300)",
+          "ac_without_external_power": "Allow air conditioning without external power",
+          "aux_heating_duration": "Auxiliary heating duration (seconds)",
+          "spin": "S-PIN (required for auxiliary heating)"
+        },
+        "description": "The API allows about 20 requests per hour per vehicle; every command also triggers one extra refresh."
+      }
+    }
+  },
+  "services": {
+    "request": {
+      "name": "Send API request",
+      "description": "Send a raw request to /api/v1/vehicles/{vin}{path}, e.g. a remote command from the API reference.",
+      "fields": {
+        "path": {
+          "name": "Path",
+          "description": "Relative to /api/v1/vehicles/{vin}, starting with '/'."
+        },
+        "method": {
+          "name": "Method",
+          "description": "HTTP method."
+        },
+        "body": {
+          "name": "Body",
+          "description": "JSON body."
+        },
+        "vin": {
+          "name": "VIN",
+          "description": "Needed only with more than one vehicle."
+        },
+        "refresh": {
+          "name": "Refresh afterwards",
+          "description": "Poll the vehicle state after the request (uses quota)."
+        }
+      }
+    }
+  }
+}
