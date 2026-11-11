@@ -13,8 +13,18 @@ def test_grouping():
     assert groups.functional_group("battery.soc") == "battery"
     assert groups.functional_group("parking.position.latitude") == "location"
     assert groups.functional_group("airConditioning.state") == "climate"
-    assert groups.functional_group("fuel.level") == "engine"
-    assert groups.functional_group("vehicle.odometer") == "vehicle_info"
+    assert groups.functional_group("fuel.level") == "powertrain"
+    assert groups.functional_group("vehicle.odometer") == "counters"
+
+
+def test_subgroups():
+    assert groups.functional_group("chargingProfiles.0.name") == "charging_profiles"
+    assert groups.functional_group("vehicle.doors.frontLeft") == "doors"
+    assert groups.functional_group("vehicle.windows.frontLeft") == "windows"
+    assert groups.functional_group("vehicle.lights.lowBeam") == "lights"
+    assert groups.functional_group("vehicle.tripMeter") == "counters"
+    assert groups.functional_group("vehicle.settings.mode") == "settings"
+    assert set(groups.GROUPS) == set(groups.GROUP_NAMES)
 
 
 def test_binary_class():
