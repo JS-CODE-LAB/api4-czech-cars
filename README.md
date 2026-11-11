@@ -25,13 +25,22 @@ Everything the API returns for your vehicle becomes an entity, and new fields ap
 | `switch` | Charging start/stop, auxiliary heating, active ventilation |
 | `number` | Charging limit (50–100 %, step 10) |
 | `climate` | Air conditioning on/off and target temperature |
-| diagnostics | Remaining API requests, API key expiry, omitted data parts |
+| diagnostics | Remaining API requests, API key expiry, omitted data parts, last successful update, manual refresh button |
 
 Control entities only appear when your vehicle reports the matching feature. The battery level and charging
 icon are shown at the top of the device page.
 
 A service `skoda_public.request` can send any request to `/api/v1/vehicles/{vin}{path}` (for example
 features without a dedicated entity).
+
+## Entity organization (0.3.0)
+Dynamic sensors and binary sensors have a `functional_group` attribute, one of:
+`battery`, `charging`, `vehicle_status`, `climate`, `engine`,
+`location`, `vehicle_info`, `diagnostics`.
+Home Assistant does not provide custom sections inside a single device page;
+use dashboard sections to display these groups. The integration retains one device
+per vehicle and preserves existing entity unique IDs. Manual refresh consumes an
+API request. New fields are discovered as the vehicle API returns them.
 
 ## Requirements
 - Home Assistant **2026.3.0** or newer (brand images are shipped inside the integration).
