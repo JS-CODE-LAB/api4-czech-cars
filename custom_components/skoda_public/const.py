@@ -25,6 +25,7 @@ PLATFORMS = [
     Platform.SWITCH,
     Platform.NUMBER,
     Platform.CLIMATE,
+    Platform.BUTTON,
 ]
 
 SERVICE_REQUEST = "request"
