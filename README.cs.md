@@ -89,6 +89,9 @@ Podrobnosti o endpointech jsem ověřoval podle open-source knihovny
 [skoda-public-api](https://github.com/mobility-lab-vsb/skoda-public-api) a oficiální dokumentace API.
 Žádný její kód není součástí integrace.
 
+## Podmínky API a licence
+[Oficiální dokumentace MyŠkoda Public API](https://public.api.connect.skoda-auto.cz/docs) výslovně omezuje použití API na **osobní použití koncovými uživateli** a vylučuje komerční produkty a služby. Licence MIT se vztahuje na vlastní kód integrace, **nikoliv na oprávnění komerčně využívat API ŠKODA**. Uživatel musí dodržovat aktuální podmínky API. Dostupnost, datová pole a limity API se mohou měnit.
+
 ## Licence
 [MIT](LICENSE) – viz také [UPOZORNĚNÍ](DISCLAIMER.md). Ochranné známky patří jejich vlastníkům.
 
