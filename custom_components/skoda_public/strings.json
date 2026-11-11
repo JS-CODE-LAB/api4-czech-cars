@@ -35,7 +35,7 @@
           "aux_heating_duration": "Auxiliary heating duration (seconds)",
           "spin": "S-PIN (required for auxiliary heating)"
         },
-        "description": "The API allows about 20 requests per hour per vehicle; every command also triggers one extra refresh."
+        "description": "Remote commands operate a real vehicle. Enable A/C without external power only when safe. The API allows about 20 requests/hour; commands trigger another refresh."
       }
     }
   },
