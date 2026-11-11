@@ -76,6 +76,7 @@ class SkodaCoordinator(DataUpdateCoordinator[SkodaData]):
         self.vin: str = entry.data[CONF_VIN]
         self._refresh_cancel = None
         self.last_successful_update: datetime | None = None
+        self.last_api_error: str | None = None
 
     async def async_command(
         self, method: str, path: str, json: Any = None
@@ -113,16 +114,20 @@ class SkodaCoordinator(DataUpdateCoordinator[SkodaData]):
         try:
             result = await self.client.async_get_vehicle()
         except SkodaAuthError as err:
+            self.last_api_error = str(err)
             raise ConfigEntryAuthFailed(str(err)) from err
         except SkodaRateLimitError as err:
+            self.last_api_error = str(err)
             raise UpdateFailed(
                 f"Rate limit exceeded (retry after {err.retry_after}s): {err}"
             ) from err
         except SkodaApiError as err:
+            self.last_api_error = str(err)
             raise UpdateFailed(str(err)) from err
 
         body = result.body
         if not isinstance(body, dict) or not isinstance(body.get("vehicle"), dict):
+            self.last_api_error = "Unexpected response format"
             raise UpdateFailed("Unexpected response format")
 
         vehicle = body["vehicle"]
@@ -130,5 +135,6 @@ class SkodaCoordinator(DataUpdateCoordinator[SkodaData]):
         flat = {
             k: v for k, v in flatten(vehicle).items() if k not in EXCLUDED_PATHS
         }
+        self.last_api_error = None
         self.last_successful_update = dt_util.utcnow()
         return SkodaData(vehicle=vehicle, errors=errors, flat=flat, meta=result.meta)
