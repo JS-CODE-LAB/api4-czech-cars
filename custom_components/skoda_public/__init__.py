@@ -13,11 +13,13 @@ from homeassistant.core import HomeAssistant, ServiceCall, SupportsResponse
 from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers import config_validation as cv
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from homeassistant.helpers import device_registry as dr
 from homeassistant.helpers.typing import ConfigType
 
 from .api import SkodaApiClient, SkodaApiError
 from .const import CONF_VIN, DOMAIN, PLATFORMS, SERVICE_REQUEST
 from .coordinator import SkodaConfigEntry, SkodaCoordinator
+from .security import redact_sensitive
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -64,7 +66,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
                 call.data["method"], path, json=call.data.get("body")
             )
         except SkodaApiError as err:
-            raise HomeAssistantError(str(err)) from err
+            raise HomeAssistantError(redact_sensitive(str(err), coordinator.client._api_key, coordinator.vin, coordinator.config_entry.options.get("spin"))) from err
         if call.data["refresh"]:
             await coordinator.async_request_refresh()
         return {
@@ -90,6 +92,18 @@ async def async_setup_entry(hass: HomeAssistant, entry: SkodaConfigEntry) -> boo
     coordinator = SkodaCoordinator(hass, entry, client)
     await coordinator.async_config_entry_first_refresh()
     entry.runtime_data = coordinator
+
+    # Register the parent before child devices are added via via_device.
+    # Existing entity unique IDs and the parent device identifier are unchanged.
+    registry = dr.async_get(hass)
+    vehicle = coordinator.data.vehicle if coordinator.data else {}
+    registry.async_get_or_create(
+        config_entry_id=entry.entry_id,
+        identifiers={(DOMAIN, coordinator.vin)},
+        manufacturer="Škoda Auto",
+        name=vehicle.get("name") or coordinator.vin,
+        serial_number=coordinator.vin,
+    )
 
     # Import platform modules in the executor so HA does not import them inside the event loop.
     for platform in PLATFORMS:

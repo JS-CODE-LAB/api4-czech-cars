@@ -3,10 +3,11 @@ from __future__ import annotations
 
 import logging
 from dataclasses import dataclass
-from datetime import timedelta
+from datetime import datetime, timedelta
 from typing import Any
 
 from homeassistant.config_entries import ConfigEntry
+from homeassistant.util import dt as dt_util
 from homeassistant.core import HomeAssistant
 from homeassistant.core import callback
 from homeassistant.exceptions import ConfigEntryAuthFailed, HomeAssistantError
@@ -21,7 +22,8 @@ from .api import (
     SkodaAuthError,
     SkodaRateLimitError,
 )
-from .const import CONF_SCAN_INTERVAL, CONF_VIN, DEFAULT_SCAN_INTERVAL, DOMAIN
+from .const import CONF_SCAN_INTERVAL, CONF_VIN, CONF_SPIN, DEFAULT_SCAN_INTERVAL, DOMAIN
+from .security import redact_sensitive
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -74,6 +76,17 @@ class SkodaCoordinator(DataUpdateCoordinator[SkodaData]):
         self.client = client
         self.vin: str = entry.data[CONF_VIN]
         self._refresh_cancel = None
+        self.last_successful_update: datetime | None = None
+        self.last_api_error: str | None = None
+
+    def _safe_error(self, err: Exception) -> str:
+        """Hide configured credentials and VIN in diagnostic errors."""
+        return redact_sensitive(
+            str(err),
+            self.client._api_key,
+            self.vin,
+            self.config_entry.options.get(CONF_SPIN),
+        )
 
     async def async_command(
         self, method: str, path: str, json: Any = None
@@ -83,9 +96,9 @@ class SkodaCoordinator(DataUpdateCoordinator[SkodaData]):
             result = await self.client.async_request(method, path, json=json)
         except SkodaAuthError as err:
             self.config_entry.async_start_reauth(self.hass)
-            raise HomeAssistantError(f"API key rejected: {err}") from err
+            raise HomeAssistantError(f"API key rejected: {self._safe_error(err)}") from err
         except SkodaApiError as err:
-            raise HomeAssistantError(str(err)) from err
+            raise HomeAssistantError(self._safe_error(err)) from err
         self.async_schedule_delayed_refresh()
         return result
 
@@ -111,16 +124,20 @@ class SkodaCoordinator(DataUpdateCoordinator[SkodaData]):
         try:
             result = await self.client.async_get_vehicle()
         except SkodaAuthError as err:
-            raise ConfigEntryAuthFailed(str(err)) from err
+            self.last_api_error = self._safe_error(err)
+            raise ConfigEntryAuthFailed(self._safe_error(err)) from err
         except SkodaRateLimitError as err:
+            self.last_api_error = str(err)
             raise UpdateFailed(
-                f"Rate limit exceeded (retry after {err.retry_after}s): {err}"
+                f"Rate limit exceeded (retry after {err.retry_after}s): {self._safe_error(err)}"
             ) from err
         except SkodaApiError as err:
-            raise UpdateFailed(str(err)) from err
+            self.last_api_error = str(err)
+            raise UpdateFailed(self._safe_error(err)) from err
 
         body = result.body
         if not isinstance(body, dict) or not isinstance(body.get("vehicle"), dict):
+            self.last_api_error = "Unexpected response format"
             raise UpdateFailed("Unexpected response format")
 
         vehicle = body["vehicle"]
@@ -128,4 +145,6 @@ class SkodaCoordinator(DataUpdateCoordinator[SkodaData]):
         flat = {
             k: v for k, v in flatten(vehicle).items() if k not in EXCLUDED_PATHS
         }
+        self.last_api_error = None
+        self.last_successful_update = dt_util.utcnow()
         return SkodaData(vehicle=vehicle, errors=errors, flat=flat, meta=result.meta)

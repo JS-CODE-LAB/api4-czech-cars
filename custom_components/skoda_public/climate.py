@@ -65,6 +65,7 @@ class SkodaClimate(SkodaControlEntity, ClimateEntity):
     def __init__(self, coordinator: SkodaCoordinator) -> None:
         super().__init__(coordinator)
         self._attr_unique_id = f"{self._vin}_climate_air_conditioning"
+        self._device_group = "climate"
         self._pending_target: float | None = None
 
     def _reported_state(self) -> str | None:

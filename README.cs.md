@@ -12,7 +12,7 @@ Integrace Home Assistantu pro připojená vozidla ŠKODA postavená na oficiáln
 > [UPOZORNĚNÍ](DISCLAIMER.md) (včetně bezpečnostních pokynů).
 
 ## Funkce
-Z každé hodnoty, kterou API vrátí, vznikne entita (nová pole se doplní sama):
+Z podporovaných jednoduchých hodnot, které API vrátí, vznikají entity (nová pole se objevují automaticky podle výbavy vozidla):
 
 | Platforma | Co dostaneš |
 |---|---|
@@ -54,7 +54,7 @@ Každé vozidlo se přidává zvlášť.
 | Možnost | Význam |
 |---|---|
 | Interval aktualizace | Sekundy mezi dotazy (výchozí 600, minimum 300). |
-| Klimatizace bez externího napájení | Povolí start klimatizace, i když auto není zapojené. |
+| Klimatizace bez externího napájení | Povolí start klimatizace, i když auto není zapojené (u nových instalací výchozí hodnota vypnuto). |
 | Délka přídavného topení | Doba běhu topení v sekundách (výchozí 600). |
 | S-PIN | API ho vyžaduje pro přídavné topení. Home Assistant ho ukládá nešifrovaně. |
 
@@ -66,6 +66,12 @@ Každé vozidlo se přidává zvlášť.
 - **Vozidlo může příkaz odmítnout** (nepodporuje, je offline, nízká baterie …); důvod se zobrazí v HA.
 - Jako entity chybí změna režimu nabíjení a úprava nabíjecích profilů (použij službu).
 - Rozsah dat závisí na vozidle; nepodporované části API vynechá.
+
+## Bezpečnost dálkového ovládání a pokročilá služba
+
+**Příkazy ovládají skutečné vozidlo.** Před zapnutím nabíjení, klimatizace, větrání nebo přídavného topení ověřte bezpečné okolí vozidla. Nikdy nespouštějte palivové topení ani motor v uzavřené garáži. Příkazy mohou být odmítnuty nebo provedeny se zpožděním. Integrace není určena pro bezpečnostně kritické automatizace.
+
+Akce `skoda_public.request` je **pokročilé rozhraní pro obecné požadavky na API vozidla**. Uživatelé s příslušným přístupem mohou odesílat příkazy a čerpat limit API. Automatizace ji mohou spouštět bez dalšího potvrzení. Chraňte přístup k Home Assistantu a přihlašovací údaje.
 
 ## Řešení potíží
 - *Chyba ověření / opětovné ověření:* API klíč vypršel nebo nepatří k VINu – vytvoř nový a zadej ho, až se HA zeptá.
@@ -83,5 +89,21 @@ Podrobnosti o endpointech jsem ověřoval podle open-source knihovny
 [skoda-public-api](https://github.com/mobility-lab-vsb/skoda-public-api) a oficiální dokumentace API.
 Žádný její kód není součástí integrace.
 
+## Podmínky API a licence
+[Oficiální dokumentace MyŠkoda Public API](https://public.api.connect.skoda-auto.cz/docs) výslovně omezuje použití API na **osobní použití koncovými uživateli** a vylučuje komerční produkty a služby. Licence MIT se vztahuje na vlastní kód integrace, **nikoliv na oprávnění komerčně využívat API ŠKODA**. Uživatel musí dodržovat aktuální podmínky API. Dostupnost, datová pole a limity API se mohou měnit.
+
 ## Licence
 [MIT](LICENSE) – viz také [UPOZORNĚNÍ](DISCLAIMER.md). Ochranné známky patří jejich vlastníkům.
+
+
+## Organizace entit ve verzi 0.3.1
+
+Entity jsou přiřazeny k virtuálním podřízeným zařízením hlavního vozidla: Baterie, Nabíjení, Nabíjecí profily, Klimatizace a topení, Dveře a zámky, Okna, Osvětlení, Počítadla a spotřeba, Pohon a palivo, Poloha a parkování, Nastavení, Informace o vozidle, Ostatní stavy vozidla a Diagnostika. Zobrazují se jen skupiny obsahující dostupné entity. **Aktuální dojezd (Range, km) je ve skupině Počítadla a spotřeba společně s odometrem.**
+
+Původní `unique_id` entit zůstávají zachována, mění se však jejich přiřazení k zařízení. Po aktualizaci zkontrolujte automatizace, skripty a dashboardy odkazující na původní zařízení. Entity kvůli přesunu nemažte ani znovu nevytvářejte.
+
+### Aktualizace ze starších verzí
+1. Vytvořte zálohu Home Assistantu včetně registru entit a automatizací.
+2. Aktualizujte integraci a restartujte Home Assistant.
+3. Zkontrolujte podřízená zařízení, původní ID entit a automatizace používající zařízení.
+4. V Diagnostice ověřte poslední aktualizaci a případné chyby API.

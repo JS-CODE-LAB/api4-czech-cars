@@ -38,6 +38,7 @@ class SkodaTracker(SkodaEntity, TrackerEntity):
         self, coordinator: SkodaCoordinator, prefix: str, lat_path: str, lon_path: str
     ) -> None:
         super().__init__(coordinator)
+        self._device_group = "location"
         self._lat_path = lat_path
         self._lon_path = lon_path
         self._attr_unique_id = f"{self._vin}_tracker_{prefix or 'vehicle'}"

@@ -10,6 +10,7 @@ from homeassistant.components.binary_sensor import (
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
+from .groups import functional_group, binary_device_class
 from .coordinator import SkodaConfigEntry, SkodaCoordinator
 from .entity import KIND_BINARY, SkodaEntity, classify, humanize, to_bool
 
@@ -51,6 +52,15 @@ class SkodaFieldBinarySensor(SkodaEntity, BinarySensorEntity):
         self.field_path = path
         self._attr_unique_id = f"{self._vin}_{path}"
         self._attr_name = humanize(path)
+        self._group = functional_group(path)
+        self._device_group = self._group
+        device_class = binary_device_class(path)
+        if device_class:
+            self._attr_device_class = BinarySensorDeviceClass(device_class)
+
+    @property
+    def extra_state_attributes(self) -> dict[str, str]:
+        return {"functional_group": self._group, "api_path": self.field_path}
 
     @property
     def is_on(self) -> bool | None:
@@ -67,6 +77,7 @@ class SkodaBatteryChargingSensor(SkodaEntity, BinarySensorEntity):
     def __init__(self, coordinator: SkodaCoordinator) -> None:
         super().__init__(coordinator)
         self._attr_unique_id = f"{self._vin}_battery_charging"
+        self._device_group = "charging"
 
     @property
     def is_on(self) -> bool | None:

@@ -9,6 +9,7 @@ from homeassistant.helpers.device_registry import DeviceInfo
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
+from .groups import GROUP_NAMES
 from .coordinator import SkodaCoordinator
 
 BOOL_TRUE = {"YES", "TRUE", "ON"}
@@ -128,9 +129,20 @@ class SkodaEntity(CoordinatorEntity[SkodaCoordinator]):
         super().__init__(coordinator)
         self._vin = coordinator.vin
 
+    _device_group: str | None = None
+
     @property
     def device_info(self) -> DeviceInfo:
+        """Attach entities to a functional child device without changing unique IDs."""
         vehicle = self.coordinator.data.vehicle if self.coordinator.data else {}
+        if self._device_group in GROUP_NAMES:
+            group = self._device_group
+            return DeviceInfo(
+                identifiers={(DOMAIN, f"{self._vin}__{group}")},
+                manufacturer="Škoda Auto",
+                name=GROUP_NAMES[group],
+                via_device=(DOMAIN, self._vin),
+            )
         return DeviceInfo(
             identifiers={(DOMAIN, self._vin)},
             manufacturer="Škoda Auto",

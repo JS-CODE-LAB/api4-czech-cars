@@ -14,7 +14,7 @@ CONF_AC_NO_EXT_POWER = "ac_without_external_power"
 DEFAULT_SCAN_INTERVAL = 600
 MIN_SCAN_INTERVAL = 300
 DEFAULT_AUX_DURATION = 600
-DEFAULT_AC_NO_EXT_POWER = True
+DEFAULT_AC_NO_EXT_POWER = False
 
 API_BASE = "https://public.api.connect.skoda-auto.cz"
 
@@ -25,6 +25,7 @@ PLATFORMS = [
     Platform.SWITCH,
     Platform.NUMBER,
     Platform.CLIMATE,
+    Platform.BUTTON,
 ]
 
 SERVICE_REQUEST = "request"

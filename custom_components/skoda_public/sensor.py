@@ -23,6 +23,7 @@ from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.util import dt as dt_util
 
+from .groups import functional_group
 from .coordinator import SkodaConfigEntry, SkodaCoordinator
 from .entity import KIND_SENSOR, SkodaEntity, classify, find_range_path, find_soc_path, humanize
 
@@ -70,6 +71,8 @@ async def async_setup_entry(
             SkodaRateLimitSensor(coordinator),
             SkodaKeyExpirySensor(coordinator),
             SkodaOmittedPartsSensor(coordinator),
+            SkodaLastUpdateSensor(coordinator),
+            SkodaLastApiErrorSensor(coordinator),
         ]
     )
 
@@ -111,11 +114,17 @@ class SkodaFieldSensor(SkodaEntity, SensorEntity):
         self.field_path = path
         self._attr_unique_id = f"{self._vin}_{path}"
         self._attr_name = humanize(path)
+        self._group = functional_group(path)
+        self._device_group = self._group
         unit, dev, state, is_ts = _describe(path, sample)
         self._is_ts = is_ts
         self._attr_native_unit_of_measurement = unit
         self._attr_device_class = dev
         self._attr_state_class = state
+
+    @property
+    def extra_state_attributes(self) -> dict[str, str]:
+        return {"functional_group": self._group, "api_path": self.field_path}
 
     @property
     def native_value(self) -> Any:
@@ -144,6 +153,7 @@ class SkodaBatterySensor(SkodaEntity, SensorEntity):
     def __init__(self, coordinator: SkodaCoordinator) -> None:
         super().__init__(coordinator)
         self._attr_unique_id = f"{self._vin}_battery_level"
+        self._device_group = "battery"
 
     @property
     def native_value(self) -> float | None:
@@ -175,6 +185,7 @@ class SkodaRangeSensor(SkodaEntity, SensorEntity):
     def __init__(self, coordinator: SkodaCoordinator, path: str) -> None:
         super().__init__(coordinator)
         self._attr_unique_id = f"{self._vin}_range"
+        self._device_group = "counters"
         self._attr_native_unit_of_measurement = (
             UnitOfLength.METERS
             if path.lower().endswith("inmeters")
@@ -204,6 +215,7 @@ class SkodaRateLimitSensor(SkodaEntity, SensorEntity):
     def __init__(self, coordinator: SkodaCoordinator) -> None:
         super().__init__(coordinator)
         self._attr_unique_id = f"{self._vin}_api_ratelimit_remaining"
+        self._device_group = "diagnostics"
 
     @property
     def native_value(self) -> int | None:
@@ -223,6 +235,7 @@ class SkodaKeyExpirySensor(SkodaEntity, SensorEntity):
     def __init__(self, coordinator: SkodaCoordinator) -> None:
         super().__init__(coordinator)
         self._attr_unique_id = f"{self._vin}_api_key_expires_at"
+        self._device_group = "diagnostics"
 
     @property
     def native_value(self) -> datetime | None:
@@ -239,6 +252,7 @@ class SkodaOmittedPartsSensor(SkodaEntity, SensorEntity):
     def __init__(self, coordinator: SkodaCoordinator) -> None:
         super().__init__(coordinator)
         self._attr_unique_id = f"{self._vin}_omitted_parts"
+        self._device_group = "diagnostics"
 
     @property
     def native_value(self) -> int:
@@ -247,3 +261,42 @@ class SkodaOmittedPartsSensor(SkodaEntity, SensorEntity):
     @property
     def extra_state_attributes(self) -> dict[str, Any]:
         return {"errors": self.coordinator.data.errors}
+
+
+class SkodaLastUpdateSensor(SkodaEntity, SensorEntity):
+    """Timestamp of last successful API response."""
+
+    _attr_entity_category = EntityCategory.DIAGNOSTIC
+    _attr_device_class = SD.TIMESTAMP
+    _attr_name = "Last successful update"
+
+    def __init__(self, coordinator: SkodaCoordinator) -> None:
+        super().__init__(coordinator)
+        self._attr_unique_id = f"{self._vin}_last_successful_update"
+        self._device_group = "diagnostics"
+
+    @property
+    def native_value(self) -> datetime | None:
+        return self.coordinator.last_successful_update
+
+
+class SkodaLastApiErrorSensor(SkodaEntity, SensorEntity):
+    """Last API polling error; available even if the coordinator update failed."""
+
+    _attr_entity_category = EntityCategory.DIAGNOSTIC
+    _attr_name = "Last API error"
+    _attr_icon = "mdi:alert-outline"
+
+    def __init__(self, coordinator: SkodaCoordinator) -> None:
+        super().__init__(coordinator)
+        self._attr_unique_id = f"{self._vin}_last_api_error"
+        self._device_group = "diagnostics"
+
+    @property
+    def available(self) -> bool:
+        return True
+
+    @property
+    def native_value(self) -> str | None:
+        error = self.coordinator.last_api_error
+        return error[:255] if error else None

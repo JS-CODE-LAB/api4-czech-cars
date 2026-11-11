@@ -12,6 +12,7 @@ import aiohttp
 from homeassistant.util import dt as dt_util
 
 from .const import API_BASE
+from .security import redact_sensitive
 
 
 class SkodaApiError(Exception):
@@ -99,7 +100,7 @@ class SkodaApiClient:
                         except ValueError:
                             body = text
                     if resp.status >= 400:
-                        raise self._to_error(resp.status, body, resp.headers)
+                        raise self._to_error(resp.status, body, resp.headers, self._api_key, self.vin)
                     return ApiResult(resp.status, body, meta)
         except (aiohttp.ClientError, TimeoutError) as err:
             raise SkodaApiError(f"Communication error: {err}") from err
@@ -109,7 +110,7 @@ class SkodaApiClient:
         return await self.async_request("GET")
 
     @staticmethod
-    def _to_error(status: int, body: Any, headers: Any) -> SkodaApiError:
+    def _to_error(status: int, body: Any, headers: Any, *secrets: str) -> SkodaApiError:
         problem = ""
         detail = f"HTTP {status}"
         if isinstance(body, dict):
@@ -117,7 +118,7 @@ class SkodaApiClient:
             if ptype and ptype != "about:blank":
                 problem = ptype.rstrip("/").rsplit("/", 1)[-1]
             detail = str(body.get("detail") or body.get("title") or detail)
-        message = f"{problem}: {detail}" if problem else detail
+        message = redact_sensitive(f"{problem}: {detail}" if problem else detail, *secrets)
 
         if status == 401:
             return SkodaAuthError(message)
