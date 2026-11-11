@@ -45,6 +45,7 @@ class SkodaChargingLimit(SkodaControlEntity, NumberEntity):
     def __init__(self, coordinator: SkodaCoordinator) -> None:
         super().__init__(coordinator)
         self._attr_unique_id = f"{self._vin}_number_charging_limit"
+        self._device_group = "charging"
 
     @property
     def native_value(self) -> float | None:
