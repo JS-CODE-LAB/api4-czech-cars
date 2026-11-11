@@ -29,7 +29,8 @@ def functional_group(path: str) -> str:
     p = path.lower()
     leaf = p.rsplit(".", 1)[-1]
     if any(k in p for k in ("chargeprofile", "chargingprofile", "chargingprofiles",
-                            "chargingprofilesettings", "departuretimer",
+                            "chargingprofilesettings", "charging.profiles", "charging.profile",
+                            "departuretimer", "departureprofile",
                             "preferredcharging", "charginglocation")):
         return "charging_profiles"
     if any(k in p for k in ("position", "latitude", "longitude", "parking", "gps")):
