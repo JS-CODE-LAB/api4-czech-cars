@@ -23,6 +23,7 @@ from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.util import dt as dt_util
 
+from .groups import functional_group
 from .coordinator import SkodaConfigEntry, SkodaCoordinator
 from .entity import KIND_SENSOR, SkodaEntity, classify, find_range_path, find_soc_path, humanize
 
@@ -70,6 +71,7 @@ async def async_setup_entry(
             SkodaRateLimitSensor(coordinator),
             SkodaKeyExpirySensor(coordinator),
             SkodaOmittedPartsSensor(coordinator),
+            SkodaLastUpdateSensor(coordinator),
         ]
     )
 
@@ -111,11 +113,16 @@ class SkodaFieldSensor(SkodaEntity, SensorEntity):
         self.field_path = path
         self._attr_unique_id = f"{self._vin}_{path}"
         self._attr_name = humanize(path)
+        self._group = functional_group(path)
         unit, dev, state, is_ts = _describe(path, sample)
         self._is_ts = is_ts
         self._attr_native_unit_of_measurement = unit
         self._attr_device_class = dev
         self._attr_state_class = state
+
+    @property
+    def extra_state_attributes(self) -> dict[str, str]:
+        return {"functional_group": self._group, "api_path": self.field_path}
 
     @property
     def native_value(self) -> Any:
@@ -247,3 +254,19 @@ class SkodaOmittedPartsSensor(SkodaEntity, SensorEntity):
     @property
     def extra_state_attributes(self) -> dict[str, Any]:
         return {"errors": self.coordinator.data.errors}
+
+
+class SkodaLastUpdateSensor(SkodaEntity, SensorEntity):
+    """Timestamp of last successful API response."""
+
+    _attr_entity_category = EntityCategory.DIAGNOSTIC
+    _attr_device_class = SD.TIMESTAMP
+    _attr_name = "Last successful update"
+
+    def __init__(self, coordinator: SkodaCoordinator) -> None:
+        super().__init__(coordinator)
+        self._attr_unique_id = f"{self._vin}_last_successful_update"
+
+    @property
+    def native_value(self) -> datetime | None:
+        return self.coordinator.last_successful_update
