@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.1
+- Organize entities into virtual child devices linked to the parent vehicle via via_device.
+- Separate charging profiles, charging, battery, climate, doors, windows, lights,
+  counters, powertrain, location, settings, vehicle information and diagnostics.
+- Preserve entity unique IDs; child devices appear only for available entities.
+- Add a last API polling error diagnostic sensor.
+- Extend functional classification tests.
+- Device-based automations may need checking after entities move between devices.
+
 ## 0.3.0
 - Functional group attributes for discovered fields (no artificial subdevices).
 - Manual refresh diagnostic button and last successful update timestamp.
