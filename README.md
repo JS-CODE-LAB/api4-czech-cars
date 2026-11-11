@@ -103,5 +103,8 @@ Endpoint details were cross-checked with the open-source Python library
 [skoda-public-api](https://github.com/mobility-lab-vsb/skoda-public-api) and the official API documentation.
 No code from it is included.
 
+## API usage terms and licensing
+The [official MyŠkoda Public API documentation](https://public.api.connect.skoda-auto.cz/docs) explicitly limits API use to **personal end-user use** and excludes commercial products and services. This project's MIT license covers the integration's own code, **not** permission to use ŠKODA's API commercially. Users must comply with the current API terms. API availability, fields and limits may change.
+
 ## License
 [MIT](LICENSE) – see also the [DISCLAIMER](DISCLAIMER.md). Trademarks belong to their respective owners.
