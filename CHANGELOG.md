@@ -7,6 +7,9 @@
 - Preserve entity unique IDs; child devices appear only for available entities.
 - Add a last API polling error diagnostic sensor.
 - Extend functional classification tests.
+- Move the Range (km) sensor to Counters and consumption alongside the odometer.
+- Clarify upgrade guidance, API safety, and privacy notices.
+- Default air conditioning without external power to disabled for new installations.
 - Device-based automations may need checking after entities move between devices.
 
 ## 0.3.0
