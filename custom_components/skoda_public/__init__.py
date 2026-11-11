@@ -19,6 +19,7 @@ from homeassistant.helpers.typing import ConfigType
 from .api import SkodaApiClient, SkodaApiError
 from .const import CONF_VIN, DOMAIN, PLATFORMS, SERVICE_REQUEST
 from .coordinator import SkodaConfigEntry, SkodaCoordinator
+from .security import redact_sensitive
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -65,7 +66,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
                 call.data["method"], path, json=call.data.get("body")
             )
         except SkodaApiError as err:
-            raise HomeAssistantError(str(err)) from err
+            raise HomeAssistantError(redact_sensitive(str(err), coordinator.client._api_key, coordinator.vin, coordinator.config_entry.options.get("spin"))) from err
         if call.data["refresh"]:
             await coordinator.async_request_refresh()
         return {
