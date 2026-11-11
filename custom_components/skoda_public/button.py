@@ -26,6 +26,7 @@ class SkodaRefreshButton(SkodaEntity, ButtonEntity):
     def __init__(self, coordinator: SkodaCoordinator) -> None:
         super().__init__(coordinator)
         self._attr_unique_id = f"{self._vin}_refresh_vehicle_data"
+        self._device_group = "diagnostics"
 
     async def async_press(self) -> None:
         await self.coordinator.async_request_refresh()
