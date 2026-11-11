@@ -3,10 +3,13 @@
     "step": {
       "user": {
         "title": "API 4 Czech Cars (public API)",
-        "description": "API klíč vytvořte v aplikaci MyŠkoda (https://go.skoda.eu/api-keys) a vyberte tam své vozidlo.",
+        "description": "API klíč vytvořte v aplikaci MyŠkoda pomocí odkazu v poli níže a vyberte tam své vozidlo.",
         "data": {
           "api_key": "API klíč",
           "vin": "VIN"
+        },
+        "description_placeholders": {
+          "api_key_url": "https://go.skoda.eu/api-keys"
         }
       },
       "reauth_confirm": {
