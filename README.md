@@ -49,6 +49,8 @@ Existing entity unique IDs are preserved, but device associations change. After 
 - A ŠKODA vehicle with an active MyŠkoda connectivity subscription and a **MyŠkoda API key** for that vehicle
   (create it in the MyŠkoda app: <https://go.skoda.eu/api-keys>).
 
+[![Open your Home Assistant instance and add this repository](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=JS-CODE-LAB&repository=api4-czech-cars&category=integration)
+
 ## Installation
 
 ### HACS (custom repository)
