@@ -72,6 +72,7 @@ async def async_setup_entry(
             SkodaKeyExpirySensor(coordinator),
             SkodaOmittedPartsSensor(coordinator),
             SkodaLastUpdateSensor(coordinator),
+            SkodaLastApiErrorSensor(coordinator),
         ]
     )
 
@@ -277,3 +278,25 @@ class SkodaLastUpdateSensor(SkodaEntity, SensorEntity):
     @property
     def native_value(self) -> datetime | None:
         return self.coordinator.last_successful_update
+
+
+class SkodaLastApiErrorSensor(SkodaEntity, SensorEntity):
+    """Last API polling error; available even if the coordinator update failed."""
+
+    _attr_entity_category = EntityCategory.DIAGNOSTIC
+    _attr_name = "Last API error"
+    _attr_icon = "mdi:alert-outline"
+
+    def __init__(self, coordinator: SkodaCoordinator) -> None:
+        super().__init__(coordinator)
+        self._attr_unique_id = f"{self._vin}_last_api_error"
+        self._device_group = "diagnostics"
+
+    @property
+    def available(self) -> bool:
+        return True
+
+    @property
+    def native_value(self) -> str | None:
+        error = self.coordinator.last_api_error
+        return error[:255] if error else None
