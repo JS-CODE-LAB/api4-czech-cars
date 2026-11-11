@@ -14,6 +14,8 @@ which can change at any time; its documentation describes it as intended for per
 solely responsible for complying with the current terms, including rate limits. Do not use this
 integration to build commercial services. The API or your vehicle can stop working with it at any time.
 
+**Remote commands act on a real vehicle.** The generic `skoda_public.request` action can issue remote commands from automations without additional confirmation; restrict access to Home Assistant and review automations before enabling them.
+
 **Remote commands act on a real vehicle.** Charging, air conditioning, auxiliary heating and
 ventilation commands are sent to your car. Make sure it is safe to run them.
 **Never run a fuel-fired auxiliary heater or leave an engine running in a closed or poorly
@@ -48,6 +50,8 @@ vlastní logo projektu a neobsahuje ochranné známky ŠKODA.
 které se mohou kdykoli změnit; dokumentace ho popisuje jako určené pro osobní použití. Za dodržování
 aktuálních podmínek včetně limitů požadavků odpovídáš sám. Integraci nepoužívej pro komerční služby.
 API nebo vozidlo mohou s integrací kdykoli přestat fungovat.
+
+**Obecná akce `skoda_public.request` může spouštět příkazy vozidla z automatizací bez dalšího potvrzení.** Omezte přístup k Home Assistantu a před zapnutím automatizace zkontrolujte.
 
 **Příkazy ovládají skutečné vozidlo.** Příkazy pro nabíjení, klimatizaci, přídavné topení a větrání se
 odesílají do tvého auta. Přesvědč se, že je jejich spuštění bezpečné.
