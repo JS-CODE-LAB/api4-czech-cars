@@ -35,7 +35,7 @@
           "aux_heating_duration": "Délka přídavného topení (sekundy)",
           "spin": "S-PIN (nutný pro přídavné topení)"
         },
-        "description": "API povoluje zhruba 20 požadavků za hodinu na vozidlo; každý příkaz navíc vyvolá jedno obnovení stavu."
+        "description": "Dálkové příkazy ovládají skutečné vozidlo. Klimatizaci bez napájení povolte jen pokud je to bezpečné. API umožňuje přibližně 20 požadavků/h; příkazy vyvolají další aktualizaci."
       }
     }
   },
