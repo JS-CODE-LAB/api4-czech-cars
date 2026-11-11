@@ -3,10 +3,11 @@ from __future__ import annotations
 
 import logging
 from dataclasses import dataclass
-from datetime import timedelta
+from datetime import datetime, timedelta
 from typing import Any
 
 from homeassistant.config_entries import ConfigEntry
+from homeassistant.util import dt as dt_util
 from homeassistant.core import HomeAssistant
 from homeassistant.core import callback
 from homeassistant.exceptions import ConfigEntryAuthFailed, HomeAssistantError
@@ -74,6 +75,7 @@ class SkodaCoordinator(DataUpdateCoordinator[SkodaData]):
         self.client = client
         self.vin: str = entry.data[CONF_VIN]
         self._refresh_cancel = None
+        self.last_successful_update: datetime | None = None
 
     async def async_command(
         self, method: str, path: str, json: Any = None
@@ -128,4 +130,5 @@ class SkodaCoordinator(DataUpdateCoordinator[SkodaData]):
         flat = {
             k: v for k, v in flatten(vehicle).items() if k not in EXCLUDED_PATHS
         }
+        self.last_successful_update = dt_util.utcnow()
         return SkodaData(vehicle=vehicle, errors=errors, flat=flat, meta=result.meta)
