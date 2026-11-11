@@ -1,44 +1,74 @@
-"""Functional classification of API fields for documentation and entity naming.
+"""Stable functional grouping for Škoda API fields.
 
-Home Assistant does not support arbitrary device-page entity sections.
-The group is exposed as an entity attribute instead of creating fake devices.
+Groups are virtual Home Assistant devices linked to one parent vehicle.
+A group is created only when at least one entity is assigned to it.
 """
 from __future__ import annotations
 
-GROUPS = ("battery", "charging", "vehicle_status", "climate", "engine",
-          "location", "vehicle_info", "diagnostics")
+GROUP_NAMES = {
+    "battery": "Baterie",
+    "charging": "Nabíjení",
+    "charging_profiles": "Nabíjecí profily",
+    "climate": "Klimatizace a topení",
+    "doors": "Dveře a zámky",
+    "windows": "Okna",
+    "lights": "Osvětlení",
+    "counters": "Počítadla a spotřeba",
+    "powertrain": "Pohon a palivo",
+    "location": "Poloha a parkování",
+    "settings": "Nastavení",
+    "vehicle_info": "Informace o vozidle",
+    "vehicle_status": "Ostatní stavy vozidla",
+    "diagnostics": "Diagnostika",
+}
+GROUPS = tuple(GROUP_NAMES)
 
 
 def functional_group(path: str) -> str:
-    """Classify a flattened vehicle field without depending on a specific model."""
+    """Choose a stable group based on an API path; order is significant."""
     p = path.lower()
-    if any(s in p for s in ("position", "latitude", "longitude", "parking")):
+    leaf = p.rsplit(".", 1)[-1]
+    if any(k in p for k in ("chargeprofile", "chargingprofile", "chargingprofiles",
+                            "chargingprofilesettings", "departuretimer",
+                            "preferredcharging", "charginglocation")):
+        return "charging_profiles"
+    if any(k in p for k in ("position", "latitude", "longitude", "parking", "gps")):
         return "location"
-    if any(s in p for s in ("charging", "charger", "plug", "chargeprofile")):
-        return "charging"
-    if any(s in p for s in ("battery", "stateofcharge", "electricrange")):
-        return "battery"
-    if any(s in p for s in ("airconditioning", "climatisation", "climatization",
-                            "auxiliaryheating", "activeventilation", "temperature")):
+    if any(k in p for k in ("window", "sunroof", "roofwindow")):
+        return "windows"
+    if any(k in p for k in ("door", "lock", "bonnet", "hood", "trunk", "tailgate")):
+        return "doors"
+    if any(k in p for k in ("light", "lamp", "headlight")):
+        return "lights"
+    if any(k in p for k in ("odometer", "mileage", "tripmeter", "distancecovered",
+                            "consumption", "averageconsumption", "totaldistance",
+                            "drivingtime", "operatinghours", "counter")):
+        return "counters"
+    if any(k in p for k in ("airconditioning", "climatisation", "climatization",
+                            "auxiliaryheating", "activeventilation", "heating",
+                            "ventilation", "interiortemperature")):
         return "climate"
-    if any(s in p for s in ("fuel", "engine", "combustion", "oil")):
-        return "engine"
-    if any(s in p for s in ("door", "window", "lock", "light", "bonnet",
-                            "hood", "trunk", "tailgate", "tyre", "tire")):
-        return "vehicle_status"
-    if any(s in p for s in ("vin", "model", "mileage", "odometer",
-                            "registration", "production", "vehicle")):
+    if any(k in p for k in ("charging", "charger", "plug", "chargecurrent")):
+        return "charging"
+    if any(k in p for k in ("battery", "stateofcharge", "electricrange")):
+        return "battery"
+    if any(k in p for k in ("fuel", "engine", "combustion", "oil", "powertrain")):
+        return "powertrain"
+    if any(k in p for k in ("settings", "configuration", "preferences")):
+        return "settings"
+    if any(k in p for k in ("vin", "model", "registration", "production",
+                            "vehicleinfo", "vehicledata")):
         return "vehicle_info"
     return "vehicle_status"
 
 
 def binary_device_class(path: str) -> str | None:
-    """Return a HA BinarySensorDeviceClass value for unambiguous paths only."""
+    """Assign device classes only where the boolean's meaning is clear."""
     p = path.lower()
     leaf = p.rsplit(".", 1)[-1]
     if any(k in leaf for k in ("locked", "lockstate")):
         return "lock"
-    if "door" in p or "bonnet" in p or "hood" in p or "tailgate" in p or "trunk" in p:
+    if any(k in p for k in ("door", "bonnet", "hood", "tailgate", "trunk")):
         return "door"
     if "window" in p:
         return "window"
