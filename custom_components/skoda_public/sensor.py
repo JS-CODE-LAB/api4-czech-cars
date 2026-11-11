@@ -185,7 +185,7 @@ class SkodaRangeSensor(SkodaEntity, SensorEntity):
     def __init__(self, coordinator: SkodaCoordinator, path: str) -> None:
         super().__init__(coordinator)
         self._attr_unique_id = f"{self._vin}_range"
-        self._device_group = "battery"
+        self._device_group = "counters"
         self._attr_native_unit_of_measurement = (
             UnitOfLength.METERS
             if path.lower().endswith("inmeters")
