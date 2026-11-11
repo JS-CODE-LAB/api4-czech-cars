@@ -114,6 +114,7 @@ class SkodaFieldSensor(SkodaEntity, SensorEntity):
         self._attr_unique_id = f"{self._vin}_{path}"
         self._attr_name = humanize(path)
         self._group = functional_group(path)
+        self._device_group = self._group
         unit, dev, state, is_ts = _describe(path, sample)
         self._is_ts = is_ts
         self._attr_native_unit_of_measurement = unit
@@ -151,6 +152,7 @@ class SkodaBatterySensor(SkodaEntity, SensorEntity):
     def __init__(self, coordinator: SkodaCoordinator) -> None:
         super().__init__(coordinator)
         self._attr_unique_id = f"{self._vin}_battery_level"
+        self._device_group = "battery"
 
     @property
     def native_value(self) -> float | None:
@@ -182,6 +184,7 @@ class SkodaRangeSensor(SkodaEntity, SensorEntity):
     def __init__(self, coordinator: SkodaCoordinator, path: str) -> None:
         super().__init__(coordinator)
         self._attr_unique_id = f"{self._vin}_range"
+        self._device_group = "battery"
         self._attr_native_unit_of_measurement = (
             UnitOfLength.METERS
             if path.lower().endswith("inmeters")
@@ -211,6 +214,7 @@ class SkodaRateLimitSensor(SkodaEntity, SensorEntity):
     def __init__(self, coordinator: SkodaCoordinator) -> None:
         super().__init__(coordinator)
         self._attr_unique_id = f"{self._vin}_api_ratelimit_remaining"
+        self._device_group = "diagnostics"
 
     @property
     def native_value(self) -> int | None:
@@ -230,6 +234,7 @@ class SkodaKeyExpirySensor(SkodaEntity, SensorEntity):
     def __init__(self, coordinator: SkodaCoordinator) -> None:
         super().__init__(coordinator)
         self._attr_unique_id = f"{self._vin}_api_key_expires_at"
+        self._device_group = "diagnostics"
 
     @property
     def native_value(self) -> datetime | None:
@@ -246,6 +251,7 @@ class SkodaOmittedPartsSensor(SkodaEntity, SensorEntity):
     def __init__(self, coordinator: SkodaCoordinator) -> None:
         super().__init__(coordinator)
         self._attr_unique_id = f"{self._vin}_omitted_parts"
+        self._device_group = "diagnostics"
 
     @property
     def native_value(self) -> int:
@@ -266,6 +272,7 @@ class SkodaLastUpdateSensor(SkodaEntity, SensorEntity):
     def __init__(self, coordinator: SkodaCoordinator) -> None:
         super().__init__(coordinator)
         self._attr_unique_id = f"{self._vin}_last_successful_update"
+        self._device_group = "diagnostics"
 
     @property
     def native_value(self) -> datetime | None:
