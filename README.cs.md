@@ -85,3 +85,8 @@ Podrobnosti o endpointech jsem ověřoval podle open-source knihovny
 
 ## Licence
 [MIT](LICENSE) – viz také [UPOZORNĚNÍ](DISCLAIMER.md). Ochranné známky patří jejich vlastníkům.
+
+
+## Novinky ve verzi 0.3.0
+
+Dynamicky objevené senzory a binární senzory mají atribut `functional_group` pro přehledné rozdělení do oblastí baterie, nabíjení, stav vozidla, klimatizace, motor, poloha, informace o vozidle a diagnostika. Home Assistant nepodporuje vlastní oddíly uvnitř jednoho zařízení, proto zůstává jedno zařízení na vozidlo a členění lze využít na dashboardu. Přibylo diagnostické tlačítko pro ruční aktualizaci (spotřebuje API požadavek) a čas poslední úspěšné aktualizace. Dosavadní identifikátory entit zůstávají zachovány.
