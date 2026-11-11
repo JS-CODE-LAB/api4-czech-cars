@@ -111,6 +111,7 @@ class SkodaCommandSwitch(SkodaControlEntity, SwitchEntity):
         super().__init__(coordinator)
         self.entity_def = definition
         self._attr_unique_id = f"{self._vin}_switch_{definition.key}"
+        self._device_group = "charging" if definition.key == "charging" else "climate"
         self._attr_name = definition.name
         self._attr_icon = definition.icon
 
