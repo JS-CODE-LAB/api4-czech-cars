@@ -90,3 +90,8 @@ Podrobnosti o endpointech jsem ověřoval podle open-source knihovny
 ## Novinky ve verzi 0.3.0
 
 Dynamicky objevené senzory a binární senzory mají atribut `functional_group` pro přehledné rozdělení do oblastí baterie, nabíjení, stav vozidla, klimatizace, motor, poloha, informace o vozidle a diagnostika. Home Assistant nepodporuje vlastní oddíly uvnitř jednoho zařízení, proto zůstává jedno zařízení na vozidlo a členění lze využít na dashboardu. Přibylo diagnostické tlačítko pro ruční aktualizaci (spotřebuje API požadavek) a čas poslední úspěšné aktualizace. Dosavadní identifikátory entit zůstávají zachovány.
+
+
+## Organizace entit ve verzi 0.3.1
+
+Entity se automaticky přiřazují do virtuálních podřízených zařízení připojených k hlavnímu vozidlu. Samostatně se zobrazují baterie, nabíjení, nabíjecí profily, klimatizace a topení, dveře a zámky, okna, osvětlení, počítadla a spotřeba, pohon a palivo, poloha, nastavení, informace o vozidle, ostatní stavy a diagnostika. Skupina vzniká pouze tehdy, pokud obsahuje alespoň jednu entitu. Původní identifikátory unique_id zůstávají zachovány, ale entity budou přiřazeny k jinému zařízení. Po aktualizaci zkontrolujte automatizace používající přímo zařízení. V diagnostice přibyl údaj o poslední chybě API.
