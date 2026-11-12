@@ -1,6 +1,7 @@
 # Changelog
 
 ## 0.3.2
+- Fix truncated vehicle renders by consuming the full HTTP response stream in bounded chunks and verifying Content-Length before decoding.
 - Render vehicle image with cropped transparent margins on a neutral light background; add a separate original image entity for comparison. Image decoding runs in an executor.
 - Expose visible pixel bounds in DEBUG diagnostics; the original source image is never modified.
 - Add DEBUG-only privacy-safe image diagnostics (actual format, pixel dimensions, alpha transparency, byte count and HTTP metadata) to investigate unusual vehicle render appearance.
