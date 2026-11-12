@@ -33,7 +33,7 @@ async def async_setup_entry(
 
 class SkodaChargingLimit(SkodaControlEntity, NumberEntity):
     _attr_entity_category = EntityCategory.CONFIG
-    _attr_name = "Charging limit"
+    _attr_translation_key = "charging_limit"
     _attr_icon = "mdi:battery-charging-high"
     _attr_native_unit_of_measurement = PERCENTAGE
     _attr_mode = NumberMode.SLIDER
