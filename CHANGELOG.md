@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.3 (unreleased)
+- Translate functional device groups into Czech for cs locales and English for all other locales.
+- Add locale fallback tests and preserve stable entity and device identifiers.
+
 ## 0.3.2
 - Retain only the unmodified original vehicle image entity; remove temporary image diagnostics and obsolete light-background image entity from the registry.
 - Fix truncated vehicle renders by consuming the full HTTP response stream in bounded chunks and verifying Content-Length before decoding.
