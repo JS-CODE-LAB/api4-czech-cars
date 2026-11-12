@@ -105,6 +105,9 @@
     "image": {
       "api_field": {
         "name": "{field}"
+      },
+      "original_api_field": {
+        "name": "Původní {field}"
       }
     },
     "device_tracker": {
