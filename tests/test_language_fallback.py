@@ -34,3 +34,17 @@ def test_dynamic_entity_labels_by_locale():
     assert localization.localized_path(path, "cs-CZ") != localization.humanize_path(path)
     for locale in ("en", "de", "sk", "fr", ""):
         assert localization.localized_path(path, locale) == localization.humanize_path(path)
+
+def test_translation_templates_use_per_user_language():
+    import json
+    for locale, field in (("cs", "field_cs"), ("en", "field_en")):
+        translation = json.loads((ROOT / "translations" / f"{locale}.json").read_text())
+        for platform, key in (
+            ("sensor", "api_field"),
+            ("binary_sensor", "api_field"),
+            ("image", "original_api_field"),
+            ("device_tracker", "api_field"),
+        ):
+            assert translation["entity"][platform][key]["name"] == "{" + field + "}"
+    strings = json.loads((ROOT / "strings.json").read_text())
+    assert strings["entity"]["sensor"]["api_field"]["name"] == "{field_en}"
