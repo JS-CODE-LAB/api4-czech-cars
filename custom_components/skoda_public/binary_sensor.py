@@ -54,7 +54,8 @@ class SkodaFieldBinarySensor(SkodaEntity, BinarySensorEntity):
         self._attr_unique_id = f"{self._vin}_{path}"
         self._attr_translation_key = "api_field"
         self._attr_translation_placeholders = {
-            "field": localized_path(path, coordinator.hass.config.language)
+            "field_cs": localized_path(path, "cs"),
+            "field_en": localized_path(path, "en")
         }
         self._group = functional_group(path)
         self._device_group = self._group
