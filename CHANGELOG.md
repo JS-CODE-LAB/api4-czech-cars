@@ -1,7 +1,8 @@
 # Changelog
 
 ## 0.3.3 (unreleased)
-- Translate functional device groups into Czech for cs locales and English for all other locales.
+- Translate dynamic entity names per user profile using Czech/English translation placeholders (not global HA language).
+- Use stable English default names for functional devices, whose registry names are not user-localized.
 - Add locale fallback tests and preserve stable entity and device identifiers.
 
 ## 0.3.2
