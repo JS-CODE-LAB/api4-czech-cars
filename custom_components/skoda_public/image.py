@@ -59,7 +59,8 @@ class SkodaFieldImage(SkodaEntity, ImageEntity):
         self._device_group = functional_group(path)
         self._attr_translation_key = "original_api_field"
         self._attr_translation_placeholders = {
-            "field": localized_path(path, coordinator.hass.config.language)
+            "field_cs": localized_path(path, "cs"),
+            "field_en": localized_path(path, "en")
         }
         self._attr_image_last_updated = datetime.now().astimezone()
 
