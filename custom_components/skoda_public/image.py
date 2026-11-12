@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import logging
+import hashlib
 from datetime import datetime
 from urllib.parse import urlsplit
 
@@ -84,6 +85,12 @@ class SkodaFieldImage(SkodaEntity, ImageEntity):
         if not is_image_field(self.field_path, url):
             _LOGGER.debug("Vehicle image unavailable for API path %s: missing or invalid HTTPS image URL", self.field_path)
             return None
+        if _LOGGER.isEnabledFor(logging.DEBUG):
+            _LOGGER.debug(
+                "Vehicle image source path=%s host=%s url_sha256_16=%s",
+                self.field_path, urlsplit(url).hostname,
+                hashlib.sha256(url.encode("utf-8")).hexdigest()[:16],
+            )
         parsed = urlsplit(url)
         if parsed.scheme != "https" or not parsed.hostname:
             return None
@@ -112,11 +119,12 @@ class SkodaFieldImage(SkodaEntity, ImageEntity):
                     _LOGGER.debug(
                         "Vehicle image diagnostic path=%s status=%s "
                         "content_type=%s bytes=%s format=%s dimensions=%sx%s "
-                        "alpha=%s declared_length=%s",
+                        "alpha=%s declared_length=%s content_sha256_16=%s",
                         self.field_path, response.status, content_type,
                         info["bytes"], info["format"], info["width"],
                         info["height"], info["alpha"],
                         response.content_length,
+                        hashlib.sha256(data).hexdigest()[:16],
                     )
                 if self._original:
                     return data
