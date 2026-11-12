@@ -70,7 +70,7 @@
   "entity": {
     "sensor": {
       "api_field": {
-        "name": "{field}"
+        "name": "{field_en}"
       },
       "battery_level": {
         "name": "Battery"
@@ -96,7 +96,7 @@
     },
     "binary_sensor": {
       "api_field": {
-        "name": "{field}"
+        "name": "{field_en}"
       },
       "battery_charging": {
         "name": "Battery charging"
@@ -104,12 +104,12 @@
     },
     "image": {
       "original_api_field": {
-        "name": "{field}"
+        "name": "{field_en}"
       }
     },
     "device_tracker": {
       "api_field": {
-        "name": "{field}"
+        "name": "{field_en}"
       }
     },
     "switch": {
