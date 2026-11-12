@@ -17,6 +17,7 @@ from .entity import SkodaEntity
 from .groups import functional_group
 from .image_fields import is_image_field
 from .image_diagnostics import inspect_image
+from .image_processing import prepare_vehicle_image
 from .localization import localized_path
 
 _LOGGER = logging.getLogger(__name__)
@@ -33,12 +34,15 @@ async def async_setup_entry(
     def _discover() -> None:
         if coordinator.data is None:
             return
-        new = [
-            SkodaFieldImage(coordinator, path)
-            for path, value in coordinator.data.flat.items()
+        paths = [
+            path for path, value in coordinator.data.flat.items()
             if path not in known and is_image_field(path, value)
         ]
-        known.update(entity.field_path for entity in new)
+        new = [
+            SkodaFieldImage(coordinator, path, original=original)
+            for path in paths for original in (False, True)
+        ]
+        known.update(paths)
         if new:
             async_add_entities(new)
 
@@ -51,13 +55,14 @@ class SkodaFieldImage(SkodaEntity, ImageEntity):
 
     _attr_content_type = "image/jpeg"
 
-    def __init__(self, coordinator: SkodaCoordinator, path: str) -> None:
+    def __init__(self, coordinator: SkodaCoordinator, path: str, *, original: bool = False) -> None:
         super().__init__(coordinator)
         ImageEntity.__init__(self, coordinator.hass)
         self.field_path = path
-        self._attr_unique_id = f"{self._vin}_{path}"
+        self._original = original
+        self._attr_unique_id = f"{self._vin}_{path}" + ("_original" if original else "")
         self._device_group = functional_group(path)
-        self._attr_translation_key = "api_field"
+        self._attr_translation_key = "original_api_field" if original else "api_field"
         self._attr_translation_placeholders = {
             "field": localized_path(path, coordinator.hass.config.language)
         }
@@ -113,7 +118,27 @@ class SkodaFieldImage(SkodaEntity, ImageEntity):
                         info["height"], info["alpha"],
                         response.content_length,
                     )
-                return data
+                if self._original:
+                    return data
+                try:
+                    processed, metadata = await self.hass.async_add_executor_job(
+                        prepare_vehicle_image, data
+                    )
+                    self._attr_content_type = "image/png"
+                    _LOGGER.debug(
+                        "Vehicle image processing path=%s original_size=%s "
+                        "visible_bounds=%s visible_size=%s output_size=%s",
+                        self.field_path, metadata["source_size"],
+                        metadata["visible_bounds"], metadata["visible_size"],
+                        metadata["output_size"],
+                    )
+                    return processed
+                except (OSError, ValueError) as err:
+                    _LOGGER.warning(
+                        "Vehicle image processing failed for %s: %s; using original",
+                        self.field_path, type(err).__name__,
+                    )
+                    return data
         except (aiohttp.ClientError, TimeoutError, ValueError) as err:
             _LOGGER.warning("Vehicle image %s could not be loaded: %s", self.field_path, type(err).__name__)
             return None
