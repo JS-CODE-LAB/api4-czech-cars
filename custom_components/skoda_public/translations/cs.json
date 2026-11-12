@@ -66,5 +66,77 @@
         }
       }
     }
+  },
+  "entity": {
+    "sensor": {
+      "api_field": {
+        "name": "{field}"
+      },
+      "battery_level": {
+        "name": "Baterie"
+      },
+      "range": {
+        "name": "Dojezd"
+      },
+      "api_requests_remaining": {
+        "name": "Zbývající požadavky API"
+      },
+      "api_key_expires_at": {
+        "name": "Platnost API klíče končí"
+      },
+      "omitted_data_parts": {
+        "name": "Vynechané části dat"
+      },
+      "last_successful_update": {
+        "name": "Poslední úspěšná aktualizace"
+      },
+      "last_api_error": {
+        "name": "Poslední chyba API"
+      }
+    },
+    "binary_sensor": {
+      "api_field": {
+        "name": "{field}"
+      },
+      "battery_charging": {
+        "name": "Nabíjení baterie"
+      }
+    },
+    "image": {
+      "api_field": {
+        "name": "{field}"
+      }
+    },
+    "device_tracker": {
+      "api_field": {
+        "name": "{field}"
+      }
+    },
+    "switch": {
+      "charging": {
+        "name": "Nabíjení"
+      },
+      "auxiliary_heating": {
+        "name": "Nezávislé topení"
+      },
+      "active_ventilation": {
+        "name": "Aktivní větrání"
+      }
+    },
+    "number": {
+      "charging_limit": {
+        "name": "Limit nabíjení"
+      }
+    },
+    "climate": {
+      "air_conditioning": {
+        "name": "Klimatizace"
+      }
+    },
+    "button": {
+      "refresh_vehicle_data": {
+        "name": "Aktualizovat data vozidla"
+      }
+    }
   }
 }
