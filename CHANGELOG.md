@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.2
+- Translate entity names to Czech in Czech Home Assistant installations; keep English names for English installations.
+- Add native Home Assistant image entities for image URLs returned by the API.
+- Keep existing unique IDs for ordinary fields and control entities; image fields move from sensor to image domain.
+- Add standalone Czech localization and image classification tests.
+- Existing manually customized entity names are not overwritten; inspect the entity registry after upgrading.
+
 ## 0.3.1
 - Organize entities into virtual child devices linked to the parent vehicle via via_device.
 - Separate charging profiles, charging, battery, climate, doors, windows, lights,
