@@ -20,6 +20,7 @@ API_BASE = "https://public.api.connect.skoda-auto.cz"
 
 PLATFORMS = [
     Platform.SENSOR,
+    Platform.IMAGE,
     Platform.BINARY_SENSOR,
     Platform.DEVICE_TRACKER,
     Platform.SWITCH,
