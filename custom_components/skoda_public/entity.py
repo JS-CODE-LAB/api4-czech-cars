@@ -9,7 +9,7 @@ from homeassistant.helpers.device_registry import DeviceInfo
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
-from .groups import GROUP_NAMES
+from .groups import GROUP_NAMES, group_name
 from .coordinator import SkodaCoordinator
 
 BOOL_TRUE = {"YES", "TRUE", "ON"}
@@ -140,7 +140,7 @@ class SkodaEntity(CoordinatorEntity[SkodaCoordinator]):
             return DeviceInfo(
                 identifiers={(DOMAIN, f"{self._vin}__{group}")},
                 manufacturer="Škoda Auto",
-                name=GROUP_NAMES[group],
+                name=group_name(group, self.coordinator.hass.config.language),
             )
         return DeviceInfo(
             identifiers={(DOMAIN, self._vin)},
