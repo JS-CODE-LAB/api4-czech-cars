@@ -22,7 +22,7 @@ def is_image_field(path: str, value: object) -> bool:
             return False
     except ValueError:
         pass
-    leaf = path.lower().rsplit(".", 1)[-1]
+    path_lower = path.lower()
     return parsed.path.lower().endswith(_IMAGE_SUFFIXES) or any(
-        part in leaf for part in _IMAGE_NAMES
+        part in path_lower for part in _IMAGE_NAMES
     )
