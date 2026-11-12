@@ -72,7 +72,7 @@ CS = {
 
 def localized_path(path: str, language: str) -> str:
     """Readable path label; Czech for cs locales, English otherwise."""
-    if not language.lower().startswith("cs"):
+    if (language or "").lower().replace("_", "-").split("-", 1)[0] != "cs":
         return humanize_path(path)
     parts = []
     for segment in path.split("."):
