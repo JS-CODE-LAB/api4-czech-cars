@@ -8,6 +8,11 @@ from __future__ import annotations
 import re
 
 CS = {
+    "licenseplate": "registrační značka", "registrationplate": "registrační značka",
+    "operations": "operace", "operation": "operace",
+    "car": "vozidlo", "captured": "pořízení údajů",
+    "render": "vizualizace vozidla", "renderurl": "obrázek vozidla",
+    "vehiclerenderurl": "obrázek vozidla",
     "vehicle": "vozidlo", "vehicles": "vozidla", "status": "stav",
     "state": "stav", "charging": "nabíjení", "charge": "nabití",
     "battery": "baterie", "batterylevel": "úroveň baterie",
@@ -81,6 +86,8 @@ def localized_path(path: str, language: str) -> str:
         else:
             parts.extend(CS.get(word.lower(), word.lower()) for word in words)
     result = " ".join(part for part in parts if part).strip()
+    result = re.sub(r"\\b(operace) (\\d+) název\\b", r"\\1 \\2 – název", result, flags=re.IGNORECASE)
+    result = result.replace("Stav vozidlo pořízení údajů časové razítko", "Čas pořízení údajů o vozidle")
     return result[:1].upper() + result[1:] if result else path
 
 
