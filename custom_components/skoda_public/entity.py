@@ -140,7 +140,7 @@ class SkodaEntity(CoordinatorEntity[SkodaCoordinator]):
             return DeviceInfo(
                 identifiers={(DOMAIN, f"{self._vin}__{group}")},
                 manufacturer="Škoda Auto",
-                name=group_name(group, self.coordinator.hass.config.language),
+                name=group_name(group, "en"),
             )
         return DeviceInfo(
             identifiers={(DOMAIN, self._vin)},
