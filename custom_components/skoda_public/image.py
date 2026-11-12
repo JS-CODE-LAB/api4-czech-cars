@@ -16,6 +16,7 @@ from .coordinator import SkodaConfigEntry, SkodaCoordinator
 from .entity import SkodaEntity
 from .groups import functional_group
 from .image_fields import is_image_field
+from .image_diagnostics import inspect_image
 from .localization import localized_path
 
 _LOGGER = logging.getLogger(__name__)
@@ -101,6 +102,17 @@ class SkodaFieldImage(SkodaEntity, ImageEntity):
                     _LOGGER.warning("Vehicle image %s exceeds size limit", self.field_path)
                     return None
                 self._attr_content_type = content_type
+                if _LOGGER.isEnabledFor(logging.DEBUG):
+                    info = inspect_image(data)
+                    _LOGGER.debug(
+                        "Vehicle image diagnostic path=%s status=%s "
+                        "content_type=%s bytes=%s format=%s dimensions=%sx%s "
+                        "alpha=%s declared_length=%s",
+                        self.field_path, response.status, content_type,
+                        info["bytes"], info["format"], info["width"],
+                        info["height"], info["alpha"],
+                        response.content_length,
+                    )
                 return data
         except (aiohttp.ClientError, TimeoutError, ValueError) as err:
             _LOGGER.warning("Vehicle image %s could not be loaded: %s", self.field_path, type(err).__name__)
