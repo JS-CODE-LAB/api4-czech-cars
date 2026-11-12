@@ -1,6 +1,7 @@
 """Image entities for URLs returned by the vehicle API."""
 from __future__ import annotations
 
+import logging
 from datetime import datetime
 from urllib.parse import urlsplit
 
@@ -17,6 +18,7 @@ from .groups import functional_group
 from .image_fields import is_image_field
 from .localization import localized_path
 
+_LOGGER = logging.getLogger(__name__)
 MAX_IMAGE_BYTES = 8 * 1024 * 1024
 
 
@@ -73,6 +75,7 @@ class SkodaFieldImage(SkodaEntity, ImageEntity):
             return None
         url = self.coordinator.data.flat.get(self.field_path)
         if not is_image_field(self.field_path, url):
+            _LOGGER.debug("Vehicle image unavailable for API path %s: missing or invalid HTTPS image URL", self.field_path)
             return None
         parsed = urlsplit(url)
         if parsed.scheme != "https" or not parsed.hostname:
@@ -83,16 +86,21 @@ class SkodaFieldImage(SkodaEntity, ImageEntity):
                 url, allow_redirects=False, timeout=aiohttp.ClientTimeout(total=20)
             ) as response:
                 if response.status != 200:
+                    _LOGGER.warning("Vehicle image %s could not be fetched: HTTP %s", self.field_path, response.status)
                     return None
                 content_type = response.headers.get("Content-Type", "").split(";", 1)[0].lower()
                 if not content_type.startswith("image/"):
+                    _LOGGER.warning("Vehicle image %s has unsupported content type %s", self.field_path, content_type)
                     return None
                 if response.content_length and response.content_length > MAX_IMAGE_BYTES:
+                    _LOGGER.warning("Vehicle image %s exceeds size limit", self.field_path)
                     return None
                 data = await response.content.read(MAX_IMAGE_BYTES + 1)
                 if len(data) > MAX_IMAGE_BYTES:
+                    _LOGGER.warning("Vehicle image %s exceeds size limit", self.field_path)
                     return None
                 self._attr_content_type = content_type
                 return data
-        except (aiohttp.ClientError, TimeoutError, ValueError):
+        except (aiohttp.ClientError, TimeoutError, ValueError) as err:
+            _LOGGER.warning("Vehicle image %s could not be loaded: %s", self.field_path, type(err).__name__)
             return None
