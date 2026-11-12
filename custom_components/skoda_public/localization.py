@@ -86,7 +86,8 @@ def localized_path(path: str, language: str) -> str:
         else:
             parts.extend(CS.get(word.lower(), word.lower()) for word in words)
     result = " ".join(part for part in parts if part).strip()
-    result = re.sub(r"\\b(operace) (\\d+) název\\b", r"\\1 \\2 – název", result, flags=re.IGNORECASE)
+    if result.lower().startswith("operace ") and result.lower().endswith(" název"):
+        result = result[:-6] + " – název"
     result = result.replace("Stav vozidlo pořízení údajů časové razítko", "Čas pořízení údajů o vozidle")
     return result[:1].upper() + result[1:] if result else path
 
