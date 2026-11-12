@@ -88,7 +88,8 @@ def localized_path(path: str, language: str) -> str:
     result = " ".join(part for part in parts if part).strip()
     if result.lower().startswith("operace ") and result.lower().endswith(" název"):
         result = result[:-6] + " – název"
-    result = result.replace("Stav vozidlo pořízení údajů časové razítko", "Čas pořízení údajů o vozidle")
+    if path.lower() == "status.carcaptured.timestamp":
+        return "Čas pořízení údajů o vozidle"
     return result[:1].upper() + result[1:] if result else path
 
 
