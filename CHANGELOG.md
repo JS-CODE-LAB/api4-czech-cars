@@ -1,6 +1,8 @@
 # Changelog
 
 ## 0.3.2
+- Remove the redundant empty vehicle device from the grouped device list while retaining the vehicle config entry heading.
+- Flatten functional groups into independent devices and migrate existing registry links without changing entity unique IDs.
 - Translate entity names to Czech in Czech Home Assistant installations; keep English names for English installations.
 - Add native Home Assistant image entities for image URLs returned by the API.
 - Keep existing unique IDs for ordinary fields and control entities; image fields move from sensor to image domain.
