@@ -107,3 +107,9 @@ Původní `unique_id` entit zůstávají zachována, mění se však jejich při
 2. Aktualizujte integraci a restartujte Home Assistant.
 3. Zkontrolujte podřízená zařízení, původní ID entit a automatizace používající zařízení.
 4. V Diagnostice ověřte poslední aktualizaci a případné chyby API.
+
+## Lokalizace a obrázky (0.3.2)
+
+V českém prostředí Home Assistantu se nové názvy entit zobrazují česky. Pevně definované entity používají překlady Home Assistantu, dynamicky objevené hodnoty používají české popisky částí API. Neznámé názvy polí mohou obsahovat původní technické označení. Jazyk nově vytvářených názvů vychází z jazyka **serveru Home Assistant**, nikoliv jen z jazyka prohlížeče.
+
+Odkazy na obrázky vozidla vrácené API se zobrazují jako entity typu **image**, nikoli textové senzory. Změna domény entity může ovlivnit dashboardy a automatizace, které používaly původní `sensor.*` s URL. Zkontrolujte je po aktualizaci. Původní názvy upravené ručně v registru entit Home Assistant automaticky nepřepisuje. Pokud název zůstane anglický, zkontrolujte vlastní název entity a jazyk Home Assistantu.
