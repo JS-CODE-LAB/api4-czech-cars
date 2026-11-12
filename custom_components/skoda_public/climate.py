@@ -49,7 +49,7 @@ class SkodaClimate(SkodaControlEntity, ClimateEntity):
     just stores it locally and it is used the next time the A/C is started.
     """
 
-    _attr_name = "Air conditioning"
+    _attr_translation_key = "air_conditioning"
     _attr_temperature_unit = UnitOfTemperature.CELSIUS
     _attr_hvac_modes = [HVACMode.OFF, HVACMode.HEAT_COOL]
     _attr_supported_features = (

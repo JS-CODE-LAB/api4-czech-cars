@@ -6,7 +6,8 @@ from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .coordinator import SkodaConfigEntry, SkodaCoordinator
-from .entity import SkodaEntity, find_positions, humanize
+from .entity import SkodaEntity, find_positions
+from .localization import localized_path
 
 
 async def async_setup_entry(
@@ -43,7 +44,10 @@ class SkodaTracker(SkodaEntity, TrackerEntity):
         self._lon_path = lon_path
         self._attr_unique_id = f"{self._vin}_tracker_{prefix or 'vehicle'}"
         # Drop the trailing "coordinates"-style segment to get a readable name.
-        self._attr_name = humanize(prefix) if prefix else "Position"
+        self._attr_translation_key = "api_field"
+        self._attr_translation_placeholders = {
+            "field": localized_path(prefix, coordinator.hass.config.language) if prefix else ("Poloha" if coordinator.hass.config.language.startswith("cs") else "Position")
+        }
 
     @property
     def latitude(self) -> float | None:

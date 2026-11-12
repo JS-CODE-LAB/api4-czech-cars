@@ -110,3 +110,9 @@ The [official MyŠkoda Public API documentation](https://public.api.connect.skod
 
 ## License
 [MIT](LICENSE) – see also the [DISCLAIMER](DISCLAIMER.md). Trademarks belong to their respective owners.
+
+## Czech localization and vehicle images (0.3.2)
+
+Home Assistant installations configured in Czech receive Czech entity names. Fixed entities use Home Assistant's translation keys; dynamically discovered API fields use Czech field labels, falling back to technical labels for unknown fields. The naming language is based on the **Home Assistant server language** when an entity is created, not merely the browser language. User-customized entity names are not overwritten.
+
+Vehicle image URLs provided by the API are represented by native **image** entities rather than URL-valued sensors. If you used a former `sensor.*` image URL in dashboards or automations, update the reference to its `image.*` replacement.

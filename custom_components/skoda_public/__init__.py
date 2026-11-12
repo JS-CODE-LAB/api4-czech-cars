@@ -14,12 +14,14 @@ from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers import config_validation as cv
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from homeassistant.helpers import device_registry as dr
+from homeassistant.helpers import entity_registry as er
 from homeassistant.helpers.typing import ConfigType
 
 from .api import SkodaApiClient, SkodaApiError
 from .const import CONF_VIN, DOMAIN, PLATFORMS, SERVICE_REQUEST
 from .coordinator import SkodaConfigEntry, SkodaCoordinator
 from .security import redact_sensitive
+from .image_fields import is_image_field
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -93,18 +95,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: SkodaConfigEntry) -> boo
     await coordinator.async_config_entry_first_refresh()
     entry.runtime_data = coordinator
 
-    # Register the parent before child devices are added via via_device.
-    # Existing entity unique IDs and the parent device identifier are unchanged.
-    registry = dr.async_get(hass)
-    vehicle = coordinator.data.vehicle if coordinator.data else {}
-    registry.async_get_or_create(
-        config_entry_id=entry.entry_id,
-        identifiers={(DOMAIN, coordinator.vin)},
-        manufacturer="Škoda Auto",
-        name=vehicle.get("name") or coordinator.vin,
-        serial_number=coordinator.vin,
-    )
-
     # Import platform modules in the executor so HA does not import them inside the event loop.
     for platform in PLATFORMS:
         await hass.async_add_import_executor_job(
@@ -112,8 +102,60 @@ async def async_setup_entry(hass: HomeAssistant, entry: SkodaConfigEntry) -> boo
         )
 
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
+    _remove_empty_vehicle_parent(hass, entry, coordinator.vin)
+    _remove_legacy_processed_images(hass, entry, coordinator)
     entry.async_on_unload(entry.add_update_listener(_async_options_updated))
     return True
+
+
+def _remove_empty_vehicle_parent(
+    hass: HomeAssistant, entry: SkodaConfigEntry, vin: str
+) -> None:
+    """Flatten legacy group hierarchy and remove only the empty parent device.
+
+    The config entry itself remains named after the car. Never remove a parent
+    that has entities attached to it (including user-created or future entities).
+    """
+    registry = dr.async_get(hass)
+    parent = registry.async_get_device(identifiers={(DOMAIN, vin)})
+    if parent is None or entry.entry_id not in parent.config_entries:
+        return
+
+    for device in list(registry.devices.values()):
+        if (
+            device.via_device_id == parent.id
+            and entry.entry_id in device.config_entries
+        ):
+            registry.async_update_device(device.id, via_device_id=None)
+
+    entities = er.async_get(hass)
+    if any(entity.device_id == parent.id for entity in entities.entities.values()):
+        return
+    # Do not remove a shared device belonging to another config entry.
+    if parent.config_entries == {entry.entry_id}:
+        registry.async_remove_device(parent.id)
+
+
+def _remove_legacy_processed_images(
+    hass: HomeAssistant, entry: SkodaConfigEntry, coordinator: SkodaCoordinator
+) -> None:
+    """Remove only the obsolete processed-image entity registry entries.
+
+    Original image entities retain their existing *_original unique IDs.
+    """
+    if coordinator.data is None:
+        return
+    registry = er.async_get(hass)
+    for path, value in coordinator.data.flat.items():
+        if not is_image_field(path, value):
+            continue
+        old_unique_id = f"{coordinator.vin}_{path}"
+        entity_id = registry.async_get_entity_id("image", DOMAIN, old_unique_id)
+        if entity_id is None:
+            continue
+        entity = registry.async_get(entity_id)
+        if entity is not None and entity.config_entry_id == entry.entry_id:
+            registry.async_remove(entity_id)
 
 
 async def _async_options_updated(hass: HomeAssistant, entry: SkodaConfigEntry) -> None:

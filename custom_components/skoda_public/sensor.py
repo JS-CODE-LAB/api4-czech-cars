@@ -23,6 +23,8 @@ from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.util import dt as dt_util
 
+from .image_fields import is_image_field
+from .localization import localized_path
 from .groups import functional_group
 from .coordinator import SkodaConfigEntry, SkodaCoordinator
 from .entity import KIND_SENSOR, SkodaEntity, classify, find_range_path, find_soc_path, humanize
@@ -96,7 +98,7 @@ async def async_setup_entry(
         new = [
             SkodaFieldSensor(coordinator, path, value)
             for path, value in coordinator.data.flat.items()
-            if path not in known and classify(value) == KIND_SENSOR
+            if path not in known and classify(value) == KIND_SENSOR and not is_image_field(path, value)
         ]
         known.update(e.field_path for e in new)
         if new:
@@ -113,7 +115,10 @@ class SkodaFieldSensor(SkodaEntity, SensorEntity):
         super().__init__(coordinator)
         self.field_path = path
         self._attr_unique_id = f"{self._vin}_{path}"
-        self._attr_name = humanize(path)
+        self._attr_translation_key = "api_field"
+        self._attr_translation_placeholders = {
+            "field": localized_path(path, coordinator.hass.config.language)
+        }
         self._group = functional_group(path)
         self._device_group = self._group
         unit, dev, state, is_ts = _describe(path, sample)
@@ -145,7 +150,7 @@ class SkodaFieldSensor(SkodaEntity, SensorEntity):
 class SkodaBatterySensor(SkodaEntity, SensorEntity):
     """Current battery level. Its battery device class makes HA show it next to the device."""
 
-    _attr_name = "Battery"
+    _attr_translation_key = "battery_level"
     _attr_device_class = SD.BATTERY
     _attr_native_unit_of_measurement = PERCENTAGE
     _attr_state_class = SensorStateClass.MEASUREMENT
@@ -176,7 +181,7 @@ class SkodaBatterySensor(SkodaEntity, SensorEntity):
 class SkodaRangeSensor(SkodaEntity, SensorEntity):
     """Current remaining range, always shown in km."""
 
-    _attr_name = "Range"
+    _attr_translation_key = "range"
     _attr_device_class = SD.DISTANCE
     _attr_state_class = SensorStateClass.MEASUREMENT
     _attr_suggested_unit_of_measurement = UnitOfLength.KILOMETERS
@@ -209,7 +214,7 @@ class SkodaRangeSensor(SkodaEntity, SensorEntity):
 
 class SkodaRateLimitSensor(SkodaEntity, SensorEntity):
     _attr_entity_category = EntityCategory.DIAGNOSTIC
-    _attr_name = "API requests remaining"
+    _attr_translation_key = "api_requests_remaining"
     _attr_icon = "mdi:speedometer"
 
     def __init__(self, coordinator: SkodaCoordinator) -> None:
@@ -230,7 +235,7 @@ class SkodaRateLimitSensor(SkodaEntity, SensorEntity):
 class SkodaKeyExpirySensor(SkodaEntity, SensorEntity):
     _attr_entity_category = EntityCategory.DIAGNOSTIC
     _attr_device_class = SD.TIMESTAMP
-    _attr_name = "API key expires at"
+    _attr_translation_key = "api_key_expires_at"
 
     def __init__(self, coordinator: SkodaCoordinator) -> None:
         super().__init__(coordinator)
@@ -246,7 +251,7 @@ class SkodaOmittedPartsSensor(SkodaEntity, SensorEntity):
     """Number of data parts the API reported as omitted (unsupported / unavailable)."""
 
     _attr_entity_category = EntityCategory.DIAGNOSTIC
-    _attr_name = "Omitted data parts"
+    _attr_translation_key = "omitted_data_parts"
     _attr_icon = "mdi:alert-circle-outline"
 
     def __init__(self, coordinator: SkodaCoordinator) -> None:
@@ -268,7 +273,7 @@ class SkodaLastUpdateSensor(SkodaEntity, SensorEntity):
 
     _attr_entity_category = EntityCategory.DIAGNOSTIC
     _attr_device_class = SD.TIMESTAMP
-    _attr_name = "Last successful update"
+    _attr_translation_key = "last_successful_update"
 
     def __init__(self, coordinator: SkodaCoordinator) -> None:
         super().__init__(coordinator)
@@ -284,7 +289,7 @@ class SkodaLastApiErrorSensor(SkodaEntity, SensorEntity):
     """Last API polling error; available even if the coordinator update failed."""
 
     _attr_entity_category = EntityCategory.DIAGNOSTIC
-    _attr_name = "Last API error"
+    _attr_translation_key = "last_api_error"
     _attr_icon = "mdi:alert-outline"
 
     def __init__(self, coordinator: SkodaCoordinator) -> None:

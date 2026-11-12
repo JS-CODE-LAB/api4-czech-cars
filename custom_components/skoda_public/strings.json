@@ -66,5 +66,77 @@
         }
       }
     }
+  },
+  "entity": {
+    "sensor": {
+      "api_field": {
+        "name": "{field}"
+      },
+      "battery_level": {
+        "name": "Battery"
+      },
+      "range": {
+        "name": "Range"
+      },
+      "api_requests_remaining": {
+        "name": "API requests remaining"
+      },
+      "api_key_expires_at": {
+        "name": "API key expires at"
+      },
+      "omitted_data_parts": {
+        "name": "Omitted data parts"
+      },
+      "last_successful_update": {
+        "name": "Last successful update"
+      },
+      "last_api_error": {
+        "name": "Last API error"
+      }
+    },
+    "binary_sensor": {
+      "api_field": {
+        "name": "{field}"
+      },
+      "battery_charging": {
+        "name": "Battery charging"
+      }
+    },
+    "image": {
+      "original_api_field": {
+        "name": "{field}"
+      }
+    },
+    "device_tracker": {
+      "api_field": {
+        "name": "{field}"
+      }
+    },
+    "switch": {
+      "charging": {
+        "name": "Charging"
+      },
+      "auxiliary_heating": {
+        "name": "Auxiliary heating"
+      },
+      "active_ventilation": {
+        "name": "Active ventilation"
+      }
+    },
+    "number": {
+      "charging_limit": {
+        "name": "Charging limit"
+      }
+    },
+    "climate": {
+      "air_conditioning": {
+        "name": "Air conditioning"
+      }
+    },
+    "button": {
+      "refresh_vehicle_data": {
+        "name": "Refresh vehicle data"
+      }
+    }
   }
 }
