@@ -46,7 +46,8 @@ class SkodaTracker(SkodaEntity, TrackerEntity):
         # Drop the trailing "coordinates"-style segment to get a readable name.
         self._attr_translation_key = "api_field"
         self._attr_translation_placeholders = {
-            "field": localized_path(prefix, coordinator.hass.config.language) if prefix else ("Poloha" if coordinator.hass.config.language.startswith("cs") else "Position")
+            "field_cs": localized_path(prefix, "cs") if prefix else "Poloha",
+            "field_en": localized_path(prefix, "en") if prefix else "Position"
         }
 
     @property
