@@ -1,10 +1,8 @@
 # Changelog
 
 ## 0.3.2
+- Retain only the unmodified original vehicle image entity; remove temporary image diagnostics and obsolete light-background image entity from the registry.
 - Fix truncated vehicle renders by consuming the full HTTP response stream in bounded chunks and verifying Content-Length before decoding.
-- Render vehicle image with cropped transparent margins on a neutral light background; add a separate original image entity for comparison. Image decoding runs in an executor.
-- Expose visible pixel bounds in DEBUG diagnostics; the original source image is never modified.
-- Add DEBUG-only privacy-safe image diagnostics (actual format, pixel dimensions, alpha transparency, byte count and HTTP metadata) to investigate unusual vehicle render appearance.
 - Remove the redundant empty vehicle device from the grouped device list while retaining the vehicle config entry heading.
 - Flatten functional groups into independent devices and migrate existing registry links without changing entity unique IDs.
 - Translate entity names to Czech in Czech Home Assistant installations; keep English names for English installations.
