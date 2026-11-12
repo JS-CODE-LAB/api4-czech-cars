@@ -52,6 +52,7 @@ class SkodaFieldImage(SkodaEntity, ImageEntity):
 
     def __init__(self, coordinator: SkodaCoordinator, path: str) -> None:
         super().__init__(coordinator)
+        ImageEntity.__init__(self, coordinator.hass)
         self.field_path = path
         self._attr_unique_id = f"{self._vin}_{path}"
         self._device_group = functional_group(path)
