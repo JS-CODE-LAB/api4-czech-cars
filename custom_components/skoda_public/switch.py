@@ -112,7 +112,7 @@ class SkodaCommandSwitch(SkodaControlEntity, SwitchEntity):
         self.entity_def = definition
         self._attr_unique_id = f"{self._vin}_switch_{definition.key}"
         self._device_group = "charging" if definition.key == "charging" else "climate"
-        self._attr_name = definition.name
+        self._attr_translation_key = definition.key
         self._attr_icon = definition.icon
 
     @property
