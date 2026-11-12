@@ -109,7 +109,24 @@ class SkodaFieldImage(SkodaEntity, ImageEntity):
                 if response.content_length and response.content_length > MAX_IMAGE_BYTES:
                     _LOGGER.warning("Vehicle image %s exceeds size limit", self.field_path)
                     return None
-                data = await response.content.read(MAX_IMAGE_BYTES + 1)
+                # A single StreamReader.read(n) may return only the first
+                # network chunk, even when Content-Length is much larger.
+                # Read to EOF while enforcing the maximum allowed size.
+                chunks: list[bytes] = []
+                total_bytes = 0
+                async for chunk in response.content.iter_chunked(64 * 1024):
+                    total_bytes += len(chunk)
+                    if total_bytes > MAX_IMAGE_BYTES:
+                        _LOGGER.warning("Vehicle image %s exceeds size limit", self.field_path)
+                        return None
+                    chunks.append(chunk)
+                data = b"".join(chunks)
+                if response.content_length is not None and len(data) != response.content_length:
+                    _LOGGER.warning(
+                        "Vehicle image %s incomplete: received %s of %s bytes",
+                        self.field_path, len(data), response.content_length,
+                    )
+                    return None
                 if len(data) > MAX_IMAGE_BYTES:
                     _LOGGER.warning("Vehicle image %s exceeds size limit", self.field_path)
                     return None
