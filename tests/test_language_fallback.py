@@ -1,0 +1,36 @@
+"""Locale fallback tests; no Home Assistant installation required."""
+import importlib.util
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1] / "custom_components" / "skoda_public"
+
+
+def load_module(name):
+    spec = importlib.util.spec_from_file_location(name, ROOT / f"{name}.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+groups = load_module("groups")
+localization = load_module("localization")
+
+
+def test_all_groups_have_english_names():
+    assert set(groups.GROUP_NAMES) == set(groups.GROUP_NAMES_EN)
+
+
+def test_group_names_by_locale():
+    for locale in ("cs", "cs-CZ", "cs_CZ"):
+        assert groups.group_name("charging", locale) == "Nabíjení"
+    for locale in ("en", "en-US", "de", "sk", "fr", "", None):
+        assert groups.group_name("charging", locale) == "Charging"
+    assert groups.group_name("unknown_group", "de") == "unknown_group"
+
+
+def test_dynamic_entity_labels_by_locale():
+    path = "charging.status.battery.stateOfChargeInPercent"
+    assert localization.localized_path(path, "cs") != localization.humanize_path(path)
+    assert localization.localized_path(path, "cs-CZ") != localization.humanize_path(path)
+    for locale in ("en", "de", "sk", "fr", ""):
+        assert localization.localized_path(path, locale) == localization.humanize_path(path)
