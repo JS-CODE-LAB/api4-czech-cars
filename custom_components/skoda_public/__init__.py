@@ -21,6 +21,7 @@ from .api import SkodaApiClient, SkodaApiError
 from .const import CONF_VIN, DOMAIN, PLATFORMS, SERVICE_REQUEST
 from .coordinator import SkodaConfigEntry, SkodaCoordinator
 from .security import redact_sensitive
+from .image_fields import is_image_field
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -102,6 +103,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: SkodaConfigEntry) -> boo
 
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
     _remove_empty_vehicle_parent(hass, entry, coordinator.vin)
+    _remove_legacy_processed_images(hass, entry, coordinator)
     entry.async_on_unload(entry.add_update_listener(_async_options_updated))
     return True
 
@@ -132,6 +134,28 @@ def _remove_empty_vehicle_parent(
     # Do not remove a shared device belonging to another config entry.
     if parent.config_entries == {entry.entry_id}:
         registry.async_remove_device(parent.id)
+
+
+def _remove_legacy_processed_images(
+    hass: HomeAssistant, entry: SkodaConfigEntry, coordinator: SkodaCoordinator
+) -> None:
+    """Remove only the obsolete processed-image entity registry entries.
+
+    Original image entities retain their existing *_original unique IDs.
+    """
+    if coordinator.data is None:
+        return
+    registry = er.async_get(hass)
+    for path, value in coordinator.data.flat.items():
+        if not is_image_field(path, value):
+            continue
+        old_unique_id = f"{coordinator.vin}_{path}"
+        entity_id = registry.async_get_entity_id("image", DOMAIN, old_unique_id)
+        if entity_id is None:
+            continue
+        entity = registry.async_get(entity_id)
+        if entity is not None and entity.config_entry_id == entry.entry_id:
+            registry.async_remove(entity_id)
 
 
 async def _async_options_updated(hass: HomeAssistant, entry: SkodaConfigEntry) -> None:
