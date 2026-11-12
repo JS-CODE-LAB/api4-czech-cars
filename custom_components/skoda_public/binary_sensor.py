@@ -11,6 +11,7 @@ from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .groups import functional_group, binary_device_class
+from .localization import localized_path
 from .coordinator import SkodaConfigEntry, SkodaCoordinator
 from .entity import KIND_BINARY, SkodaEntity, classify, humanize, to_bool
 
@@ -51,7 +52,10 @@ class SkodaFieldBinarySensor(SkodaEntity, BinarySensorEntity):
         super().__init__(coordinator)
         self.field_path = path
         self._attr_unique_id = f"{self._vin}_{path}"
-        self._attr_name = humanize(path)
+        self._attr_translation_key = "api_field"
+        self._attr_translation_placeholders = {
+            "field": localized_path(path, coordinator.hass.config.language)
+        }
         self._group = functional_group(path)
         self._device_group = self._group
         device_class = binary_device_class(path)
@@ -71,7 +75,7 @@ class SkodaFieldBinarySensor(SkodaEntity, BinarySensorEntity):
 class SkodaBatteryChargingSensor(SkodaEntity, BinarySensorEntity):
     """On while charging; HA shows the charging icon next to the battery level."""
 
-    _attr_name = "Battery charging"
+    _attr_translation_key = "battery_charging"
     _attr_device_class = BinarySensorDeviceClass.BATTERY_CHARGING
 
     def __init__(self, coordinator: SkodaCoordinator) -> None:
