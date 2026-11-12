@@ -103,11 +103,8 @@
       }
     },
     "image": {
-      "api_field": {
-        "name": "{field}"
-      },
       "original_api_field": {
-        "name": "Original {field}"
+        "name": "{field}"
       }
     },
     "device_tracker": {
