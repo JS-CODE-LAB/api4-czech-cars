@@ -133,7 +133,7 @@ class SkodaEntity(CoordinatorEntity[SkodaCoordinator]):
 
     @property
     def device_info(self) -> DeviceInfo:
-        """Attach entities to a functional child device without changing unique IDs."""
+        """Attach entities to independent functional devices without changing unique IDs."""
         vehicle = self.coordinator.data.vehicle if self.coordinator.data else {}
         if self._device_group in GROUP_NAMES:
             group = self._device_group
@@ -141,7 +141,6 @@ class SkodaEntity(CoordinatorEntity[SkodaCoordinator]):
                 identifiers={(DOMAIN, f"{self._vin}__{group}")},
                 manufacturer="Škoda Auto",
                 name=GROUP_NAMES[group],
-                via_device=(DOMAIN, self._vin),
             )
         return DeviceInfo(
             identifiers={(DOMAIN, self._vin)},
