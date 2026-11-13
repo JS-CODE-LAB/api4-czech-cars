@@ -211,3 +211,9 @@ def field_translation_key(path: str, available_keys: set[str]) -> str:
     canonical = re.sub(r"(?<=\.)\d+(?=\.|$)", "0", path)
     key = KNOWN_FIELD_KEYS.get(path) or KNOWN_FIELD_KEYS.get(canonical)
     return key if key in available_keys else "api_field"
+
+
+def profile_number(path: str) -> str:
+    """One-based profile number used by localized name templates."""
+    match = re.search(r"(?<=\.profiles\.)\d+", path)
+    return str(int(match.group()) + 1) if match else "1"
