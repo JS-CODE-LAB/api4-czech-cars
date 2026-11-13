@@ -76,3 +76,29 @@ def test_expanded_field_translation_coverage():
         "charging.settings.targetStateOfChargeInPercent",
         set(localization.KNOWN_FIELD_KEYS.values())
     ) != "api_field"
+
+
+def test_observed_paths_and_indexed_profiles():
+    import json
+    keys = set(localization.KNOWN_FIELD_KEYS.values())
+    examples = (
+        "status.detail.bonnet",
+        "status.overall.windows",
+        "licensePlate",
+        "odometer.mileageInKm",
+        "parking.position.state",
+        "charging.settings.autoUnlockPlugWhenCharged",
+        "chargingProfiles.profiles.3.settings.maxChargeCurrent",
+        "chargingProfiles.profiles.2.preferredChargingTimes.4.startTime",
+    )
+    for path in examples:
+        assert localization.field_translation_key(path, keys) != "api_field", path
+    assert localization.profile_number("chargingProfiles.profiles.3.name") == "4"
+    assert localization.profile_number("charging.status.state") == "1"
+    for locale in ("cs", "en"):
+        data = json.loads((ROOT / "translations" / f"{locale}.json").read_text())
+        for platform in ("sensor", "binary_sensor", "image", "device_tracker"):
+            assert keys <= set(data["entity"][platform])
+            assert "{profile}" in data["entity"][platform][
+                "field_charging_profiles_profiles_0_settings_max_charge_current"
+            ]["name"]
