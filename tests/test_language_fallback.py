@@ -48,3 +48,18 @@ def test_translation_templates_use_per_user_language():
             assert translation["entity"][platform][key]["name"] == "{" + field + "}"
     strings = json.loads((ROOT / "strings.json").read_text())
     assert strings["entity"]["sensor"]["api_field"]["name"] == "{field_en}"
+
+
+def test_known_field_translations_present_in_all_locales():
+    import json
+    for locale in ("cs", "en"):
+        translations = json.loads((ROOT / "translations" / f"{locale}.json").read_text())
+        for platform in ("sensor", "binary_sensor", "image", "device_tracker"):
+            keys = set(translations["entity"][platform])
+            assert set(localization.KNOWN_FIELD_KEYS.values()) <= keys
+    assert localization.field_translation_key(
+        "airConditioning.state", set(localization.KNOWN_FIELD_KEYS.values())
+    ) == "air_conditioning_state"
+    assert localization.field_translation_key(
+        "unknown.path", set(localization.KNOWN_FIELD_KEYS.values())
+    ) == "api_field"
