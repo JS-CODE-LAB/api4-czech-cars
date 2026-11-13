@@ -344,6 +344,51 @@
       },
       "field_charging_profiles_profiles_0_settings_charging_mode": {
         "name": "Profile {profile}: Charging Profiles profiles 0 settings charging Mode"
+      },
+      "profile_preferred_time_id": {
+        "name": "{profile}: Preferred interval {timer} ID"
+      },
+      "profile_preferred_time_time": {
+        "name": "{profile}: Preferred interval {timer} time"
+      },
+      "profile_preferred_time_type": {
+        "name": "{profile}: Preferred interval {timer} type"
+      },
+      "profile_preferred_time_day": {
+        "name": "{profile}: Preferred interval {timer} day"
+      },
+      "profile_preferred_time_days": {
+        "name": "{profile}: Preferred interval {timer} days"
+      },
+      "profile_preferred_time_recurrence": {
+        "name": "{profile}: Preferred interval {timer} recurrence"
+      },
+      "profile_preferred_time_recurrence_day": {
+        "name": "{profile}: Preferred interval {timer} recurrence day {day}"
+      },
+      "profile_timer_enabled": {
+        "name": "{profile}: Timer {timer} enabled"
+      },
+      "profile_timer_id": {
+        "name": "{profile}: Timer {timer} ID"
+      },
+      "profile_timer_time": {
+        "name": "{profile}: Timer {timer} time"
+      },
+      "profile_timer_type": {
+        "name": "{profile}: Timer {timer} type"
+      },
+      "profile_timer_recurrence": {
+        "name": "{profile}: Timer {timer} recurrence"
+      },
+      "profile_timer_recurrence_day": {
+        "name": "{profile}: Timer {timer} recurrence day {day}"
+      },
+      "profile_minimum_soc": {
+        "name": "{profile}: Minimum battery charge"
+      },
+      "profile_max_charge_current": {
+        "name": "{profile}: Maximum charging current"
       }
     },
     "binary_sensor": {
@@ -604,6 +649,51 @@
       },
       "field_charging_profiles_profiles_0_settings_charging_mode": {
         "name": "Profile {profile}: Charging Profiles profiles 0 settings charging Mode"
+      },
+      "profile_preferred_time_id": {
+        "name": "{profile}: Preferred interval {timer} ID"
+      },
+      "profile_preferred_time_time": {
+        "name": "{profile}: Preferred interval {timer} time"
+      },
+      "profile_preferred_time_type": {
+        "name": "{profile}: Preferred interval {timer} type"
+      },
+      "profile_preferred_time_day": {
+        "name": "{profile}: Preferred interval {timer} day"
+      },
+      "profile_preferred_time_days": {
+        "name": "{profile}: Preferred interval {timer} days"
+      },
+      "profile_preferred_time_recurrence": {
+        "name": "{profile}: Preferred interval {timer} recurrence"
+      },
+      "profile_preferred_time_recurrence_day": {
+        "name": "{profile}: Preferred interval {timer} recurrence day {day}"
+      },
+      "profile_timer_enabled": {
+        "name": "{profile}: Timer {timer} enabled"
+      },
+      "profile_timer_id": {
+        "name": "{profile}: Timer {timer} ID"
+      },
+      "profile_timer_time": {
+        "name": "{profile}: Timer {timer} time"
+      },
+      "profile_timer_type": {
+        "name": "{profile}: Timer {timer} type"
+      },
+      "profile_timer_recurrence": {
+        "name": "{profile}: Timer {timer} recurrence"
+      },
+      "profile_timer_recurrence_day": {
+        "name": "{profile}: Timer {timer} recurrence day {day}"
+      },
+      "profile_minimum_soc": {
+        "name": "{profile}: Minimum battery charge"
+      },
+      "profile_max_charge_current": {
+        "name": "{profile}: Maximum charging current"
       }
     },
     "image": {
@@ -861,6 +951,51 @@
       },
       "field_charging_profiles_profiles_0_settings_charging_mode": {
         "name": "Profile {profile}: Charging Profiles profiles 0 settings charging Mode"
+      },
+      "profile_preferred_time_id": {
+        "name": "{profile}: Preferred interval {timer} ID"
+      },
+      "profile_preferred_time_time": {
+        "name": "{profile}: Preferred interval {timer} time"
+      },
+      "profile_preferred_time_type": {
+        "name": "{profile}: Preferred interval {timer} type"
+      },
+      "profile_preferred_time_day": {
+        "name": "{profile}: Preferred interval {timer} day"
+      },
+      "profile_preferred_time_days": {
+        "name": "{profile}: Preferred interval {timer} days"
+      },
+      "profile_preferred_time_recurrence": {
+        "name": "{profile}: Preferred interval {timer} recurrence"
+      },
+      "profile_preferred_time_recurrence_day": {
+        "name": "{profile}: Preferred interval {timer} recurrence day {day}"
+      },
+      "profile_timer_enabled": {
+        "name": "{profile}: Timer {timer} enabled"
+      },
+      "profile_timer_id": {
+        "name": "{profile}: Timer {timer} ID"
+      },
+      "profile_timer_time": {
+        "name": "{profile}: Timer {timer} time"
+      },
+      "profile_timer_type": {
+        "name": "{profile}: Timer {timer} type"
+      },
+      "profile_timer_recurrence": {
+        "name": "{profile}: Timer {timer} recurrence"
+      },
+      "profile_timer_recurrence_day": {
+        "name": "{profile}: Timer {timer} recurrence day {day}"
+      },
+      "profile_minimum_soc": {
+        "name": "{profile}: Minimum battery charge"
+      },
+      "profile_max_charge_current": {
+        "name": "{profile}: Maximum charging current"
       }
     },
     "device_tracker": {
@@ -1118,6 +1253,51 @@
       },
       "field_charging_profiles_profiles_0_settings_charging_mode": {
         "name": "Profile {profile}: Charging Profiles profiles 0 settings charging Mode"
+      },
+      "profile_preferred_time_id": {
+        "name": "{profile}: Preferred interval {timer} ID"
+      },
+      "profile_preferred_time_time": {
+        "name": "{profile}: Preferred interval {timer} time"
+      },
+      "profile_preferred_time_type": {
+        "name": "{profile}: Preferred interval {timer} type"
+      },
+      "profile_preferred_time_day": {
+        "name": "{profile}: Preferred interval {timer} day"
+      },
+      "profile_preferred_time_days": {
+        "name": "{profile}: Preferred interval {timer} days"
+      },
+      "profile_preferred_time_recurrence": {
+        "name": "{profile}: Preferred interval {timer} recurrence"
+      },
+      "profile_preferred_time_recurrence_day": {
+        "name": "{profile}: Preferred interval {timer} recurrence day {day}"
+      },
+      "profile_timer_enabled": {
+        "name": "{profile}: Timer {timer} enabled"
+      },
+      "profile_timer_id": {
+        "name": "{profile}: Timer {timer} ID"
+      },
+      "profile_timer_time": {
+        "name": "{profile}: Timer {timer} time"
+      },
+      "profile_timer_type": {
+        "name": "{profile}: Timer {timer} type"
+      },
+      "profile_timer_recurrence": {
+        "name": "{profile}: Timer {timer} recurrence"
+      },
+      "profile_timer_recurrence_day": {
+        "name": "{profile}: Timer {timer} recurrence day {day}"
+      },
+      "profile_minimum_soc": {
+        "name": "{profile}: Minimum battery charge"
+      },
+      "profile_max_charge_current": {
+        "name": "{profile}: Maximum charging current"
       }
     },
     "switch": {
