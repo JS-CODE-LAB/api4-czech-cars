@@ -24,7 +24,7 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.util import dt as dt_util
 
 from .image_fields import is_image_field
-from .localization import localized_path, KNOWN_FIELD_KEYS, field_translation_key, profile_number
+from .localization import localized_path, KNOWN_FIELD_KEYS, field_translation_key, profile_number, timer_number, day_number
 from .groups import functional_group
 from .coordinator import SkodaConfigEntry, SkodaCoordinator
 from .entity import KIND_SENSOR, SkodaEntity, classify, find_range_path, find_soc_path, humanize
@@ -120,6 +120,8 @@ class SkodaFieldSensor(SkodaEntity, SensorEntity):
             "field_cs": localized_path(path, "cs"),
             "field_en": localized_path(path, "en"),
             "profile": profile_number(path),
+            "timer": timer_number(path),
+            "day": day_number(path),
         }
         self._group = functional_group(path)
         self._device_group = self._group
