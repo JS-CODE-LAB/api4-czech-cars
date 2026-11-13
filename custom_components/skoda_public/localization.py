@@ -117,6 +117,39 @@ KNOWN_FIELD_KEYS = {
 }
 
 
+KNOWN_FIELD_KEYS.update({
+    "charging.carCapturedTimestamp": "field_charging_car_captured_timestamp",
+    "charging.isVehicleInSavedLocation": "field_charging_is_vehicle_in_saved_location",
+    "charging.settings.availableChargingModes": "field_charging_settings_available_charging_modes",
+    "charging.settings.batteryCareModeTarget": "field_charging_settings_battery_care_mode_target",
+    "charging.settings.chargingCareMode": "field_charging_settings_charging_care_mode",
+    "charging.settings.maxChargeCurrent": "field_charging_settings_max_charge_current",
+    "charging.settings.preferredChargeMode": "field_charging_settings_preferred_charge_mode",
+    "charging.settings.targetStateOfChargeInPercent": "field_charging_settings_target_state_of_charge_in_percent",
+    "charging.status.battery.remainingCruisingRangeInMeters": "field_charging_status_battery_remaining_cruising_range_in_meters",
+    "charging.status.fullyChargedAt": "field_charging_status_fully_charged_at",
+    "charging.status.chargePowerInKw": "field_charging_status_charge_power_in_kw",
+    "charging.status.chargeType": "field_charging_status_charge_type",
+    "charging.status.chargingRateInKilometersPerHour": "field_charging_status_charging_rate_in_kilometers_per_hour",
+    "charging.status.plugConnectionState": "field_charging_status_plug_connection_state",
+    "charging.status.remainingTimeToFullyChargedInMinutes": "field_charging_status_remaining_time_to_fully_charged_in_minutes",
+    "airConditioning.targetTemperatureInCelsius": "field_air_conditioning_target_temperature_in_celsius",
+    "airConditioning.settings.windowHeatingEnabled": "field_air_conditioning_settings_window_heating_enabled",
+    "airConditioning.settings.climatisationAtUnlock": "field_air_conditioning_settings_climatisation_at_unlock",
+    "vehicleStatus.overall.status": "field_vehicle_status_overall_status",
+    "vehicleStatus.doors.frontLeft": "field_vehicle_status_doors_front_left",
+    "vehicleStatus.doors.frontRight": "field_vehicle_status_doors_front_right",
+    "vehicleStatus.doors.rearLeft": "field_vehicle_status_doors_rear_left",
+    "vehicleStatus.doors.rearRight": "field_vehicle_status_doors_rear_right",
+    "vehicleStatus.windows.frontLeft": "field_vehicle_status_windows_front_left",
+    "vehicleStatus.windows.frontRight": "field_vehicle_status_windows_front_right",
+    "vehicleStatus.windows.rearLeft": "field_vehicle_status_windows_rear_left",
+    "vehicleStatus.windows.rearRight": "field_vehicle_status_windows_rear_right",
+    "vehicleStatus.lights": "field_vehicle_status_lights",
+    "vehicleStatus.odometerInKm": "field_vehicle_status_odometer_in_km"
+})
+
+
 def field_translation_key(path: str, available_keys: set[str]) -> str:
     """Use a static key only when its translation exists for the platform."""
     key = KNOWN_FIELD_KEYS.get(path)
