@@ -1,6 +1,8 @@
 # Changelog
 
 ## 0.3.3 (unreleased)
+- Expand Czech/English static field translations for charging, climate and vehicle status paths.
+- Restore functional group default names based on the HA system language; update existing group names on startup unless manually renamed.
 - Add stable Czech/English translation keys for selected known API fields; unknown fields keep English fallback.
 - Existing user-customized entity names remain untouched; registry-stored names may require a manual reset to restore translated defaults.
 - Translate dynamic entity names per user profile using Czech/English translation placeholders (not global HA language).
