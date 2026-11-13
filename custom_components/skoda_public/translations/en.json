@@ -113,6 +113,93 @@
       },
       "vehicle_capture_timestamp": {
         "name": "Vehicle data captured at"
+      },
+      "field_charging_car_captured_timestamp": {
+        "name": "Charging car Captured Timestamp"
+      },
+      "field_charging_is_vehicle_in_saved_location": {
+        "name": "Charging is Vehicle In Saved Location"
+      },
+      "field_charging_settings_available_charging_modes": {
+        "name": "Charging settings available Charging Modes"
+      },
+      "field_charging_settings_battery_care_mode_target": {
+        "name": "Charging settings battery Care Mode Target"
+      },
+      "field_charging_settings_charging_care_mode": {
+        "name": "Charging settings charging Care Mode"
+      },
+      "field_charging_settings_max_charge_current": {
+        "name": "Charging settings max Charge Current"
+      },
+      "field_charging_settings_preferred_charge_mode": {
+        "name": "Charging settings preferred Charge Mode"
+      },
+      "field_charging_settings_target_state_of_charge_in_percent": {
+        "name": "Charging settings target State Of Charge In Percent"
+      },
+      "field_charging_status_battery_remaining_cruising_range_in_meters": {
+        "name": "Charging status battery remaining Cruising Range In Meters"
+      },
+      "field_charging_status_fully_charged_at": {
+        "name": "Charging status fully Charged At"
+      },
+      "field_charging_status_charge_power_in_kw": {
+        "name": "Charging status charge Power In Kw"
+      },
+      "field_charging_status_charge_type": {
+        "name": "Charging status charge Type"
+      },
+      "field_charging_status_charging_rate_in_kilometers_per_hour": {
+        "name": "Charging status charging Rate In Kilometers Per Hour"
+      },
+      "field_charging_status_plug_connection_state": {
+        "name": "Charging status plug Connection State"
+      },
+      "field_charging_status_remaining_time_to_fully_charged_in_minutes": {
+        "name": "Charging status remaining Time To Fully Charged In Minutes"
+      },
+      "field_air_conditioning_target_temperature_in_celsius": {
+        "name": "Air Conditioning target Temperature In Celsius"
+      },
+      "field_air_conditioning_settings_window_heating_enabled": {
+        "name": "Air Conditioning settings window Heating Enabled"
+      },
+      "field_air_conditioning_settings_climatisation_at_unlock": {
+        "name": "Air Conditioning settings climatisation At Unlock"
+      },
+      "field_vehicle_status_overall_status": {
+        "name": "Vehicle Status overall status"
+      },
+      "field_vehicle_status_doors_front_left": {
+        "name": "Vehicle Status doors front Left"
+      },
+      "field_vehicle_status_doors_front_right": {
+        "name": "Vehicle Status doors front Right"
+      },
+      "field_vehicle_status_doors_rear_left": {
+        "name": "Vehicle Status doors rear Left"
+      },
+      "field_vehicle_status_doors_rear_right": {
+        "name": "Vehicle Status doors rear Right"
+      },
+      "field_vehicle_status_windows_front_left": {
+        "name": "Vehicle Status windows front Left"
+      },
+      "field_vehicle_status_windows_front_right": {
+        "name": "Vehicle Status windows front Right"
+      },
+      "field_vehicle_status_windows_rear_left": {
+        "name": "Vehicle Status windows rear Left"
+      },
+      "field_vehicle_status_windows_rear_right": {
+        "name": "Vehicle Status windows rear Right"
+      },
+      "field_vehicle_status_lights": {
+        "name": "Vehicle Status lights"
+      },
+      "field_vehicle_status_odometer_in_km": {
+        "name": "Vehicle Status odometer In Km"
       }
     },
     "binary_sensor": {
@@ -142,6 +229,93 @@
       },
       "vehicle_capture_timestamp": {
         "name": "Vehicle data captured at"
+      },
+      "field_charging_car_captured_timestamp": {
+        "name": "Charging car Captured Timestamp"
+      },
+      "field_charging_is_vehicle_in_saved_location": {
+        "name": "Charging is Vehicle In Saved Location"
+      },
+      "field_charging_settings_available_charging_modes": {
+        "name": "Charging settings available Charging Modes"
+      },
+      "field_charging_settings_battery_care_mode_target": {
+        "name": "Charging settings battery Care Mode Target"
+      },
+      "field_charging_settings_charging_care_mode": {
+        "name": "Charging settings charging Care Mode"
+      },
+      "field_charging_settings_max_charge_current": {
+        "name": "Charging settings max Charge Current"
+      },
+      "field_charging_settings_preferred_charge_mode": {
+        "name": "Charging settings preferred Charge Mode"
+      },
+      "field_charging_settings_target_state_of_charge_in_percent": {
+        "name": "Charging settings target State Of Charge In Percent"
+      },
+      "field_charging_status_battery_remaining_cruising_range_in_meters": {
+        "name": "Charging status battery remaining Cruising Range In Meters"
+      },
+      "field_charging_status_fully_charged_at": {
+        "name": "Charging status fully Charged At"
+      },
+      "field_charging_status_charge_power_in_kw": {
+        "name": "Charging status charge Power In Kw"
+      },
+      "field_charging_status_charge_type": {
+        "name": "Charging status charge Type"
+      },
+      "field_charging_status_charging_rate_in_kilometers_per_hour": {
+        "name": "Charging status charging Rate In Kilometers Per Hour"
+      },
+      "field_charging_status_plug_connection_state": {
+        "name": "Charging status plug Connection State"
+      },
+      "field_charging_status_remaining_time_to_fully_charged_in_minutes": {
+        "name": "Charging status remaining Time To Fully Charged In Minutes"
+      },
+      "field_air_conditioning_target_temperature_in_celsius": {
+        "name": "Air Conditioning target Temperature In Celsius"
+      },
+      "field_air_conditioning_settings_window_heating_enabled": {
+        "name": "Air Conditioning settings window Heating Enabled"
+      },
+      "field_air_conditioning_settings_climatisation_at_unlock": {
+        "name": "Air Conditioning settings climatisation At Unlock"
+      },
+      "field_vehicle_status_overall_status": {
+        "name": "Vehicle Status overall status"
+      },
+      "field_vehicle_status_doors_front_left": {
+        "name": "Vehicle Status doors front Left"
+      },
+      "field_vehicle_status_doors_front_right": {
+        "name": "Vehicle Status doors front Right"
+      },
+      "field_vehicle_status_doors_rear_left": {
+        "name": "Vehicle Status doors rear Left"
+      },
+      "field_vehicle_status_doors_rear_right": {
+        "name": "Vehicle Status doors rear Right"
+      },
+      "field_vehicle_status_windows_front_left": {
+        "name": "Vehicle Status windows front Left"
+      },
+      "field_vehicle_status_windows_front_right": {
+        "name": "Vehicle Status windows front Right"
+      },
+      "field_vehicle_status_windows_rear_left": {
+        "name": "Vehicle Status windows rear Left"
+      },
+      "field_vehicle_status_windows_rear_right": {
+        "name": "Vehicle Status windows rear Right"
+      },
+      "field_vehicle_status_lights": {
+        "name": "Vehicle Status lights"
+      },
+      "field_vehicle_status_odometer_in_km": {
+        "name": "Vehicle Status odometer In Km"
       }
     },
     "image": {
@@ -168,6 +342,93 @@
       },
       "vehicle_capture_timestamp": {
         "name": "Vehicle data captured at"
+      },
+      "field_charging_car_captured_timestamp": {
+        "name": "Charging car Captured Timestamp"
+      },
+      "field_charging_is_vehicle_in_saved_location": {
+        "name": "Charging is Vehicle In Saved Location"
+      },
+      "field_charging_settings_available_charging_modes": {
+        "name": "Charging settings available Charging Modes"
+      },
+      "field_charging_settings_battery_care_mode_target": {
+        "name": "Charging settings battery Care Mode Target"
+      },
+      "field_charging_settings_charging_care_mode": {
+        "name": "Charging settings charging Care Mode"
+      },
+      "field_charging_settings_max_charge_current": {
+        "name": "Charging settings max Charge Current"
+      },
+      "field_charging_settings_preferred_charge_mode": {
+        "name": "Charging settings preferred Charge Mode"
+      },
+      "field_charging_settings_target_state_of_charge_in_percent": {
+        "name": "Charging settings target State Of Charge In Percent"
+      },
+      "field_charging_status_battery_remaining_cruising_range_in_meters": {
+        "name": "Charging status battery remaining Cruising Range In Meters"
+      },
+      "field_charging_status_fully_charged_at": {
+        "name": "Charging status fully Charged At"
+      },
+      "field_charging_status_charge_power_in_kw": {
+        "name": "Charging status charge Power In Kw"
+      },
+      "field_charging_status_charge_type": {
+        "name": "Charging status charge Type"
+      },
+      "field_charging_status_charging_rate_in_kilometers_per_hour": {
+        "name": "Charging status charging Rate In Kilometers Per Hour"
+      },
+      "field_charging_status_plug_connection_state": {
+        "name": "Charging status plug Connection State"
+      },
+      "field_charging_status_remaining_time_to_fully_charged_in_minutes": {
+        "name": "Charging status remaining Time To Fully Charged In Minutes"
+      },
+      "field_air_conditioning_target_temperature_in_celsius": {
+        "name": "Air Conditioning target Temperature In Celsius"
+      },
+      "field_air_conditioning_settings_window_heating_enabled": {
+        "name": "Air Conditioning settings window Heating Enabled"
+      },
+      "field_air_conditioning_settings_climatisation_at_unlock": {
+        "name": "Air Conditioning settings climatisation At Unlock"
+      },
+      "field_vehicle_status_overall_status": {
+        "name": "Vehicle Status overall status"
+      },
+      "field_vehicle_status_doors_front_left": {
+        "name": "Vehicle Status doors front Left"
+      },
+      "field_vehicle_status_doors_front_right": {
+        "name": "Vehicle Status doors front Right"
+      },
+      "field_vehicle_status_doors_rear_left": {
+        "name": "Vehicle Status doors rear Left"
+      },
+      "field_vehicle_status_doors_rear_right": {
+        "name": "Vehicle Status doors rear Right"
+      },
+      "field_vehicle_status_windows_front_left": {
+        "name": "Vehicle Status windows front Left"
+      },
+      "field_vehicle_status_windows_front_right": {
+        "name": "Vehicle Status windows front Right"
+      },
+      "field_vehicle_status_windows_rear_left": {
+        "name": "Vehicle Status windows rear Left"
+      },
+      "field_vehicle_status_windows_rear_right": {
+        "name": "Vehicle Status windows rear Right"
+      },
+      "field_vehicle_status_lights": {
+        "name": "Vehicle Status lights"
+      },
+      "field_vehicle_status_odometer_in_km": {
+        "name": "Vehicle Status odometer In Km"
       }
     },
     "device_tracker": {
@@ -194,6 +455,93 @@
       },
       "vehicle_capture_timestamp": {
         "name": "Vehicle data captured at"
+      },
+      "field_charging_car_captured_timestamp": {
+        "name": "Charging car Captured Timestamp"
+      },
+      "field_charging_is_vehicle_in_saved_location": {
+        "name": "Charging is Vehicle In Saved Location"
+      },
+      "field_charging_settings_available_charging_modes": {
+        "name": "Charging settings available Charging Modes"
+      },
+      "field_charging_settings_battery_care_mode_target": {
+        "name": "Charging settings battery Care Mode Target"
+      },
+      "field_charging_settings_charging_care_mode": {
+        "name": "Charging settings charging Care Mode"
+      },
+      "field_charging_settings_max_charge_current": {
+        "name": "Charging settings max Charge Current"
+      },
+      "field_charging_settings_preferred_charge_mode": {
+        "name": "Charging settings preferred Charge Mode"
+      },
+      "field_charging_settings_target_state_of_charge_in_percent": {
+        "name": "Charging settings target State Of Charge In Percent"
+      },
+      "field_charging_status_battery_remaining_cruising_range_in_meters": {
+        "name": "Charging status battery remaining Cruising Range In Meters"
+      },
+      "field_charging_status_fully_charged_at": {
+        "name": "Charging status fully Charged At"
+      },
+      "field_charging_status_charge_power_in_kw": {
+        "name": "Charging status charge Power In Kw"
+      },
+      "field_charging_status_charge_type": {
+        "name": "Charging status charge Type"
+      },
+      "field_charging_status_charging_rate_in_kilometers_per_hour": {
+        "name": "Charging status charging Rate In Kilometers Per Hour"
+      },
+      "field_charging_status_plug_connection_state": {
+        "name": "Charging status plug Connection State"
+      },
+      "field_charging_status_remaining_time_to_fully_charged_in_minutes": {
+        "name": "Charging status remaining Time To Fully Charged In Minutes"
+      },
+      "field_air_conditioning_target_temperature_in_celsius": {
+        "name": "Air Conditioning target Temperature In Celsius"
+      },
+      "field_air_conditioning_settings_window_heating_enabled": {
+        "name": "Air Conditioning settings window Heating Enabled"
+      },
+      "field_air_conditioning_settings_climatisation_at_unlock": {
+        "name": "Air Conditioning settings climatisation At Unlock"
+      },
+      "field_vehicle_status_overall_status": {
+        "name": "Vehicle Status overall status"
+      },
+      "field_vehicle_status_doors_front_left": {
+        "name": "Vehicle Status doors front Left"
+      },
+      "field_vehicle_status_doors_front_right": {
+        "name": "Vehicle Status doors front Right"
+      },
+      "field_vehicle_status_doors_rear_left": {
+        "name": "Vehicle Status doors rear Left"
+      },
+      "field_vehicle_status_doors_rear_right": {
+        "name": "Vehicle Status doors rear Right"
+      },
+      "field_vehicle_status_windows_front_left": {
+        "name": "Vehicle Status windows front Left"
+      },
+      "field_vehicle_status_windows_front_right": {
+        "name": "Vehicle Status windows front Right"
+      },
+      "field_vehicle_status_windows_rear_left": {
+        "name": "Vehicle Status windows rear Left"
+      },
+      "field_vehicle_status_windows_rear_right": {
+        "name": "Vehicle Status windows rear Right"
+      },
+      "field_vehicle_status_lights": {
+        "name": "Vehicle Status lights"
+      },
+      "field_vehicle_status_odometer_in_km": {
+        "name": "Vehicle Status odometer In Km"
       }
     },
     "switch": {
