@@ -16,7 +16,7 @@ from .coordinator import SkodaConfigEntry, SkodaCoordinator
 from .entity import SkodaEntity
 from .groups import functional_group
 from .image_fields import is_image_field
-from .localization import localized_path
+from .localization import localized_path, KNOWN_FIELD_KEYS, field_translation_key, profile_number, timer_number, day_number
 
 _LOGGER = logging.getLogger(__name__)
 MAX_IMAGE_BYTES = 8 * 1024 * 1024
@@ -57,9 +57,13 @@ class SkodaFieldImage(SkodaEntity, ImageEntity):
         # Preserve the already-tested original image entity registry identity.
         self._attr_unique_id = f"{self._vin}_{path}_original"
         self._device_group = functional_group(path)
-        self._attr_translation_key = "original_api_field"
+        self._attr_translation_key = field_translation_key(path, set(KNOWN_FIELD_KEYS.values())) if path in KNOWN_FIELD_KEYS else "original_api_field"
         self._attr_translation_placeholders = {
-            "field": localized_path(path, coordinator.hass.config.language)
+            "field_cs": localized_path(path, "cs"),
+            "field_en": localized_path(path, "en"),
+            "profile": profile_number(path),
+            "timer": timer_number(path),
+            "day": day_number(path),
         }
         self._attr_image_last_updated = datetime.now().astimezone()
 

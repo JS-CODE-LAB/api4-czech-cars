@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.3.3 (unreleased)
+- Translate charging profile timers, recurring weekdays and preferred charging intervals, including numeric index placeholders.
+- Translate more observed API paths across all functional groups; normalize numeric charging-profile indices.
+- Expose names of untranslated API paths in the Omitted data parts diagnostic sensor for coverage auditing (no API values).
+- Expand Czech/English static field translations for charging, climate and vehicle status paths.
+- Restore functional group default names based on the HA system language; update existing group names on startup unless manually renamed.
+- Add stable Czech/English translation keys for selected known API fields; unknown fields keep English fallback.
+- Existing user-customized entity names remain untouched; registry-stored names may require a manual reset to restore translated defaults.
+- Translate dynamic entity names per user profile using Czech/English translation placeholders (not global HA language).
+- Use stable English default names for functional devices, whose registry names are not user-localized.
+- Add locale fallback tests and preserve stable entity and device identifiers.
+
 ## 0.3.2
 - Retain only the unmodified original vehicle image entity; remove temporary image diagnostics and obsolete light-background image entity from the registry.
 - Fix truncated vehicle renders by consuming the full HTTP response stream in bounded chunks and verifying Content-Length before decoding.

@@ -24,7 +24,7 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.util import dt as dt_util
 
 from .image_fields import is_image_field
-from .localization import localized_path
+from .localization import localized_path, KNOWN_FIELD_KEYS, field_translation_key, profile_number, timer_number, day_number
 from .groups import functional_group
 from .coordinator import SkodaConfigEntry, SkodaCoordinator
 from .entity import KIND_SENSOR, SkodaEntity, classify, find_range_path, find_soc_path, humanize
@@ -115,9 +115,13 @@ class SkodaFieldSensor(SkodaEntity, SensorEntity):
         super().__init__(coordinator)
         self.field_path = path
         self._attr_unique_id = f"{self._vin}_{path}"
-        self._attr_translation_key = "api_field"
+        self._attr_translation_key = field_translation_key(path, set(KNOWN_FIELD_KEYS.values()))
         self._attr_translation_placeholders = {
-            "field": localized_path(path, coordinator.hass.config.language)
+            "field_cs": localized_path(path, "cs"),
+            "field_en": localized_path(path, "en"),
+            "profile": profile_number(path),
+            "timer": timer_number(path),
+            "day": day_number(path),
         }
         self._group = functional_group(path)
         self._device_group = self._group
@@ -265,7 +269,15 @@ class SkodaOmittedPartsSensor(SkodaEntity, SensorEntity):
 
     @property
     def extra_state_attributes(self) -> dict[str, Any]:
-        return {"errors": self.coordinator.data.errors}
+        untranslated = sorted(
+            path for path in self.coordinator.data.flat
+            if field_translation_key(path, set(KNOWN_FIELD_KEYS.values())) == "api_field"
+        )
+        return {
+            "errors": self.coordinator.data.errors,
+            "untranslated_api_path_count": len(untranslated),
+            "untranslated_api_paths": untranslated,
+        }
 
 
 class SkodaLastUpdateSensor(SkodaEntity, SensorEntity):

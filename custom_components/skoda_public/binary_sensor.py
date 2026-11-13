@@ -11,7 +11,7 @@ from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .groups import functional_group, binary_device_class
-from .localization import localized_path
+from .localization import localized_path, KNOWN_FIELD_KEYS, field_translation_key, profile_number, timer_number, day_number
 from .coordinator import SkodaConfigEntry, SkodaCoordinator
 from .entity import KIND_BINARY, SkodaEntity, classify, humanize, to_bool
 
@@ -52,9 +52,13 @@ class SkodaFieldBinarySensor(SkodaEntity, BinarySensorEntity):
         super().__init__(coordinator)
         self.field_path = path
         self._attr_unique_id = f"{self._vin}_{path}"
-        self._attr_translation_key = "api_field"
+        self._attr_translation_key = field_translation_key(path, set(KNOWN_FIELD_KEYS.values()))
         self._attr_translation_placeholders = {
-            "field": localized_path(path, coordinator.hass.config.language)
+            "field_cs": localized_path(path, "cs"),
+            "field_en": localized_path(path, "en"),
+            "profile": profile_number(path),
+            "timer": timer_number(path),
+            "day": day_number(path),
         }
         self._group = functional_group(path)
         self._device_group = self._group

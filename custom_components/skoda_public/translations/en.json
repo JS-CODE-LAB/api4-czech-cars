@@ -70,7 +70,7 @@
   "entity": {
     "sensor": {
       "api_field": {
-        "name": "{field}"
+        "name": "{field_en}"
       },
       "battery_level": {
         "name": "Battery"
@@ -92,24 +92,1212 @@
       },
       "last_api_error": {
         "name": "Last API error"
+      },
+      "air_conditioning_state": {
+        "name": "Air conditioning state"
+      },
+      "air_conditioning_target_temperature_unit": {
+        "name": "Air conditioning target temperature unit"
+      },
+      "air_conditioning_target_temperature_value": {
+        "name": "Air conditioning target temperature"
+      },
+      "air_conditioning_car_captured_timestamp": {
+        "name": "Air conditioning data captured at"
+      },
+      "charging_battery_soc": {
+        "name": "Battery state of charge"
+      },
+      "charging_state": {
+        "name": "Charging state"
+      },
+      "vehicle_capture_timestamp": {
+        "name": "Vehicle data captured at"
+      },
+      "field_charging_car_captured_timestamp": {
+        "name": "Charging car Captured Timestamp"
+      },
+      "field_charging_is_vehicle_in_saved_location": {
+        "name": "Charging is Vehicle In Saved Location"
+      },
+      "field_charging_settings_available_charging_modes": {
+        "name": "Charging settings available Charging Modes"
+      },
+      "field_charging_settings_battery_care_mode_target": {
+        "name": "Charging settings battery Care Mode Target"
+      },
+      "field_charging_settings_charging_care_mode": {
+        "name": "Charging settings charging Care Mode"
+      },
+      "field_charging_settings_max_charge_current": {
+        "name": "Charging settings max Charge Current"
+      },
+      "field_charging_settings_preferred_charge_mode": {
+        "name": "Charging settings preferred Charge Mode"
+      },
+      "field_charging_settings_target_state_of_charge_in_percent": {
+        "name": "Charging settings target State Of Charge In Percent"
+      },
+      "field_charging_status_battery_remaining_cruising_range_in_meters": {
+        "name": "Charging status battery remaining Cruising Range In Meters"
+      },
+      "field_charging_status_fully_charged_at": {
+        "name": "Charging status fully Charged At"
+      },
+      "field_charging_status_charge_power_in_kw": {
+        "name": "Charging status charge Power In KW"
+      },
+      "field_charging_status_charge_type": {
+        "name": "Charging status charge Type"
+      },
+      "field_charging_status_charging_rate_in_kilometers_per_hour": {
+        "name": "Charging status charging Rate In Kilometers Per Hour"
+      },
+      "field_charging_status_plug_connection_state": {
+        "name": "Charging status plug Connection State"
+      },
+      "field_charging_status_remaining_time_to_fully_charged_in_minutes": {
+        "name": "Charging status remaining Time To Fully Charged In Minutes"
+      },
+      "field_air_conditioning_target_temperature_in_celsius": {
+        "name": "Air Conditioning target Temperature In Celsius"
+      },
+      "field_air_conditioning_settings_window_heating_enabled": {
+        "name": "Air Conditioning settings window Heating Enabled"
+      },
+      "field_air_conditioning_settings_climatisation_at_unlock": {
+        "name": "Air Conditioning settings climatisation At Unlock"
+      },
+      "field_vehicle_status_overall_status": {
+        "name": "Vehicle Status overall status"
+      },
+      "field_vehicle_status_doors_front_left": {
+        "name": "Vehicle Status doors front Left"
+      },
+      "field_vehicle_status_doors_front_right": {
+        "name": "Vehicle Status doors front Right"
+      },
+      "field_vehicle_status_doors_rear_left": {
+        "name": "Vehicle Status doors rear Left"
+      },
+      "field_vehicle_status_doors_rear_right": {
+        "name": "Vehicle Status doors rear Right"
+      },
+      "field_vehicle_status_windows_front_left": {
+        "name": "Vehicle Status windows front Left"
+      },
+      "field_vehicle_status_windows_front_right": {
+        "name": "Vehicle Status windows front Right"
+      },
+      "field_vehicle_status_windows_rear_left": {
+        "name": "Vehicle Status windows rear Left"
+      },
+      "field_vehicle_status_windows_rear_right": {
+        "name": "Vehicle Status windows rear Right"
+      },
+      "field_vehicle_status_lights": {
+        "name": "Vehicle Status lights"
+      },
+      "field_vehicle_status_odometer_in_km": {
+        "name": "Vehicle Status odometer In Km"
+      },
+      "field_air_conditioning_air_conditioning_at_unlock": {
+        "name": "Air Conditioning air Conditioning At Unlock"
+      },
+      "field_air_conditioning_window_heating_enabled": {
+        "name": "Air Conditioning window Heating enabled"
+      },
+      "field_air_conditioning_window_heating_front": {
+        "name": "Air Conditioning window Heating front"
+      },
+      "field_air_conditioning_window_heating_rear": {
+        "name": "Air Conditioning window Heating rear"
+      },
+      "field_charging_settings_auto_unlock_plug_when_charged": {
+        "name": "Charging settings auto Unlock Plug When Charged"
+      },
+      "field_charging_status_plug_lock_state": {
+        "name": "Charging status plug Lock State"
+      },
+      "field_charging_settings_available_charge_modes": {
+        "name": "Charging settings available Charge Modes"
+      },
+      "field_charging_settings_available_charge_modes_0": {
+        "name": "Charging settings available Charge Modes 0"
+      },
+      "field_charging_settings_available_charge_modes_1": {
+        "name": "Charging settings available Charge Modes 1"
+      },
+      "field_charging_settings_available_charge_modes_2": {
+        "name": "Charging settings available Charge Modes 2"
+      },
+      "field_charging_settings_available_charge_modes_3": {
+        "name": "Charging settings available Charge Modes 3"
+      },
+      "field_charging_settings_battery_care_mode_target_state_of_charge_in_percent": {
+        "name": "Charging settings battery Care Mode Target State Of Charge In Percent"
+      },
+      "field_charging_settings_max_charge_current_ac": {
+        "name": "Charging settings max Charge Current Ac"
+      },
+      "field_status_detail_bonnet": {
+        "name": "Status detail bonnet"
+      },
+      "field_status_detail_trunk": {
+        "name": "Status detail trunk"
+      },
+      "field_status_detail_sunroof": {
+        "name": "Status detail sunroof"
+      },
+      "field_status_overall_doors": {
+        "name": "Status overall doors"
+      },
+      "field_status_overall_doors_locked": {
+        "name": "Status overall doors Locked"
+      },
+      "field_status_overall_locked": {
+        "name": "Status overall locked"
+      },
+      "field_status_overall_reliable_lock_status": {
+        "name": "Status overall reliable Lock Status"
+      },
+      "field_status_overall_windows": {
+        "name": "Status overall windows"
+      },
+      "field_status_overall_lights": {
+        "name": "Status overall lights"
+      },
+      "field_license_plate": {
+        "name": "License Plate"
+      },
+      "field_render_url": {
+        "name": "Render Url"
+      },
+      "field_odometer_car_captured_timestamp": {
+        "name": "Odometer car Captured Timestamp"
+      },
+      "field_odometer_mileage_in_km": {
+        "name": "Odometer mileage In Km"
+      },
+      "field_parking_position_address": {
+        "name": "Parking position address"
+      },
+      "field_parking_position_gps_coordinates_latitude": {
+        "name": "Parking position gps Coordinates latitude"
+      },
+      "field_parking_position_gps_coordinates_longitude": {
+        "name": "Parking position gps Coordinates longitude"
+      },
+      "field_parking_position_state": {
+        "name": "Parking position state"
+      },
+      "field_parking_position_gps_coordinates": {
+        "name": "Parking position gps Coordinates"
+      },
+      "field_charging_profiles_car_captured_timestamp": {
+        "name": "Charging Profiles car Captured Timestamp"
+      },
+      "field_charging_profiles_current_vehicle_position_latitude": {
+        "name": "Charging Profiles current Vehicle Position latitude"
+      },
+      "field_charging_profiles_current_vehicle_position_longitude": {
+        "name": "Charging Profiles current Vehicle Position longitude"
+      },
+      "field_charging_profiles_current_vehicle_position_address": {
+        "name": "Charging Profiles current Vehicle Position address"
+      },
+      "field_charging_profiles_current_vehicle_position_state": {
+        "name": "Charging Profiles current Vehicle Position state"
+      },
+      "field_charging_profiles_profiles_0_id": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 id"
+      },
+      "field_charging_profiles_profiles_0_name": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 name"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_enabled": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 enabled"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_start_time": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 start Time"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_end_time": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 end Time"
+      },
+      "field_charging_profiles_profiles_0_settings_auto_unlock_plug_when_charged": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings auto Unlock Plug When Charged"
+      },
+      "field_charging_profiles_profiles_0_settings_max_charge_current": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings max Charge Current"
+      },
+      "field_charging_profiles_profiles_0_settings_min_battery_state_of_charge_in_percent": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings min Battery State Of Charge In Percent"
+      },
+      "field_charging_profiles_profiles_0_settings_target_state_of_charge_in_percent": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings target State Of Charge In Percent"
+      },
+      "field_charging_profiles_profiles_0_settings_battery_care_mode": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings battery Care Mode"
+      },
+      "field_charging_profiles_profiles_0_settings_preferred_charge_mode": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings preferred Charge Mode"
+      },
+      "field_charging_profiles_profiles_0_settings_charging_mode": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings charging Mode"
+      },
+      "profile_preferred_time_id": {
+        "name": "{profile}: Preferred interval {timer} ID"
+      },
+      "profile_preferred_time_time": {
+        "name": "{profile}: Preferred interval {timer} time"
+      },
+      "profile_preferred_time_type": {
+        "name": "{profile}: Preferred interval {timer} type"
+      },
+      "profile_preferred_time_day": {
+        "name": "{profile}: Preferred interval {timer} day"
+      },
+      "profile_preferred_time_days": {
+        "name": "{profile}: Preferred interval {timer} days"
+      },
+      "profile_preferred_time_recurrence": {
+        "name": "{profile}: Preferred interval {timer} recurrence"
+      },
+      "profile_preferred_time_recurrence_day": {
+        "name": "{profile}: Preferred interval {timer} recurrence day {day}"
+      },
+      "profile_timer_enabled": {
+        "name": "{profile}: Timer {timer} enabled"
+      },
+      "profile_timer_id": {
+        "name": "{profile}: Timer {timer} ID"
+      },
+      "profile_timer_time": {
+        "name": "{profile}: Timer {timer} time"
+      },
+      "profile_timer_type": {
+        "name": "{profile}: Timer {timer} type"
+      },
+      "profile_timer_recurrence": {
+        "name": "{profile}: Timer {timer} recurrence"
+      },
+      "profile_timer_recurrence_day": {
+        "name": "{profile}: Timer {timer} recurrence day {day}"
+      },
+      "profile_minimum_soc": {
+        "name": "{profile}: Minimum battery charge"
+      },
+      "profile_max_charge_current": {
+        "name": "{profile}: Maximum charging current"
       }
     },
     "binary_sensor": {
       "api_field": {
-        "name": "{field}"
+        "name": "{field_en}"
       },
       "battery_charging": {
         "name": "Battery charging"
+      },
+      "air_conditioning_state": {
+        "name": "Air conditioning state"
+      },
+      "air_conditioning_target_temperature_unit": {
+        "name": "Air conditioning target temperature unit"
+      },
+      "air_conditioning_target_temperature_value": {
+        "name": "Air conditioning target temperature"
+      },
+      "air_conditioning_car_captured_timestamp": {
+        "name": "Air conditioning data captured at"
+      },
+      "charging_battery_soc": {
+        "name": "Battery state of charge"
+      },
+      "charging_state": {
+        "name": "Charging state"
+      },
+      "vehicle_capture_timestamp": {
+        "name": "Vehicle data captured at"
+      },
+      "field_charging_car_captured_timestamp": {
+        "name": "Charging car Captured Timestamp"
+      },
+      "field_charging_is_vehicle_in_saved_location": {
+        "name": "Charging is Vehicle In Saved Location"
+      },
+      "field_charging_settings_available_charging_modes": {
+        "name": "Charging settings available Charging Modes"
+      },
+      "field_charging_settings_battery_care_mode_target": {
+        "name": "Charging settings battery Care Mode Target"
+      },
+      "field_charging_settings_charging_care_mode": {
+        "name": "Charging settings charging Care Mode"
+      },
+      "field_charging_settings_max_charge_current": {
+        "name": "Charging settings max Charge Current"
+      },
+      "field_charging_settings_preferred_charge_mode": {
+        "name": "Charging settings preferred Charge Mode"
+      },
+      "field_charging_settings_target_state_of_charge_in_percent": {
+        "name": "Charging settings target State Of Charge In Percent"
+      },
+      "field_charging_status_battery_remaining_cruising_range_in_meters": {
+        "name": "Charging status battery remaining Cruising Range In Meters"
+      },
+      "field_charging_status_fully_charged_at": {
+        "name": "Charging status fully Charged At"
+      },
+      "field_charging_status_charge_power_in_kw": {
+        "name": "Charging status charge Power In KW"
+      },
+      "field_charging_status_charge_type": {
+        "name": "Charging status charge Type"
+      },
+      "field_charging_status_charging_rate_in_kilometers_per_hour": {
+        "name": "Charging status charging Rate In Kilometers Per Hour"
+      },
+      "field_charging_status_plug_connection_state": {
+        "name": "Charging status plug Connection State"
+      },
+      "field_charging_status_remaining_time_to_fully_charged_in_minutes": {
+        "name": "Charging status remaining Time To Fully Charged In Minutes"
+      },
+      "field_air_conditioning_target_temperature_in_celsius": {
+        "name": "Air Conditioning target Temperature In Celsius"
+      },
+      "field_air_conditioning_settings_window_heating_enabled": {
+        "name": "Air Conditioning settings window Heating Enabled"
+      },
+      "field_air_conditioning_settings_climatisation_at_unlock": {
+        "name": "Air Conditioning settings climatisation At Unlock"
+      },
+      "field_vehicle_status_overall_status": {
+        "name": "Vehicle Status overall status"
+      },
+      "field_vehicle_status_doors_front_left": {
+        "name": "Vehicle Status doors front Left"
+      },
+      "field_vehicle_status_doors_front_right": {
+        "name": "Vehicle Status doors front Right"
+      },
+      "field_vehicle_status_doors_rear_left": {
+        "name": "Vehicle Status doors rear Left"
+      },
+      "field_vehicle_status_doors_rear_right": {
+        "name": "Vehicle Status doors rear Right"
+      },
+      "field_vehicle_status_windows_front_left": {
+        "name": "Vehicle Status windows front Left"
+      },
+      "field_vehicle_status_windows_front_right": {
+        "name": "Vehicle Status windows front Right"
+      },
+      "field_vehicle_status_windows_rear_left": {
+        "name": "Vehicle Status windows rear Left"
+      },
+      "field_vehicle_status_windows_rear_right": {
+        "name": "Vehicle Status windows rear Right"
+      },
+      "field_vehicle_status_lights": {
+        "name": "Vehicle Status lights"
+      },
+      "field_vehicle_status_odometer_in_km": {
+        "name": "Vehicle Status odometer In Km"
+      },
+      "field_air_conditioning_air_conditioning_at_unlock": {
+        "name": "Air Conditioning air Conditioning At Unlock"
+      },
+      "field_air_conditioning_window_heating_enabled": {
+        "name": "Air Conditioning window Heating enabled"
+      },
+      "field_air_conditioning_window_heating_front": {
+        "name": "Air Conditioning window Heating front"
+      },
+      "field_air_conditioning_window_heating_rear": {
+        "name": "Air Conditioning window Heating rear"
+      },
+      "field_charging_settings_auto_unlock_plug_when_charged": {
+        "name": "Charging settings auto Unlock Plug When Charged"
+      },
+      "field_charging_status_plug_lock_state": {
+        "name": "Charging status plug Lock State"
+      },
+      "field_charging_settings_available_charge_modes": {
+        "name": "Charging settings available Charge Modes"
+      },
+      "field_charging_settings_available_charge_modes_0": {
+        "name": "Charging settings available Charge Modes 0"
+      },
+      "field_charging_settings_available_charge_modes_1": {
+        "name": "Charging settings available Charge Modes 1"
+      },
+      "field_charging_settings_available_charge_modes_2": {
+        "name": "Charging settings available Charge Modes 2"
+      },
+      "field_charging_settings_available_charge_modes_3": {
+        "name": "Charging settings available Charge Modes 3"
+      },
+      "field_charging_settings_battery_care_mode_target_state_of_charge_in_percent": {
+        "name": "Charging settings battery Care Mode Target State Of Charge In Percent"
+      },
+      "field_charging_settings_max_charge_current_ac": {
+        "name": "Charging settings max Charge Current Ac"
+      },
+      "field_status_detail_bonnet": {
+        "name": "Status detail bonnet"
+      },
+      "field_status_detail_trunk": {
+        "name": "Status detail trunk"
+      },
+      "field_status_detail_sunroof": {
+        "name": "Status detail sunroof"
+      },
+      "field_status_overall_doors": {
+        "name": "Status overall doors"
+      },
+      "field_status_overall_doors_locked": {
+        "name": "Status overall doors Locked"
+      },
+      "field_status_overall_locked": {
+        "name": "Status overall locked"
+      },
+      "field_status_overall_reliable_lock_status": {
+        "name": "Status overall reliable Lock Status"
+      },
+      "field_status_overall_windows": {
+        "name": "Status overall windows"
+      },
+      "field_status_overall_lights": {
+        "name": "Status overall lights"
+      },
+      "field_license_plate": {
+        "name": "License Plate"
+      },
+      "field_render_url": {
+        "name": "Render Url"
+      },
+      "field_odometer_car_captured_timestamp": {
+        "name": "Odometer car Captured Timestamp"
+      },
+      "field_odometer_mileage_in_km": {
+        "name": "Odometer mileage In Km"
+      },
+      "field_parking_position_address": {
+        "name": "Parking position address"
+      },
+      "field_parking_position_gps_coordinates_latitude": {
+        "name": "Parking position gps Coordinates latitude"
+      },
+      "field_parking_position_gps_coordinates_longitude": {
+        "name": "Parking position gps Coordinates longitude"
+      },
+      "field_parking_position_state": {
+        "name": "Parking position state"
+      },
+      "field_parking_position_gps_coordinates": {
+        "name": "Parking position gps Coordinates"
+      },
+      "field_charging_profiles_car_captured_timestamp": {
+        "name": "Charging Profiles car Captured Timestamp"
+      },
+      "field_charging_profiles_current_vehicle_position_latitude": {
+        "name": "Charging Profiles current Vehicle Position latitude"
+      },
+      "field_charging_profiles_current_vehicle_position_longitude": {
+        "name": "Charging Profiles current Vehicle Position longitude"
+      },
+      "field_charging_profiles_current_vehicle_position_address": {
+        "name": "Charging Profiles current Vehicle Position address"
+      },
+      "field_charging_profiles_current_vehicle_position_state": {
+        "name": "Charging Profiles current Vehicle Position state"
+      },
+      "field_charging_profiles_profiles_0_id": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 id"
+      },
+      "field_charging_profiles_profiles_0_name": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 name"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_enabled": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 enabled"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_start_time": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 start Time"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_end_time": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 end Time"
+      },
+      "field_charging_profiles_profiles_0_settings_auto_unlock_plug_when_charged": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings auto Unlock Plug When Charged"
+      },
+      "field_charging_profiles_profiles_0_settings_max_charge_current": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings max Charge Current"
+      },
+      "field_charging_profiles_profiles_0_settings_min_battery_state_of_charge_in_percent": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings min Battery State Of Charge In Percent"
+      },
+      "field_charging_profiles_profiles_0_settings_target_state_of_charge_in_percent": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings target State Of Charge In Percent"
+      },
+      "field_charging_profiles_profiles_0_settings_battery_care_mode": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings battery Care Mode"
+      },
+      "field_charging_profiles_profiles_0_settings_preferred_charge_mode": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings preferred Charge Mode"
+      },
+      "field_charging_profiles_profiles_0_settings_charging_mode": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings charging Mode"
+      },
+      "profile_preferred_time_id": {
+        "name": "{profile}: Preferred interval {timer} ID"
+      },
+      "profile_preferred_time_time": {
+        "name": "{profile}: Preferred interval {timer} time"
+      },
+      "profile_preferred_time_type": {
+        "name": "{profile}: Preferred interval {timer} type"
+      },
+      "profile_preferred_time_day": {
+        "name": "{profile}: Preferred interval {timer} day"
+      },
+      "profile_preferred_time_days": {
+        "name": "{profile}: Preferred interval {timer} days"
+      },
+      "profile_preferred_time_recurrence": {
+        "name": "{profile}: Preferred interval {timer} recurrence"
+      },
+      "profile_preferred_time_recurrence_day": {
+        "name": "{profile}: Preferred interval {timer} recurrence day {day}"
+      },
+      "profile_timer_enabled": {
+        "name": "{profile}: Timer {timer} enabled"
+      },
+      "profile_timer_id": {
+        "name": "{profile}: Timer {timer} ID"
+      },
+      "profile_timer_time": {
+        "name": "{profile}: Timer {timer} time"
+      },
+      "profile_timer_type": {
+        "name": "{profile}: Timer {timer} type"
+      },
+      "profile_timer_recurrence": {
+        "name": "{profile}: Timer {timer} recurrence"
+      },
+      "profile_timer_recurrence_day": {
+        "name": "{profile}: Timer {timer} recurrence day {day}"
+      },
+      "profile_minimum_soc": {
+        "name": "{profile}: Minimum battery charge"
+      },
+      "profile_max_charge_current": {
+        "name": "{profile}: Maximum charging current"
       }
     },
     "image": {
       "original_api_field": {
-        "name": "{field}"
+        "name": "{field_en}"
+      },
+      "air_conditioning_state": {
+        "name": "Air conditioning state"
+      },
+      "air_conditioning_target_temperature_unit": {
+        "name": "Air conditioning target temperature unit"
+      },
+      "air_conditioning_target_temperature_value": {
+        "name": "Air conditioning target temperature"
+      },
+      "air_conditioning_car_captured_timestamp": {
+        "name": "Air conditioning data captured at"
+      },
+      "charging_battery_soc": {
+        "name": "Battery state of charge"
+      },
+      "charging_state": {
+        "name": "Charging state"
+      },
+      "vehicle_capture_timestamp": {
+        "name": "Vehicle data captured at"
+      },
+      "field_charging_car_captured_timestamp": {
+        "name": "Charging car Captured Timestamp"
+      },
+      "field_charging_is_vehicle_in_saved_location": {
+        "name": "Charging is Vehicle In Saved Location"
+      },
+      "field_charging_settings_available_charging_modes": {
+        "name": "Charging settings available Charging Modes"
+      },
+      "field_charging_settings_battery_care_mode_target": {
+        "name": "Charging settings battery Care Mode Target"
+      },
+      "field_charging_settings_charging_care_mode": {
+        "name": "Charging settings charging Care Mode"
+      },
+      "field_charging_settings_max_charge_current": {
+        "name": "Charging settings max Charge Current"
+      },
+      "field_charging_settings_preferred_charge_mode": {
+        "name": "Charging settings preferred Charge Mode"
+      },
+      "field_charging_settings_target_state_of_charge_in_percent": {
+        "name": "Charging settings target State Of Charge In Percent"
+      },
+      "field_charging_status_battery_remaining_cruising_range_in_meters": {
+        "name": "Charging status battery remaining Cruising Range In Meters"
+      },
+      "field_charging_status_fully_charged_at": {
+        "name": "Charging status fully Charged At"
+      },
+      "field_charging_status_charge_power_in_kw": {
+        "name": "Charging status charge Power In KW"
+      },
+      "field_charging_status_charge_type": {
+        "name": "Charging status charge Type"
+      },
+      "field_charging_status_charging_rate_in_kilometers_per_hour": {
+        "name": "Charging status charging Rate In Kilometers Per Hour"
+      },
+      "field_charging_status_plug_connection_state": {
+        "name": "Charging status plug Connection State"
+      },
+      "field_charging_status_remaining_time_to_fully_charged_in_minutes": {
+        "name": "Charging status remaining Time To Fully Charged In Minutes"
+      },
+      "field_air_conditioning_target_temperature_in_celsius": {
+        "name": "Air Conditioning target Temperature In Celsius"
+      },
+      "field_air_conditioning_settings_window_heating_enabled": {
+        "name": "Air Conditioning settings window Heating Enabled"
+      },
+      "field_air_conditioning_settings_climatisation_at_unlock": {
+        "name": "Air Conditioning settings climatisation At Unlock"
+      },
+      "field_vehicle_status_overall_status": {
+        "name": "Vehicle Status overall status"
+      },
+      "field_vehicle_status_doors_front_left": {
+        "name": "Vehicle Status doors front Left"
+      },
+      "field_vehicle_status_doors_front_right": {
+        "name": "Vehicle Status doors front Right"
+      },
+      "field_vehicle_status_doors_rear_left": {
+        "name": "Vehicle Status doors rear Left"
+      },
+      "field_vehicle_status_doors_rear_right": {
+        "name": "Vehicle Status doors rear Right"
+      },
+      "field_vehicle_status_windows_front_left": {
+        "name": "Vehicle Status windows front Left"
+      },
+      "field_vehicle_status_windows_front_right": {
+        "name": "Vehicle Status windows front Right"
+      },
+      "field_vehicle_status_windows_rear_left": {
+        "name": "Vehicle Status windows rear Left"
+      },
+      "field_vehicle_status_windows_rear_right": {
+        "name": "Vehicle Status windows rear Right"
+      },
+      "field_vehicle_status_lights": {
+        "name": "Vehicle Status lights"
+      },
+      "field_vehicle_status_odometer_in_km": {
+        "name": "Vehicle Status odometer In Km"
+      },
+      "field_air_conditioning_air_conditioning_at_unlock": {
+        "name": "Air Conditioning air Conditioning At Unlock"
+      },
+      "field_air_conditioning_window_heating_enabled": {
+        "name": "Air Conditioning window Heating enabled"
+      },
+      "field_air_conditioning_window_heating_front": {
+        "name": "Air Conditioning window Heating front"
+      },
+      "field_air_conditioning_window_heating_rear": {
+        "name": "Air Conditioning window Heating rear"
+      },
+      "field_charging_settings_auto_unlock_plug_when_charged": {
+        "name": "Charging settings auto Unlock Plug When Charged"
+      },
+      "field_charging_status_plug_lock_state": {
+        "name": "Charging status plug Lock State"
+      },
+      "field_charging_settings_available_charge_modes": {
+        "name": "Charging settings available Charge Modes"
+      },
+      "field_charging_settings_available_charge_modes_0": {
+        "name": "Charging settings available Charge Modes 0"
+      },
+      "field_charging_settings_available_charge_modes_1": {
+        "name": "Charging settings available Charge Modes 1"
+      },
+      "field_charging_settings_available_charge_modes_2": {
+        "name": "Charging settings available Charge Modes 2"
+      },
+      "field_charging_settings_available_charge_modes_3": {
+        "name": "Charging settings available Charge Modes 3"
+      },
+      "field_charging_settings_battery_care_mode_target_state_of_charge_in_percent": {
+        "name": "Charging settings battery Care Mode Target State Of Charge In Percent"
+      },
+      "field_charging_settings_max_charge_current_ac": {
+        "name": "Charging settings max Charge Current Ac"
+      },
+      "field_status_detail_bonnet": {
+        "name": "Status detail bonnet"
+      },
+      "field_status_detail_trunk": {
+        "name": "Status detail trunk"
+      },
+      "field_status_detail_sunroof": {
+        "name": "Status detail sunroof"
+      },
+      "field_status_overall_doors": {
+        "name": "Status overall doors"
+      },
+      "field_status_overall_doors_locked": {
+        "name": "Status overall doors Locked"
+      },
+      "field_status_overall_locked": {
+        "name": "Status overall locked"
+      },
+      "field_status_overall_reliable_lock_status": {
+        "name": "Status overall reliable Lock Status"
+      },
+      "field_status_overall_windows": {
+        "name": "Status overall windows"
+      },
+      "field_status_overall_lights": {
+        "name": "Status overall lights"
+      },
+      "field_license_plate": {
+        "name": "License Plate"
+      },
+      "field_render_url": {
+        "name": "Render Url"
+      },
+      "field_odometer_car_captured_timestamp": {
+        "name": "Odometer car Captured Timestamp"
+      },
+      "field_odometer_mileage_in_km": {
+        "name": "Odometer mileage In Km"
+      },
+      "field_parking_position_address": {
+        "name": "Parking position address"
+      },
+      "field_parking_position_gps_coordinates_latitude": {
+        "name": "Parking position gps Coordinates latitude"
+      },
+      "field_parking_position_gps_coordinates_longitude": {
+        "name": "Parking position gps Coordinates longitude"
+      },
+      "field_parking_position_state": {
+        "name": "Parking position state"
+      },
+      "field_parking_position_gps_coordinates": {
+        "name": "Parking position gps Coordinates"
+      },
+      "field_charging_profiles_car_captured_timestamp": {
+        "name": "Charging Profiles car Captured Timestamp"
+      },
+      "field_charging_profiles_current_vehicle_position_latitude": {
+        "name": "Charging Profiles current Vehicle Position latitude"
+      },
+      "field_charging_profiles_current_vehicle_position_longitude": {
+        "name": "Charging Profiles current Vehicle Position longitude"
+      },
+      "field_charging_profiles_current_vehicle_position_address": {
+        "name": "Charging Profiles current Vehicle Position address"
+      },
+      "field_charging_profiles_current_vehicle_position_state": {
+        "name": "Charging Profiles current Vehicle Position state"
+      },
+      "field_charging_profiles_profiles_0_id": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 id"
+      },
+      "field_charging_profiles_profiles_0_name": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 name"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_enabled": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 enabled"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_start_time": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 start Time"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_end_time": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 end Time"
+      },
+      "field_charging_profiles_profiles_0_settings_auto_unlock_plug_when_charged": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings auto Unlock Plug When Charged"
+      },
+      "field_charging_profiles_profiles_0_settings_max_charge_current": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings max Charge Current"
+      },
+      "field_charging_profiles_profiles_0_settings_min_battery_state_of_charge_in_percent": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings min Battery State Of Charge In Percent"
+      },
+      "field_charging_profiles_profiles_0_settings_target_state_of_charge_in_percent": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings target State Of Charge In Percent"
+      },
+      "field_charging_profiles_profiles_0_settings_battery_care_mode": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings battery Care Mode"
+      },
+      "field_charging_profiles_profiles_0_settings_preferred_charge_mode": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings preferred Charge Mode"
+      },
+      "field_charging_profiles_profiles_0_settings_charging_mode": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings charging Mode"
+      },
+      "profile_preferred_time_id": {
+        "name": "{profile}: Preferred interval {timer} ID"
+      },
+      "profile_preferred_time_time": {
+        "name": "{profile}: Preferred interval {timer} time"
+      },
+      "profile_preferred_time_type": {
+        "name": "{profile}: Preferred interval {timer} type"
+      },
+      "profile_preferred_time_day": {
+        "name": "{profile}: Preferred interval {timer} day"
+      },
+      "profile_preferred_time_days": {
+        "name": "{profile}: Preferred interval {timer} days"
+      },
+      "profile_preferred_time_recurrence": {
+        "name": "{profile}: Preferred interval {timer} recurrence"
+      },
+      "profile_preferred_time_recurrence_day": {
+        "name": "{profile}: Preferred interval {timer} recurrence day {day}"
+      },
+      "profile_timer_enabled": {
+        "name": "{profile}: Timer {timer} enabled"
+      },
+      "profile_timer_id": {
+        "name": "{profile}: Timer {timer} ID"
+      },
+      "profile_timer_time": {
+        "name": "{profile}: Timer {timer} time"
+      },
+      "profile_timer_type": {
+        "name": "{profile}: Timer {timer} type"
+      },
+      "profile_timer_recurrence": {
+        "name": "{profile}: Timer {timer} recurrence"
+      },
+      "profile_timer_recurrence_day": {
+        "name": "{profile}: Timer {timer} recurrence day {day}"
+      },
+      "profile_minimum_soc": {
+        "name": "{profile}: Minimum battery charge"
+      },
+      "profile_max_charge_current": {
+        "name": "{profile}: Maximum charging current"
       }
     },
     "device_tracker": {
       "api_field": {
-        "name": "{field}"
+        "name": "{field_en}"
+      },
+      "air_conditioning_state": {
+        "name": "Air conditioning state"
+      },
+      "air_conditioning_target_temperature_unit": {
+        "name": "Air conditioning target temperature unit"
+      },
+      "air_conditioning_target_temperature_value": {
+        "name": "Air conditioning target temperature"
+      },
+      "air_conditioning_car_captured_timestamp": {
+        "name": "Air conditioning data captured at"
+      },
+      "charging_battery_soc": {
+        "name": "Battery state of charge"
+      },
+      "charging_state": {
+        "name": "Charging state"
+      },
+      "vehicle_capture_timestamp": {
+        "name": "Vehicle data captured at"
+      },
+      "field_charging_car_captured_timestamp": {
+        "name": "Charging car Captured Timestamp"
+      },
+      "field_charging_is_vehicle_in_saved_location": {
+        "name": "Charging is Vehicle In Saved Location"
+      },
+      "field_charging_settings_available_charging_modes": {
+        "name": "Charging settings available Charging Modes"
+      },
+      "field_charging_settings_battery_care_mode_target": {
+        "name": "Charging settings battery Care Mode Target"
+      },
+      "field_charging_settings_charging_care_mode": {
+        "name": "Charging settings charging Care Mode"
+      },
+      "field_charging_settings_max_charge_current": {
+        "name": "Charging settings max Charge Current"
+      },
+      "field_charging_settings_preferred_charge_mode": {
+        "name": "Charging settings preferred Charge Mode"
+      },
+      "field_charging_settings_target_state_of_charge_in_percent": {
+        "name": "Charging settings target State Of Charge In Percent"
+      },
+      "field_charging_status_battery_remaining_cruising_range_in_meters": {
+        "name": "Charging status battery remaining Cruising Range In Meters"
+      },
+      "field_charging_status_fully_charged_at": {
+        "name": "Charging status fully Charged At"
+      },
+      "field_charging_status_charge_power_in_kw": {
+        "name": "Charging status charge Power In KW"
+      },
+      "field_charging_status_charge_type": {
+        "name": "Charging status charge Type"
+      },
+      "field_charging_status_charging_rate_in_kilometers_per_hour": {
+        "name": "Charging status charging Rate In Kilometers Per Hour"
+      },
+      "field_charging_status_plug_connection_state": {
+        "name": "Charging status plug Connection State"
+      },
+      "field_charging_status_remaining_time_to_fully_charged_in_minutes": {
+        "name": "Charging status remaining Time To Fully Charged In Minutes"
+      },
+      "field_air_conditioning_target_temperature_in_celsius": {
+        "name": "Air Conditioning target Temperature In Celsius"
+      },
+      "field_air_conditioning_settings_window_heating_enabled": {
+        "name": "Air Conditioning settings window Heating Enabled"
+      },
+      "field_air_conditioning_settings_climatisation_at_unlock": {
+        "name": "Air Conditioning settings climatisation At Unlock"
+      },
+      "field_vehicle_status_overall_status": {
+        "name": "Vehicle Status overall status"
+      },
+      "field_vehicle_status_doors_front_left": {
+        "name": "Vehicle Status doors front Left"
+      },
+      "field_vehicle_status_doors_front_right": {
+        "name": "Vehicle Status doors front Right"
+      },
+      "field_vehicle_status_doors_rear_left": {
+        "name": "Vehicle Status doors rear Left"
+      },
+      "field_vehicle_status_doors_rear_right": {
+        "name": "Vehicle Status doors rear Right"
+      },
+      "field_vehicle_status_windows_front_left": {
+        "name": "Vehicle Status windows front Left"
+      },
+      "field_vehicle_status_windows_front_right": {
+        "name": "Vehicle Status windows front Right"
+      },
+      "field_vehicle_status_windows_rear_left": {
+        "name": "Vehicle Status windows rear Left"
+      },
+      "field_vehicle_status_windows_rear_right": {
+        "name": "Vehicle Status windows rear Right"
+      },
+      "field_vehicle_status_lights": {
+        "name": "Vehicle Status lights"
+      },
+      "field_vehicle_status_odometer_in_km": {
+        "name": "Vehicle Status odometer In Km"
+      },
+      "field_air_conditioning_air_conditioning_at_unlock": {
+        "name": "Air Conditioning air Conditioning At Unlock"
+      },
+      "field_air_conditioning_window_heating_enabled": {
+        "name": "Air Conditioning window Heating enabled"
+      },
+      "field_air_conditioning_window_heating_front": {
+        "name": "Air Conditioning window Heating front"
+      },
+      "field_air_conditioning_window_heating_rear": {
+        "name": "Air Conditioning window Heating rear"
+      },
+      "field_charging_settings_auto_unlock_plug_when_charged": {
+        "name": "Charging settings auto Unlock Plug When Charged"
+      },
+      "field_charging_status_plug_lock_state": {
+        "name": "Charging status plug Lock State"
+      },
+      "field_charging_settings_available_charge_modes": {
+        "name": "Charging settings available Charge Modes"
+      },
+      "field_charging_settings_available_charge_modes_0": {
+        "name": "Charging settings available Charge Modes 0"
+      },
+      "field_charging_settings_available_charge_modes_1": {
+        "name": "Charging settings available Charge Modes 1"
+      },
+      "field_charging_settings_available_charge_modes_2": {
+        "name": "Charging settings available Charge Modes 2"
+      },
+      "field_charging_settings_available_charge_modes_3": {
+        "name": "Charging settings available Charge Modes 3"
+      },
+      "field_charging_settings_battery_care_mode_target_state_of_charge_in_percent": {
+        "name": "Charging settings battery Care Mode Target State Of Charge In Percent"
+      },
+      "field_charging_settings_max_charge_current_ac": {
+        "name": "Charging settings max Charge Current Ac"
+      },
+      "field_status_detail_bonnet": {
+        "name": "Status detail bonnet"
+      },
+      "field_status_detail_trunk": {
+        "name": "Status detail trunk"
+      },
+      "field_status_detail_sunroof": {
+        "name": "Status detail sunroof"
+      },
+      "field_status_overall_doors": {
+        "name": "Status overall doors"
+      },
+      "field_status_overall_doors_locked": {
+        "name": "Status overall doors Locked"
+      },
+      "field_status_overall_locked": {
+        "name": "Status overall locked"
+      },
+      "field_status_overall_reliable_lock_status": {
+        "name": "Status overall reliable Lock Status"
+      },
+      "field_status_overall_windows": {
+        "name": "Status overall windows"
+      },
+      "field_status_overall_lights": {
+        "name": "Status overall lights"
+      },
+      "field_license_plate": {
+        "name": "License Plate"
+      },
+      "field_render_url": {
+        "name": "Render Url"
+      },
+      "field_odometer_car_captured_timestamp": {
+        "name": "Odometer car Captured Timestamp"
+      },
+      "field_odometer_mileage_in_km": {
+        "name": "Odometer mileage In Km"
+      },
+      "field_parking_position_address": {
+        "name": "Parking position address"
+      },
+      "field_parking_position_gps_coordinates_latitude": {
+        "name": "Parking position gps Coordinates latitude"
+      },
+      "field_parking_position_gps_coordinates_longitude": {
+        "name": "Parking position gps Coordinates longitude"
+      },
+      "field_parking_position_state": {
+        "name": "Parking position state"
+      },
+      "field_parking_position_gps_coordinates": {
+        "name": "Parking position gps Coordinates"
+      },
+      "field_charging_profiles_car_captured_timestamp": {
+        "name": "Charging Profiles car Captured Timestamp"
+      },
+      "field_charging_profiles_current_vehicle_position_latitude": {
+        "name": "Charging Profiles current Vehicle Position latitude"
+      },
+      "field_charging_profiles_current_vehicle_position_longitude": {
+        "name": "Charging Profiles current Vehicle Position longitude"
+      },
+      "field_charging_profiles_current_vehicle_position_address": {
+        "name": "Charging Profiles current Vehicle Position address"
+      },
+      "field_charging_profiles_current_vehicle_position_state": {
+        "name": "Charging Profiles current Vehicle Position state"
+      },
+      "field_charging_profiles_profiles_0_id": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 id"
+      },
+      "field_charging_profiles_profiles_0_name": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 name"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_enabled": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 enabled"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_start_time": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 start Time"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_end_time": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 end Time"
+      },
+      "field_charging_profiles_profiles_0_settings_auto_unlock_plug_when_charged": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings auto Unlock Plug When Charged"
+      },
+      "field_charging_profiles_profiles_0_settings_max_charge_current": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings max Charge Current"
+      },
+      "field_charging_profiles_profiles_0_settings_min_battery_state_of_charge_in_percent": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings min Battery State Of Charge In Percent"
+      },
+      "field_charging_profiles_profiles_0_settings_target_state_of_charge_in_percent": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings target State Of Charge In Percent"
+      },
+      "field_charging_profiles_profiles_0_settings_battery_care_mode": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings battery Care Mode"
+      },
+      "field_charging_profiles_profiles_0_settings_preferred_charge_mode": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings preferred Charge Mode"
+      },
+      "field_charging_profiles_profiles_0_settings_charging_mode": {
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings charging Mode"
+      },
+      "profile_preferred_time_id": {
+        "name": "{profile}: Preferred interval {timer} ID"
+      },
+      "profile_preferred_time_time": {
+        "name": "{profile}: Preferred interval {timer} time"
+      },
+      "profile_preferred_time_type": {
+        "name": "{profile}: Preferred interval {timer} type"
+      },
+      "profile_preferred_time_day": {
+        "name": "{profile}: Preferred interval {timer} day"
+      },
+      "profile_preferred_time_days": {
+        "name": "{profile}: Preferred interval {timer} days"
+      },
+      "profile_preferred_time_recurrence": {
+        "name": "{profile}: Preferred interval {timer} recurrence"
+      },
+      "profile_preferred_time_recurrence_day": {
+        "name": "{profile}: Preferred interval {timer} recurrence day {day}"
+      },
+      "profile_timer_enabled": {
+        "name": "{profile}: Timer {timer} enabled"
+      },
+      "profile_timer_id": {
+        "name": "{profile}: Timer {timer} ID"
+      },
+      "profile_timer_time": {
+        "name": "{profile}: Timer {timer} time"
+      },
+      "profile_timer_type": {
+        "name": "{profile}: Timer {timer} type"
+      },
+      "profile_timer_recurrence": {
+        "name": "{profile}: Timer {timer} recurrence"
+      },
+      "profile_timer_recurrence_day": {
+        "name": "{profile}: Timer {timer} recurrence day {day}"
+      },
+      "profile_minimum_soc": {
+        "name": "{profile}: Minimum battery charge"
+      },
+      "profile_max_charge_current": {
+        "name": "{profile}: Maximum charging current"
       }
     },
     "switch": {

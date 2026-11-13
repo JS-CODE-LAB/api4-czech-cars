@@ -21,6 +21,31 @@ GROUP_NAMES = {
     "vehicle_status": "Ostatní stavy vozidla",
     "diagnostics": "Diagnostika",
 }
+GROUP_NAMES_EN = {
+    "battery": "Battery",
+    "charging": "Charging",
+    "charging_profiles": "Charging profiles",
+    "climate": "Climate and heating",
+    "doors": "Doors and locks",
+    "windows": "Windows",
+    "lights": "Lighting",
+    "counters": "Counters and consumption",
+    "powertrain": "Powertrain and fuel",
+    "location": "Location and parking",
+    "settings": "Settings",
+    "vehicle_info": "Vehicle information",
+    "vehicle_status": "Other vehicle status",
+    "diagnostics": "Diagnostics",
+}
+
+
+def group_name(group: str, language: str | None) -> str:
+    """Czech labels for Czech HA, English fallback for all other locales."""
+    is_czech = (language or "").lower().replace("_", "-").split("-", 1)[0] == "cs"
+    names = GROUP_NAMES if is_czech else GROUP_NAMES_EN
+    return names.get(group, group)
+
+
 GROUPS = tuple(GROUP_NAMES)
 
 

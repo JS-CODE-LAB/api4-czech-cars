@@ -22,6 +22,7 @@ from .const import CONF_VIN, DOMAIN, PLATFORMS, SERVICE_REQUEST
 from .coordinator import SkodaConfigEntry, SkodaCoordinator
 from .security import redact_sensitive
 from .image_fields import is_image_field
+from .groups import GROUPS, group_name
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -102,10 +103,23 @@ async def async_setup_entry(hass: HomeAssistant, entry: SkodaConfigEntry) -> boo
         )
 
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
+    _sync_functional_device_names(hass, entry, coordinator.vin)
     _remove_empty_vehicle_parent(hass, entry, coordinator.vin)
     _remove_legacy_processed_images(hass, entry, coordinator)
     entry.async_on_unload(entry.add_update_listener(_async_options_updated))
     return True
+
+
+def _sync_functional_device_names(hass: HomeAssistant, entry: SkodaConfigEntry, vin: str) -> None:
+    """Update default group labels for the system locale without overriding user names."""
+    registry = dr.async_get(hass)
+    for group in GROUPS:
+        device = registry.async_get_device(identifiers={(DOMAIN, f"{vin}__{group}")})
+        if device is None or entry.entry_id not in device.config_entries:
+            continue
+        desired = group_name(group, hass.config.language)
+        if device.name != desired and device.name_by_user is None:
+            registry.async_update_device(device.id, name=desired)
 
 
 def _remove_empty_vehicle_parent(
