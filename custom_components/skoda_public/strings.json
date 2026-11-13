@@ -310,40 +310,40 @@
         "name": "Charging Profiles current Vehicle Position state"
       },
       "field_charging_profiles_profiles_0_id": {
-        "name": "Charging Profiles profiles 0 id"
+        "name": "Profile {profile}: Charging Profiles profiles 0 id"
       },
       "field_charging_profiles_profiles_0_name": {
-        "name": "Charging Profiles profiles 0 name"
+        "name": "Profile {profile}: Charging Profiles profiles 0 name"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_enabled": {
-        "name": "Charging Profiles profiles 0 preferred Charging Times 0 enabled"
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 enabled"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_start_time": {
-        "name": "Charging Profiles profiles 0 preferred Charging Times 0 start Time"
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 start Time"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_end_time": {
-        "name": "Charging Profiles profiles 0 preferred Charging Times 0 end Time"
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 end Time"
       },
       "field_charging_profiles_profiles_0_settings_auto_unlock_plug_when_charged": {
-        "name": "Charging Profiles profiles 0 settings auto Unlock Plug When Charged"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings auto Unlock Plug When Charged"
       },
       "field_charging_profiles_profiles_0_settings_max_charge_current": {
-        "name": "Charging Profiles profiles 0 settings max Charge Current"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings max Charge Current"
       },
       "field_charging_profiles_profiles_0_settings_min_battery_state_of_charge_in_percent": {
-        "name": "Charging Profiles profiles 0 settings min Battery State Of Charge In Percent"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings min Battery State Of Charge In Percent"
       },
       "field_charging_profiles_profiles_0_settings_target_state_of_charge_in_percent": {
-        "name": "Charging Profiles profiles 0 settings target State Of Charge In Percent"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings target State Of Charge In Percent"
       },
       "field_charging_profiles_profiles_0_settings_battery_care_mode": {
-        "name": "Charging Profiles profiles 0 settings battery Care Mode"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings battery Care Mode"
       },
       "field_charging_profiles_profiles_0_settings_preferred_charge_mode": {
-        "name": "Charging Profiles profiles 0 settings preferred Charge Mode"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings preferred Charge Mode"
       },
       "field_charging_profiles_profiles_0_settings_charging_mode": {
-        "name": "Charging Profiles profiles 0 settings charging Mode"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings charging Mode"
       }
     },
     "binary_sensor": {
@@ -570,40 +570,40 @@
         "name": "Charging Profiles current Vehicle Position state"
       },
       "field_charging_profiles_profiles_0_id": {
-        "name": "Charging Profiles profiles 0 id"
+        "name": "Profile {profile}: Charging Profiles profiles 0 id"
       },
       "field_charging_profiles_profiles_0_name": {
-        "name": "Charging Profiles profiles 0 name"
+        "name": "Profile {profile}: Charging Profiles profiles 0 name"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_enabled": {
-        "name": "Charging Profiles profiles 0 preferred Charging Times 0 enabled"
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 enabled"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_start_time": {
-        "name": "Charging Profiles profiles 0 preferred Charging Times 0 start Time"
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 start Time"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_end_time": {
-        "name": "Charging Profiles profiles 0 preferred Charging Times 0 end Time"
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 end Time"
       },
       "field_charging_profiles_profiles_0_settings_auto_unlock_plug_when_charged": {
-        "name": "Charging Profiles profiles 0 settings auto Unlock Plug When Charged"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings auto Unlock Plug When Charged"
       },
       "field_charging_profiles_profiles_0_settings_max_charge_current": {
-        "name": "Charging Profiles profiles 0 settings max Charge Current"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings max Charge Current"
       },
       "field_charging_profiles_profiles_0_settings_min_battery_state_of_charge_in_percent": {
-        "name": "Charging Profiles profiles 0 settings min Battery State Of Charge In Percent"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings min Battery State Of Charge In Percent"
       },
       "field_charging_profiles_profiles_0_settings_target_state_of_charge_in_percent": {
-        "name": "Charging Profiles profiles 0 settings target State Of Charge In Percent"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings target State Of Charge In Percent"
       },
       "field_charging_profiles_profiles_0_settings_battery_care_mode": {
-        "name": "Charging Profiles profiles 0 settings battery Care Mode"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings battery Care Mode"
       },
       "field_charging_profiles_profiles_0_settings_preferred_charge_mode": {
-        "name": "Charging Profiles profiles 0 settings preferred Charge Mode"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings preferred Charge Mode"
       },
       "field_charging_profiles_profiles_0_settings_charging_mode": {
-        "name": "Charging Profiles profiles 0 settings charging Mode"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings charging Mode"
       }
     },
     "image": {
@@ -827,40 +827,40 @@
         "name": "Charging Profiles current Vehicle Position state"
       },
       "field_charging_profiles_profiles_0_id": {
-        "name": "Charging Profiles profiles 0 id"
+        "name": "Profile {profile}: Charging Profiles profiles 0 id"
       },
       "field_charging_profiles_profiles_0_name": {
-        "name": "Charging Profiles profiles 0 name"
+        "name": "Profile {profile}: Charging Profiles profiles 0 name"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_enabled": {
-        "name": "Charging Profiles profiles 0 preferred Charging Times 0 enabled"
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 enabled"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_start_time": {
-        "name": "Charging Profiles profiles 0 preferred Charging Times 0 start Time"
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 start Time"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_end_time": {
-        "name": "Charging Profiles profiles 0 preferred Charging Times 0 end Time"
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 end Time"
       },
       "field_charging_profiles_profiles_0_settings_auto_unlock_plug_when_charged": {
-        "name": "Charging Profiles profiles 0 settings auto Unlock Plug When Charged"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings auto Unlock Plug When Charged"
       },
       "field_charging_profiles_profiles_0_settings_max_charge_current": {
-        "name": "Charging Profiles profiles 0 settings max Charge Current"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings max Charge Current"
       },
       "field_charging_profiles_profiles_0_settings_min_battery_state_of_charge_in_percent": {
-        "name": "Charging Profiles profiles 0 settings min Battery State Of Charge In Percent"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings min Battery State Of Charge In Percent"
       },
       "field_charging_profiles_profiles_0_settings_target_state_of_charge_in_percent": {
-        "name": "Charging Profiles profiles 0 settings target State Of Charge In Percent"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings target State Of Charge In Percent"
       },
       "field_charging_profiles_profiles_0_settings_battery_care_mode": {
-        "name": "Charging Profiles profiles 0 settings battery Care Mode"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings battery Care Mode"
       },
       "field_charging_profiles_profiles_0_settings_preferred_charge_mode": {
-        "name": "Charging Profiles profiles 0 settings preferred Charge Mode"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings preferred Charge Mode"
       },
       "field_charging_profiles_profiles_0_settings_charging_mode": {
-        "name": "Charging Profiles profiles 0 settings charging Mode"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings charging Mode"
       }
     },
     "device_tracker": {
@@ -1084,40 +1084,40 @@
         "name": "Charging Profiles current Vehicle Position state"
       },
       "field_charging_profiles_profiles_0_id": {
-        "name": "Charging Profiles profiles 0 id"
+        "name": "Profile {profile}: Charging Profiles profiles 0 id"
       },
       "field_charging_profiles_profiles_0_name": {
-        "name": "Charging Profiles profiles 0 name"
+        "name": "Profile {profile}: Charging Profiles profiles 0 name"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_enabled": {
-        "name": "Charging Profiles profiles 0 preferred Charging Times 0 enabled"
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 enabled"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_start_time": {
-        "name": "Charging Profiles profiles 0 preferred Charging Times 0 start Time"
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 start Time"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_end_time": {
-        "name": "Charging Profiles profiles 0 preferred Charging Times 0 end Time"
+        "name": "Profile {profile}: Charging Profiles profiles 0 preferred Charging Times 0 end Time"
       },
       "field_charging_profiles_profiles_0_settings_auto_unlock_plug_when_charged": {
-        "name": "Charging Profiles profiles 0 settings auto Unlock Plug When Charged"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings auto Unlock Plug When Charged"
       },
       "field_charging_profiles_profiles_0_settings_max_charge_current": {
-        "name": "Charging Profiles profiles 0 settings max Charge Current"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings max Charge Current"
       },
       "field_charging_profiles_profiles_0_settings_min_battery_state_of_charge_in_percent": {
-        "name": "Charging Profiles profiles 0 settings min Battery State Of Charge In Percent"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings min Battery State Of Charge In Percent"
       },
       "field_charging_profiles_profiles_0_settings_target_state_of_charge_in_percent": {
-        "name": "Charging Profiles profiles 0 settings target State Of Charge In Percent"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings target State Of Charge In Percent"
       },
       "field_charging_profiles_profiles_0_settings_battery_care_mode": {
-        "name": "Charging Profiles profiles 0 settings battery Care Mode"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings battery Care Mode"
       },
       "field_charging_profiles_profiles_0_settings_preferred_charge_mode": {
-        "name": "Charging Profiles profiles 0 settings preferred Charge Mode"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings preferred Charge Mode"
       },
       "field_charging_profiles_profiles_0_settings_charging_mode": {
-        "name": "Charging Profiles profiles 0 settings charging Mode"
+        "name": "Profile {profile}: Charging Profiles profiles 0 settings charging Mode"
       }
     },
     "switch": {
