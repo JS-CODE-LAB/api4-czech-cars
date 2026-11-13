@@ -102,3 +102,25 @@ def test_observed_paths_and_indexed_profiles():
             assert "{profile}" in data["entity"][platform][
                 "field_charging_profiles_profiles_0_settings_max_charge_current"
             ]["name"]
+
+
+def test_timer_translation_indices_and_placeholders():
+    import json
+    keys = set(localization.KNOWN_FIELD_KEYS.values())
+    cases = (
+        ("chargingProfiles.profiles.0.timers.0.id", "profile_timer_id"),
+        ("chargingProfiles.profiles.2.timers.3.time", "profile_timer_time"),
+        ("chargingProfiles.profiles.0.timers.1.recurrenceDays.4", "profile_timer_recurrence_day"),
+        ("chargingProfiles.profiles.3.preferredChargingTimes.2.startTime",
+         "field_charging_profiles_profiles_0_preferred_charging_times_0_start_time"),
+    )
+    for path, expected in cases:
+        assert localization.field_translation_key(path, keys) == expected
+    assert localization.profile_number("chargingProfiles.profiles.2.timers.1.id") == "3"
+    assert localization.timer_number("chargingProfiles.profiles.2.timers.1.id") == "2"
+    assert localization.day_number("chargingProfiles.profiles.2.timers.1.recurrenceDays.4") == "5"
+    for locale in ("cs", "en"):
+        data = json.loads((ROOT / "translations" / f"{locale}.json").read_text())
+        for platform in ("sensor", "binary_sensor", "image", "device_tracker"):
+            assert keys <= set(data["entity"][platform])
+            assert "{timer}" in data["entity"][platform]["profile_timer_id"]["name"]
