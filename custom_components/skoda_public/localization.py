@@ -102,3 +102,22 @@ def humanize_path(path: str) -> str:
             parts.append(re.sub(r"(?<=[a-z0-9])(?=[A-Z])", " ", segment).replace("_", " ").lower())
     text = " ".join(parts)
     return text[:1].upper() + text[1:]
+
+
+# Stable translation keys for known API fields. Unknown fields retain an
+# English fallback; never derive translation keys from arbitrary API paths.
+KNOWN_FIELD_KEYS = {
+    "airConditioning.state": "air_conditioning_state",
+    "airConditioning.targetTemperature.unit": "air_conditioning_target_temperature_unit",
+    "airConditioning.targetTemperature.value": "air_conditioning_target_temperature_value",
+    "airConditioning.carCapturedTimestamp": "air_conditioning_car_captured_timestamp",
+    "charging.status.battery.stateOfChargeInPercent": "charging_battery_soc",
+    "charging.status.state": "charging_state",
+    "status.carCaptured.timestamp": "vehicle_capture_timestamp",
+}
+
+
+def field_translation_key(path: str, available_keys: set[str]) -> str:
+    """Use a static key only when its translation exists for the platform."""
+    key = KNOWN_FIELD_KEYS.get(path)
+    return key if key in available_keys else "api_field"
