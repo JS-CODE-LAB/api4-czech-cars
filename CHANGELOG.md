@@ -1,6 +1,8 @@
 # Changelog
 
 ## 0.3.3 (unreleased)
+- Translate more observed API paths across all functional groups; normalize numeric charging-profile indices.
+- Expose names of untranslated API paths in the Omitted data parts diagnostic sensor for coverage auditing (no API values).
 - Expand Czech/English static field translations for charging, climate and vehicle status paths.
 - Restore functional group default names based on the HA system language; update existing group names on startup unless manually renamed.
 - Add stable Czech/English translation keys for selected known API fields; unknown fields keep English fallback.
