@@ -63,3 +63,16 @@ def test_known_field_translations_present_in_all_locales():
     assert localization.field_translation_key(
         "unknown.path", set(localization.KNOWN_FIELD_KEYS.values())
     ) == "api_field"
+
+
+def test_expanded_field_translation_coverage():
+    import json
+    assert len(localization.KNOWN_FIELD_KEYS) >= 30
+    for locale in ("cs", "en"):
+        data = json.loads((ROOT / "translations" / f"{locale}.json").read_text())
+        for platform in ("sensor", "binary_sensor", "image", "device_tracker"):
+            assert set(localization.KNOWN_FIELD_KEYS.values()) <= set(data["entity"][platform])
+    assert localization.field_translation_key(
+        "charging.settings.targetStateOfChargeInPercent",
+        set(localization.KNOWN_FIELD_KEYS.values())
+    ) != "api_field"
