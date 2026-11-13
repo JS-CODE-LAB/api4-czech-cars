@@ -7,7 +7,7 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .coordinator import SkodaConfigEntry, SkodaCoordinator
 from .entity import SkodaEntity, find_positions
-from .localization import localized_path
+from .localization import localized_path, KNOWN_FIELD_KEYS, field_translation_key
 
 
 async def async_setup_entry(
@@ -44,7 +44,7 @@ class SkodaTracker(SkodaEntity, TrackerEntity):
         self._lon_path = lon_path
         self._attr_unique_id = f"{self._vin}_tracker_{prefix or 'vehicle'}"
         # Drop the trailing "coordinates"-style segment to get a readable name.
-        self._attr_translation_key = "api_field"
+        self._attr_translation_key = field_translation_key(prefix, set(KNOWN_FIELD_KEYS.values()))
         self._attr_translation_placeholders = {
             "field_cs": localized_path(prefix, "cs") if prefix else "Poloha",
             "field_en": localized_path(prefix, "en") if prefix else "Position"
