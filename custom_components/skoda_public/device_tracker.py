@@ -47,7 +47,8 @@ class SkodaTracker(SkodaEntity, TrackerEntity):
         self._attr_translation_key = field_translation_key(prefix, set(KNOWN_FIELD_KEYS.values()))
         self._attr_translation_placeholders = {
             "field_cs": localized_path(prefix, "cs") if prefix else "Poloha",
-            "field_en": localized_path(prefix, "en") if prefix else "Position"
+            "field_en": localized_path(prefix, "en"),
+            "profile": str(int(__import__("re").search(r"(?<=\\.profiles\\.)\\d+", prefix).group()) + 1) if __import__("re").search(r"(?<=\\.profiles\\.)\\d+", prefix) else "1" if prefix else "Position"
         }
 
     @property
