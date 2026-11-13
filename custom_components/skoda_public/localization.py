@@ -208,6 +208,6 @@ KNOWN_FIELD_KEYS.update({
 def field_translation_key(path: str, available_keys: set[str]) -> str:
     """Use a static key only when its translation exists for the platform."""
     # Numeric array indices must not create new translation keys for each profile.
-    canonical = re.sub(r"(?<=\\.)\\d+(?=\\.|$)", "0", path)
+    canonical = re.sub(r"(?<=\.)\d+(?=\.|$)", "0", path)
     key = KNOWN_FIELD_KEYS.get(path) or KNOWN_FIELD_KEYS.get(canonical)
     return key if key in available_keys else "api_field"
