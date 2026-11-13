@@ -1,6 +1,8 @@
 # Changelog
 
 ## 0.3.3 (unreleased)
+- Add stable Czech/English translation keys for selected known API fields; unknown fields keep English fallback.
+- Existing user-customized entity names remain untouched; registry-stored names may require a manual reset to restore translated defaults.
 - Translate dynamic entity names per user profile using Czech/English translation placeholders (not global HA language).
 - Use stable English default names for functional devices, whose registry names are not user-localized.
 - Add locale fallback tests and preserve stable entity and device identifiers.
