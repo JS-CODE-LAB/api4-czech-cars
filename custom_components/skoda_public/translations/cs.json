@@ -92,6 +92,27 @@
       },
       "last_api_error": {
         "name": "Poslední chyba API"
+      },
+      "air_conditioning_state": {
+        "name": "Stav klimatizace"
+      },
+      "air_conditioning_target_temperature_unit": {
+        "name": "Jednotka cílové teploty klimatizace"
+      },
+      "air_conditioning_target_temperature_value": {
+        "name": "Cílová teplota klimatizace"
+      },
+      "air_conditioning_car_captured_timestamp": {
+        "name": "Čas pořízení údajů klimatizace"
+      },
+      "charging_battery_soc": {
+        "name": "Stav nabití baterie"
+      },
+      "charging_state": {
+        "name": "Stav nabíjení"
+      },
+      "vehicle_capture_timestamp": {
+        "name": "Čas pořízení údajů o vozidle"
       }
     },
     "binary_sensor": {
@@ -100,16 +121,79 @@
       },
       "battery_charging": {
         "name": "Nabíjení baterie"
+      },
+      "air_conditioning_state": {
+        "name": "Stav klimatizace"
+      },
+      "air_conditioning_target_temperature_unit": {
+        "name": "Jednotka cílové teploty klimatizace"
+      },
+      "air_conditioning_target_temperature_value": {
+        "name": "Cílová teplota klimatizace"
+      },
+      "air_conditioning_car_captured_timestamp": {
+        "name": "Čas pořízení údajů klimatizace"
+      },
+      "charging_battery_soc": {
+        "name": "Stav nabití baterie"
+      },
+      "charging_state": {
+        "name": "Stav nabíjení"
+      },
+      "vehicle_capture_timestamp": {
+        "name": "Čas pořízení údajů o vozidle"
       }
     },
     "image": {
       "original_api_field": {
         "name": "{field_cs}"
+      },
+      "air_conditioning_state": {
+        "name": "Stav klimatizace"
+      },
+      "air_conditioning_target_temperature_unit": {
+        "name": "Jednotka cílové teploty klimatizace"
+      },
+      "air_conditioning_target_temperature_value": {
+        "name": "Cílová teplota klimatizace"
+      },
+      "air_conditioning_car_captured_timestamp": {
+        "name": "Čas pořízení údajů klimatizace"
+      },
+      "charging_battery_soc": {
+        "name": "Stav nabití baterie"
+      },
+      "charging_state": {
+        "name": "Stav nabíjení"
+      },
+      "vehicle_capture_timestamp": {
+        "name": "Čas pořízení údajů o vozidle"
       }
     },
     "device_tracker": {
       "api_field": {
         "name": "{field_cs}"
+      },
+      "air_conditioning_state": {
+        "name": "Stav klimatizace"
+      },
+      "air_conditioning_target_temperature_unit": {
+        "name": "Jednotka cílové teploty klimatizace"
+      },
+      "air_conditioning_target_temperature_value": {
+        "name": "Cílová teplota klimatizace"
+      },
+      "air_conditioning_car_captured_timestamp": {
+        "name": "Čas pořízení údajů klimatizace"
+      },
+      "charging_battery_soc": {
+        "name": "Stav nabití baterie"
+      },
+      "charging_state": {
+        "name": "Stav nabíjení"
+      },
+      "vehicle_capture_timestamp": {
+        "name": "Čas pořízení údajů o vozidle"
       }
     },
     "switch": {
