@@ -60,7 +60,8 @@ class SkodaFieldImage(SkodaEntity, ImageEntity):
         self._attr_translation_key = field_translation_key(path, set(KNOWN_FIELD_KEYS.values())) if path in KNOWN_FIELD_KEYS else "original_api_field"
         self._attr_translation_placeholders = {
             "field_cs": localized_path(path, "cs"),
-            "field_en": localized_path(path, "en")
+            "field_en": localized_path(path, "en"),
+            "profile": str(int(__import__("re").search(r"(?<=\\.profiles\\.)\\d+", path).group()) + 1) if __import__("re").search(r"(?<=\\.profiles\\.)\\d+", path) else "1"
         }
         self._attr_image_last_updated = datetime.now().astimezone()
 
