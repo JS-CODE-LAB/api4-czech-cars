@@ -150,6 +150,61 @@ KNOWN_FIELD_KEYS.update({
 })
 
 
+# Additional observed API paths from real Home Assistant devices.
+KNOWN_FIELD_KEYS.update({
+    "airConditioning.airConditioningAtUnlock": "field_air_conditioning_air_conditioning_at_unlock",
+    "airConditioning.windowHeating.enabled": "field_air_conditioning_window_heating_enabled",
+    "airConditioning.windowHeating.front": "field_air_conditioning_window_heating_front",
+    "airConditioning.windowHeating.rear": "field_air_conditioning_window_heating_rear",
+    "charging.settings.autoUnlockPlugWhenCharged": "field_charging_settings_auto_unlock_plug_when_charged",
+    "charging.status.plug.lockState": "field_charging_status_plug_lock_state",
+    "charging.status.plugLockState": "field_charging_status_plug_lock_state",
+    "charging.settings.availableChargeModes": "field_charging_settings_available_charge_modes",
+    "charging.settings.availableChargeModes.0": "field_charging_settings_available_charge_modes_0",
+    "charging.settings.availableChargeModes.1": "field_charging_settings_available_charge_modes_1",
+    "charging.settings.availableChargeModes.2": "field_charging_settings_available_charge_modes_2",
+    "charging.settings.availableChargeModes.3": "field_charging_settings_available_charge_modes_3",
+    "charging.settings.batteryCareModeTargetStateOfChargeInPercent": "field_charging_settings_battery_care_mode_target_state_of_charge_in_percent",
+    "charging.settings.maxChargeCurrentAc": "field_charging_settings_max_charge_current_ac",
+    "charging.status.chargePowerInKW": "field_charging_status_charge_power_in_kw",
+    "status.detail.bonnet": "field_status_detail_bonnet",
+    "status.detail.trunk": "field_status_detail_trunk",
+    "status.detail.sunroof": "field_status_detail_sunroof",
+    "status.overall.doors": "field_status_overall_doors",
+    "status.overall.doorsLocked": "field_status_overall_doors_locked",
+    "status.overall.locked": "field_status_overall_locked",
+    "status.overall.reliableLockStatus": "field_status_overall_reliable_lock_status",
+    "status.overall.windows": "field_status_overall_windows",
+    "status.overall.lights": "field_status_overall_lights",
+    "licensePlate": "field_license_plate",
+    "renderUrl": "field_render_url",
+    "odometer.carCapturedTimestamp": "field_odometer_car_captured_timestamp",
+    "odometer.mileageInKm": "field_odometer_mileage_in_km",
+    "parking.position.address": "field_parking_position_address",
+    "parking.position.gpsCoordinates.latitude": "field_parking_position_gps_coordinates_latitude",
+    "parking.position.gpsCoordinates.longitude": "field_parking_position_gps_coordinates_longitude",
+    "parking.position.state": "field_parking_position_state",
+    "parking.position.gpsCoordinates": "field_parking_position_gps_coordinates",
+    "chargingProfiles.carCapturedTimestamp": "field_charging_profiles_car_captured_timestamp",
+    "chargingProfiles.currentVehiclePosition.latitude": "field_charging_profiles_current_vehicle_position_latitude",
+    "chargingProfiles.currentVehiclePosition.longitude": "field_charging_profiles_current_vehicle_position_longitude",
+    "chargingProfiles.currentVehiclePosition.address": "field_charging_profiles_current_vehicle_position_address",
+    "chargingProfiles.currentVehiclePosition.state": "field_charging_profiles_current_vehicle_position_state",
+    "chargingProfiles.profiles.0.id": "field_charging_profiles_profiles_0_id",
+    "chargingProfiles.profiles.0.name": "field_charging_profiles_profiles_0_name",
+    "chargingProfiles.profiles.0.preferredChargingTimes.0.enabled": "field_charging_profiles_profiles_0_preferred_charging_times_0_enabled",
+    "chargingProfiles.profiles.0.preferredChargingTimes.0.startTime": "field_charging_profiles_profiles_0_preferred_charging_times_0_start_time",
+    "chargingProfiles.profiles.0.preferredChargingTimes.0.endTime": "field_charging_profiles_profiles_0_preferred_charging_times_0_end_time",
+    "chargingProfiles.profiles.0.settings.autoUnlockPlugWhenCharged": "field_charging_profiles_profiles_0_settings_auto_unlock_plug_when_charged",
+    "chargingProfiles.profiles.0.settings.maxChargeCurrent": "field_charging_profiles_profiles_0_settings_max_charge_current",
+    "chargingProfiles.profiles.0.settings.minBatteryStateOfChargeInPercent": "field_charging_profiles_profiles_0_settings_min_battery_state_of_charge_in_percent",
+    "chargingProfiles.profiles.0.settings.targetStateOfChargeInPercent": "field_charging_profiles_profiles_0_settings_target_state_of_charge_in_percent",
+    "chargingProfiles.profiles.0.settings.batteryCareMode": "field_charging_profiles_profiles_0_settings_battery_care_mode",
+    "chargingProfiles.profiles.0.settings.preferredChargeMode": "field_charging_profiles_profiles_0_settings_preferred_charge_mode",
+    "chargingProfiles.profiles.0.settings.chargingMode": "field_charging_profiles_profiles_0_settings_charging_mode"
+})
+
+
 def field_translation_key(path: str, available_keys: set[str]) -> str:
     """Use a static key only when its translation exists for the platform."""
     key = KNOWN_FIELD_KEYS.get(path)
