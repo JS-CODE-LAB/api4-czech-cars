@@ -7,7 +7,7 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .coordinator import SkodaConfigEntry, SkodaCoordinator
 from .entity import SkodaEntity, find_positions
-from .localization import localized_path, KNOWN_FIELD_KEYS, field_translation_key, profile_number
+from .localization import localized_path, KNOWN_FIELD_KEYS, field_translation_key, profile_number, timer_number, day_number
 
 
 async def async_setup_entry(
@@ -49,6 +49,8 @@ class SkodaTracker(SkodaEntity, TrackerEntity):
             "field_cs": localized_path(prefix, "cs") if prefix else "Poloha",
             "field_en": localized_path(prefix, "en"),
             "profile": profile_number(prefix),
+            "timer": timer_number(prefix),
+            "day": day_number(prefix),
         }
 
     @property
