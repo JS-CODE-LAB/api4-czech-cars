@@ -92,6 +92,27 @@
       },
       "last_api_error": {
         "name": "Last API error"
+      },
+      "air_conditioning_state": {
+        "name": "Air conditioning state"
+      },
+      "air_conditioning_target_temperature_unit": {
+        "name": "Air conditioning target temperature unit"
+      },
+      "air_conditioning_target_temperature_value": {
+        "name": "Air conditioning target temperature"
+      },
+      "air_conditioning_car_captured_timestamp": {
+        "name": "Air conditioning data captured at"
+      },
+      "charging_battery_soc": {
+        "name": "Battery state of charge"
+      },
+      "charging_state": {
+        "name": "Charging state"
+      },
+      "vehicle_capture_timestamp": {
+        "name": "Vehicle data captured at"
       }
     },
     "binary_sensor": {
@@ -100,16 +121,79 @@
       },
       "battery_charging": {
         "name": "Battery charging"
+      },
+      "air_conditioning_state": {
+        "name": "Air conditioning state"
+      },
+      "air_conditioning_target_temperature_unit": {
+        "name": "Air conditioning target temperature unit"
+      },
+      "air_conditioning_target_temperature_value": {
+        "name": "Air conditioning target temperature"
+      },
+      "air_conditioning_car_captured_timestamp": {
+        "name": "Air conditioning data captured at"
+      },
+      "charging_battery_soc": {
+        "name": "Battery state of charge"
+      },
+      "charging_state": {
+        "name": "Charging state"
+      },
+      "vehicle_capture_timestamp": {
+        "name": "Vehicle data captured at"
       }
     },
     "image": {
       "original_api_field": {
         "name": "{field_en}"
+      },
+      "air_conditioning_state": {
+        "name": "Air conditioning state"
+      },
+      "air_conditioning_target_temperature_unit": {
+        "name": "Air conditioning target temperature unit"
+      },
+      "air_conditioning_target_temperature_value": {
+        "name": "Air conditioning target temperature"
+      },
+      "air_conditioning_car_captured_timestamp": {
+        "name": "Air conditioning data captured at"
+      },
+      "charging_battery_soc": {
+        "name": "Battery state of charge"
+      },
+      "charging_state": {
+        "name": "Charging state"
+      },
+      "vehicle_capture_timestamp": {
+        "name": "Vehicle data captured at"
       }
     },
     "device_tracker": {
       "api_field": {
         "name": "{field_en}"
+      },
+      "air_conditioning_state": {
+        "name": "Air conditioning state"
+      },
+      "air_conditioning_target_temperature_unit": {
+        "name": "Air conditioning target temperature unit"
+      },
+      "air_conditioning_target_temperature_value": {
+        "name": "Air conditioning target temperature"
+      },
+      "air_conditioning_car_captured_timestamp": {
+        "name": "Air conditioning data captured at"
+      },
+      "charging_battery_soc": {
+        "name": "Battery state of charge"
+      },
+      "charging_state": {
+        "name": "Charging state"
+      },
+      "vehicle_capture_timestamp": {
+        "name": "Vehicle data captured at"
       }
     },
     "switch": {
