@@ -200,6 +200,150 @@
       },
       "field_vehicle_status_odometer_in_km": {
         "name": "Stav tachometru (km)"
+      },
+      "field_air_conditioning_air_conditioning_at_unlock": {
+        "name": "Klimatizace při odemčení"
+      },
+      "field_air_conditioning_window_heating_enabled": {
+        "name": "Vyhřívání oken povoleno"
+      },
+      "field_air_conditioning_window_heating_front": {
+        "name": "Vyhřívání předního okna"
+      },
+      "field_air_conditioning_window_heating_rear": {
+        "name": "Vyhřívání zadního okna"
+      },
+      "field_charging_settings_auto_unlock_plug_when_charged": {
+        "name": "Automatické odemčení konektoru po nabití"
+      },
+      "field_charging_status_plug_lock_state": {
+        "name": "Stav zámku nabíjecího konektoru"
+      },
+      "field_charging_settings_available_charge_modes": {
+        "name": "Dostupné režimy nabíjení"
+      },
+      "field_charging_settings_available_charge_modes_0": {
+        "name": "Dostupný režim nabíjení 1"
+      },
+      "field_charging_settings_available_charge_modes_1": {
+        "name": "Dostupný režim nabíjení 2"
+      },
+      "field_charging_settings_available_charge_modes_2": {
+        "name": "Dostupný režim nabíjení 3"
+      },
+      "field_charging_settings_available_charge_modes_3": {
+        "name": "Dostupný režim nabíjení 4"
+      },
+      "field_charging_settings_battery_care_mode_target_state_of_charge_in_percent": {
+        "name": "Cílové nabití při ochraně baterie (%)"
+      },
+      "field_charging_settings_max_charge_current_ac": {
+        "name": "Maximální nabíjecí proud AC"
+      },
+      "field_status_detail_bonnet": {
+        "name": "Kapota"
+      },
+      "field_status_detail_trunk": {
+        "name": "Zavazadlový prostor"
+      },
+      "field_status_detail_sunroof": {
+        "name": "Střešní okno"
+      },
+      "field_status_overall_doors": {
+        "name": "Celkový stav dveří"
+      },
+      "field_status_overall_doors_locked": {
+        "name": "Všechny dveře zamčené"
+      },
+      "field_status_overall_locked": {
+        "name": "Vozidlo zamčené"
+      },
+      "field_status_overall_reliable_lock_status": {
+        "name": "Spolehlivý stav zamčení"
+      },
+      "field_status_overall_windows": {
+        "name": "Celkový stav oken"
+      },
+      "field_status_overall_lights": {
+        "name": "Celkový stav světel"
+      },
+      "field_license_plate": {
+        "name": "Registrační značka"
+      },
+      "field_render_url": {
+        "name": "URL obrázku vozidla"
+      },
+      "field_odometer_car_captured_timestamp": {
+        "name": "Čas pořízení stavu tachometru"
+      },
+      "field_odometer_mileage_in_km": {
+        "name": "Stav tachometru (km)"
+      },
+      "field_parking_position_address": {
+        "name": "Parkovací adresa"
+      },
+      "field_parking_position_gps_coordinates_latitude": {
+        "name": "Zeměpisná šířka parkování"
+      },
+      "field_parking_position_gps_coordinates_longitude": {
+        "name": "Zeměpisná délka parkování"
+      },
+      "field_parking_position_state": {
+        "name": "Stav parkování"
+      },
+      "field_parking_position_gps_coordinates": {
+        "name": "Souřadnice parkování"
+      },
+      "field_charging_profiles_car_captured_timestamp": {
+        "name": "Čas pořízení nabíjecích profilů"
+      },
+      "field_charging_profiles_current_vehicle_position_latitude": {
+        "name": "Aktuální zeměpisná šířka vozidla"
+      },
+      "field_charging_profiles_current_vehicle_position_longitude": {
+        "name": "Aktuální zeměpisná délka vozidla"
+      },
+      "field_charging_profiles_current_vehicle_position_address": {
+        "name": "Aktuální adresa vozidla"
+      },
+      "field_charging_profiles_current_vehicle_position_state": {
+        "name": "Aktuální poloha vozidla"
+      },
+      "field_charging_profiles_profiles_0_id": {
+        "name": "ID nabíjecího profilu 1"
+      },
+      "field_charging_profiles_profiles_0_name": {
+        "name": "Název nabíjecího profilu 1"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_enabled": {
+        "name": "Preferovaný čas nabíjení aktivní"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_start_time": {
+        "name": "Začátek preferovaného nabíjení"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_end_time": {
+        "name": "Konec preferovaného nabíjení"
+      },
+      "field_charging_profiles_profiles_0_settings_auto_unlock_plug_when_charged": {
+        "name": "Automatické odemknutí konektoru"
+      },
+      "field_charging_profiles_profiles_0_settings_max_charge_current": {
+        "name": "Maximální proud profilu"
+      },
+      "field_charging_profiles_profiles_0_settings_min_battery_state_of_charge_in_percent": {
+        "name": "Minimální stav nabití profilu (%)"
+      },
+      "field_charging_profiles_profiles_0_settings_target_state_of_charge_in_percent": {
+        "name": "Cílové nabití profilu (%)"
+      },
+      "field_charging_profiles_profiles_0_settings_battery_care_mode": {
+        "name": "Ochrana baterie v profilu"
+      },
+      "field_charging_profiles_profiles_0_settings_preferred_charge_mode": {
+        "name": "Preferovaný režim profilu"
+      },
+      "field_charging_profiles_profiles_0_settings_charging_mode": {
+        "name": "Režim nabíjení profilu"
       }
     },
     "binary_sensor": {
@@ -316,6 +460,150 @@
       },
       "field_vehicle_status_odometer_in_km": {
         "name": "Stav tachometru (km)"
+      },
+      "field_air_conditioning_air_conditioning_at_unlock": {
+        "name": "Klimatizace při odemčení"
+      },
+      "field_air_conditioning_window_heating_enabled": {
+        "name": "Vyhřívání oken povoleno"
+      },
+      "field_air_conditioning_window_heating_front": {
+        "name": "Vyhřívání předního okna"
+      },
+      "field_air_conditioning_window_heating_rear": {
+        "name": "Vyhřívání zadního okna"
+      },
+      "field_charging_settings_auto_unlock_plug_when_charged": {
+        "name": "Automatické odemčení konektoru po nabití"
+      },
+      "field_charging_status_plug_lock_state": {
+        "name": "Stav zámku nabíjecího konektoru"
+      },
+      "field_charging_settings_available_charge_modes": {
+        "name": "Dostupné režimy nabíjení"
+      },
+      "field_charging_settings_available_charge_modes_0": {
+        "name": "Dostupný režim nabíjení 1"
+      },
+      "field_charging_settings_available_charge_modes_1": {
+        "name": "Dostupný režim nabíjení 2"
+      },
+      "field_charging_settings_available_charge_modes_2": {
+        "name": "Dostupný režim nabíjení 3"
+      },
+      "field_charging_settings_available_charge_modes_3": {
+        "name": "Dostupný režim nabíjení 4"
+      },
+      "field_charging_settings_battery_care_mode_target_state_of_charge_in_percent": {
+        "name": "Cílové nabití při ochraně baterie (%)"
+      },
+      "field_charging_settings_max_charge_current_ac": {
+        "name": "Maximální nabíjecí proud AC"
+      },
+      "field_status_detail_bonnet": {
+        "name": "Kapota"
+      },
+      "field_status_detail_trunk": {
+        "name": "Zavazadlový prostor"
+      },
+      "field_status_detail_sunroof": {
+        "name": "Střešní okno"
+      },
+      "field_status_overall_doors": {
+        "name": "Celkový stav dveří"
+      },
+      "field_status_overall_doors_locked": {
+        "name": "Všechny dveře zamčené"
+      },
+      "field_status_overall_locked": {
+        "name": "Vozidlo zamčené"
+      },
+      "field_status_overall_reliable_lock_status": {
+        "name": "Spolehlivý stav zamčení"
+      },
+      "field_status_overall_windows": {
+        "name": "Celkový stav oken"
+      },
+      "field_status_overall_lights": {
+        "name": "Celkový stav světel"
+      },
+      "field_license_plate": {
+        "name": "Registrační značka"
+      },
+      "field_render_url": {
+        "name": "URL obrázku vozidla"
+      },
+      "field_odometer_car_captured_timestamp": {
+        "name": "Čas pořízení stavu tachometru"
+      },
+      "field_odometer_mileage_in_km": {
+        "name": "Stav tachometru (km)"
+      },
+      "field_parking_position_address": {
+        "name": "Parkovací adresa"
+      },
+      "field_parking_position_gps_coordinates_latitude": {
+        "name": "Zeměpisná šířka parkování"
+      },
+      "field_parking_position_gps_coordinates_longitude": {
+        "name": "Zeměpisná délka parkování"
+      },
+      "field_parking_position_state": {
+        "name": "Stav parkování"
+      },
+      "field_parking_position_gps_coordinates": {
+        "name": "Souřadnice parkování"
+      },
+      "field_charging_profiles_car_captured_timestamp": {
+        "name": "Čas pořízení nabíjecích profilů"
+      },
+      "field_charging_profiles_current_vehicle_position_latitude": {
+        "name": "Aktuální zeměpisná šířka vozidla"
+      },
+      "field_charging_profiles_current_vehicle_position_longitude": {
+        "name": "Aktuální zeměpisná délka vozidla"
+      },
+      "field_charging_profiles_current_vehicle_position_address": {
+        "name": "Aktuální adresa vozidla"
+      },
+      "field_charging_profiles_current_vehicle_position_state": {
+        "name": "Aktuální poloha vozidla"
+      },
+      "field_charging_profiles_profiles_0_id": {
+        "name": "ID nabíjecího profilu 1"
+      },
+      "field_charging_profiles_profiles_0_name": {
+        "name": "Název nabíjecího profilu 1"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_enabled": {
+        "name": "Preferovaný čas nabíjení aktivní"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_start_time": {
+        "name": "Začátek preferovaného nabíjení"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_end_time": {
+        "name": "Konec preferovaného nabíjení"
+      },
+      "field_charging_profiles_profiles_0_settings_auto_unlock_plug_when_charged": {
+        "name": "Automatické odemknutí konektoru"
+      },
+      "field_charging_profiles_profiles_0_settings_max_charge_current": {
+        "name": "Maximální proud profilu"
+      },
+      "field_charging_profiles_profiles_0_settings_min_battery_state_of_charge_in_percent": {
+        "name": "Minimální stav nabití profilu (%)"
+      },
+      "field_charging_profiles_profiles_0_settings_target_state_of_charge_in_percent": {
+        "name": "Cílové nabití profilu (%)"
+      },
+      "field_charging_profiles_profiles_0_settings_battery_care_mode": {
+        "name": "Ochrana baterie v profilu"
+      },
+      "field_charging_profiles_profiles_0_settings_preferred_charge_mode": {
+        "name": "Preferovaný režim profilu"
+      },
+      "field_charging_profiles_profiles_0_settings_charging_mode": {
+        "name": "Režim nabíjení profilu"
       }
     },
     "image": {
@@ -429,6 +717,150 @@
       },
       "field_vehicle_status_odometer_in_km": {
         "name": "Stav tachometru (km)"
+      },
+      "field_air_conditioning_air_conditioning_at_unlock": {
+        "name": "Klimatizace při odemčení"
+      },
+      "field_air_conditioning_window_heating_enabled": {
+        "name": "Vyhřívání oken povoleno"
+      },
+      "field_air_conditioning_window_heating_front": {
+        "name": "Vyhřívání předního okna"
+      },
+      "field_air_conditioning_window_heating_rear": {
+        "name": "Vyhřívání zadního okna"
+      },
+      "field_charging_settings_auto_unlock_plug_when_charged": {
+        "name": "Automatické odemčení konektoru po nabití"
+      },
+      "field_charging_status_plug_lock_state": {
+        "name": "Stav zámku nabíjecího konektoru"
+      },
+      "field_charging_settings_available_charge_modes": {
+        "name": "Dostupné režimy nabíjení"
+      },
+      "field_charging_settings_available_charge_modes_0": {
+        "name": "Dostupný režim nabíjení 1"
+      },
+      "field_charging_settings_available_charge_modes_1": {
+        "name": "Dostupný režim nabíjení 2"
+      },
+      "field_charging_settings_available_charge_modes_2": {
+        "name": "Dostupný režim nabíjení 3"
+      },
+      "field_charging_settings_available_charge_modes_3": {
+        "name": "Dostupný režim nabíjení 4"
+      },
+      "field_charging_settings_battery_care_mode_target_state_of_charge_in_percent": {
+        "name": "Cílové nabití při ochraně baterie (%)"
+      },
+      "field_charging_settings_max_charge_current_ac": {
+        "name": "Maximální nabíjecí proud AC"
+      },
+      "field_status_detail_bonnet": {
+        "name": "Kapota"
+      },
+      "field_status_detail_trunk": {
+        "name": "Zavazadlový prostor"
+      },
+      "field_status_detail_sunroof": {
+        "name": "Střešní okno"
+      },
+      "field_status_overall_doors": {
+        "name": "Celkový stav dveří"
+      },
+      "field_status_overall_doors_locked": {
+        "name": "Všechny dveře zamčené"
+      },
+      "field_status_overall_locked": {
+        "name": "Vozidlo zamčené"
+      },
+      "field_status_overall_reliable_lock_status": {
+        "name": "Spolehlivý stav zamčení"
+      },
+      "field_status_overall_windows": {
+        "name": "Celkový stav oken"
+      },
+      "field_status_overall_lights": {
+        "name": "Celkový stav světel"
+      },
+      "field_license_plate": {
+        "name": "Registrační značka"
+      },
+      "field_render_url": {
+        "name": "URL obrázku vozidla"
+      },
+      "field_odometer_car_captured_timestamp": {
+        "name": "Čas pořízení stavu tachometru"
+      },
+      "field_odometer_mileage_in_km": {
+        "name": "Stav tachometru (km)"
+      },
+      "field_parking_position_address": {
+        "name": "Parkovací adresa"
+      },
+      "field_parking_position_gps_coordinates_latitude": {
+        "name": "Zeměpisná šířka parkování"
+      },
+      "field_parking_position_gps_coordinates_longitude": {
+        "name": "Zeměpisná délka parkování"
+      },
+      "field_parking_position_state": {
+        "name": "Stav parkování"
+      },
+      "field_parking_position_gps_coordinates": {
+        "name": "Souřadnice parkování"
+      },
+      "field_charging_profiles_car_captured_timestamp": {
+        "name": "Čas pořízení nabíjecích profilů"
+      },
+      "field_charging_profiles_current_vehicle_position_latitude": {
+        "name": "Aktuální zeměpisná šířka vozidla"
+      },
+      "field_charging_profiles_current_vehicle_position_longitude": {
+        "name": "Aktuální zeměpisná délka vozidla"
+      },
+      "field_charging_profiles_current_vehicle_position_address": {
+        "name": "Aktuální adresa vozidla"
+      },
+      "field_charging_profiles_current_vehicle_position_state": {
+        "name": "Aktuální poloha vozidla"
+      },
+      "field_charging_profiles_profiles_0_id": {
+        "name": "ID nabíjecího profilu 1"
+      },
+      "field_charging_profiles_profiles_0_name": {
+        "name": "Název nabíjecího profilu 1"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_enabled": {
+        "name": "Preferovaný čas nabíjení aktivní"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_start_time": {
+        "name": "Začátek preferovaného nabíjení"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_end_time": {
+        "name": "Konec preferovaného nabíjení"
+      },
+      "field_charging_profiles_profiles_0_settings_auto_unlock_plug_when_charged": {
+        "name": "Automatické odemknutí konektoru"
+      },
+      "field_charging_profiles_profiles_0_settings_max_charge_current": {
+        "name": "Maximální proud profilu"
+      },
+      "field_charging_profiles_profiles_0_settings_min_battery_state_of_charge_in_percent": {
+        "name": "Minimální stav nabití profilu (%)"
+      },
+      "field_charging_profiles_profiles_0_settings_target_state_of_charge_in_percent": {
+        "name": "Cílové nabití profilu (%)"
+      },
+      "field_charging_profiles_profiles_0_settings_battery_care_mode": {
+        "name": "Ochrana baterie v profilu"
+      },
+      "field_charging_profiles_profiles_0_settings_preferred_charge_mode": {
+        "name": "Preferovaný režim profilu"
+      },
+      "field_charging_profiles_profiles_0_settings_charging_mode": {
+        "name": "Režim nabíjení profilu"
       }
     },
     "device_tracker": {
@@ -542,6 +974,150 @@
       },
       "field_vehicle_status_odometer_in_km": {
         "name": "Stav tachometru (km)"
+      },
+      "field_air_conditioning_air_conditioning_at_unlock": {
+        "name": "Klimatizace při odemčení"
+      },
+      "field_air_conditioning_window_heating_enabled": {
+        "name": "Vyhřívání oken povoleno"
+      },
+      "field_air_conditioning_window_heating_front": {
+        "name": "Vyhřívání předního okna"
+      },
+      "field_air_conditioning_window_heating_rear": {
+        "name": "Vyhřívání zadního okna"
+      },
+      "field_charging_settings_auto_unlock_plug_when_charged": {
+        "name": "Automatické odemčení konektoru po nabití"
+      },
+      "field_charging_status_plug_lock_state": {
+        "name": "Stav zámku nabíjecího konektoru"
+      },
+      "field_charging_settings_available_charge_modes": {
+        "name": "Dostupné režimy nabíjení"
+      },
+      "field_charging_settings_available_charge_modes_0": {
+        "name": "Dostupný režim nabíjení 1"
+      },
+      "field_charging_settings_available_charge_modes_1": {
+        "name": "Dostupný režim nabíjení 2"
+      },
+      "field_charging_settings_available_charge_modes_2": {
+        "name": "Dostupný režim nabíjení 3"
+      },
+      "field_charging_settings_available_charge_modes_3": {
+        "name": "Dostupný režim nabíjení 4"
+      },
+      "field_charging_settings_battery_care_mode_target_state_of_charge_in_percent": {
+        "name": "Cílové nabití při ochraně baterie (%)"
+      },
+      "field_charging_settings_max_charge_current_ac": {
+        "name": "Maximální nabíjecí proud AC"
+      },
+      "field_status_detail_bonnet": {
+        "name": "Kapota"
+      },
+      "field_status_detail_trunk": {
+        "name": "Zavazadlový prostor"
+      },
+      "field_status_detail_sunroof": {
+        "name": "Střešní okno"
+      },
+      "field_status_overall_doors": {
+        "name": "Celkový stav dveří"
+      },
+      "field_status_overall_doors_locked": {
+        "name": "Všechny dveře zamčené"
+      },
+      "field_status_overall_locked": {
+        "name": "Vozidlo zamčené"
+      },
+      "field_status_overall_reliable_lock_status": {
+        "name": "Spolehlivý stav zamčení"
+      },
+      "field_status_overall_windows": {
+        "name": "Celkový stav oken"
+      },
+      "field_status_overall_lights": {
+        "name": "Celkový stav světel"
+      },
+      "field_license_plate": {
+        "name": "Registrační značka"
+      },
+      "field_render_url": {
+        "name": "URL obrázku vozidla"
+      },
+      "field_odometer_car_captured_timestamp": {
+        "name": "Čas pořízení stavu tachometru"
+      },
+      "field_odometer_mileage_in_km": {
+        "name": "Stav tachometru (km)"
+      },
+      "field_parking_position_address": {
+        "name": "Parkovací adresa"
+      },
+      "field_parking_position_gps_coordinates_latitude": {
+        "name": "Zeměpisná šířka parkování"
+      },
+      "field_parking_position_gps_coordinates_longitude": {
+        "name": "Zeměpisná délka parkování"
+      },
+      "field_parking_position_state": {
+        "name": "Stav parkování"
+      },
+      "field_parking_position_gps_coordinates": {
+        "name": "Souřadnice parkování"
+      },
+      "field_charging_profiles_car_captured_timestamp": {
+        "name": "Čas pořízení nabíjecích profilů"
+      },
+      "field_charging_profiles_current_vehicle_position_latitude": {
+        "name": "Aktuální zeměpisná šířka vozidla"
+      },
+      "field_charging_profiles_current_vehicle_position_longitude": {
+        "name": "Aktuální zeměpisná délka vozidla"
+      },
+      "field_charging_profiles_current_vehicle_position_address": {
+        "name": "Aktuální adresa vozidla"
+      },
+      "field_charging_profiles_current_vehicle_position_state": {
+        "name": "Aktuální poloha vozidla"
+      },
+      "field_charging_profiles_profiles_0_id": {
+        "name": "ID nabíjecího profilu 1"
+      },
+      "field_charging_profiles_profiles_0_name": {
+        "name": "Název nabíjecího profilu 1"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_enabled": {
+        "name": "Preferovaný čas nabíjení aktivní"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_start_time": {
+        "name": "Začátek preferovaného nabíjení"
+      },
+      "field_charging_profiles_profiles_0_preferred_charging_times_0_end_time": {
+        "name": "Konec preferovaného nabíjení"
+      },
+      "field_charging_profiles_profiles_0_settings_auto_unlock_plug_when_charged": {
+        "name": "Automatické odemknutí konektoru"
+      },
+      "field_charging_profiles_profiles_0_settings_max_charge_current": {
+        "name": "Maximální proud profilu"
+      },
+      "field_charging_profiles_profiles_0_settings_min_battery_state_of_charge_in_percent": {
+        "name": "Minimální stav nabití profilu (%)"
+      },
+      "field_charging_profiles_profiles_0_settings_target_state_of_charge_in_percent": {
+        "name": "Cílové nabití profilu (%)"
+      },
+      "field_charging_profiles_profiles_0_settings_battery_care_mode": {
+        "name": "Ochrana baterie v profilu"
+      },
+      "field_charging_profiles_profiles_0_settings_preferred_charge_mode": {
+        "name": "Preferovaný režim profilu"
+      },
+      "field_charging_profiles_profiles_0_settings_charging_mode": {
+        "name": "Režim nabíjení profilu"
       }
     },
     "switch": {
