@@ -205,6 +205,29 @@ KNOWN_FIELD_KEYS.update({
 })
 
 
+
+# Nested charging-profile fields observed in Home Assistant. Numeric indices are
+# normalized by field_translation_key, so one key covers every profile/timer/day.
+KNOWN_FIELD_KEYS.update({
+    "chargingProfiles.profiles.0.preferredChargingTimes.0.id": "profile_preferred_time_id",
+    "chargingProfiles.profiles.0.preferredChargingTimes.0.time": "profile_preferred_time_time",
+    "chargingProfiles.profiles.0.preferredChargingTimes.0.type": "profile_preferred_time_type",
+    "chargingProfiles.profiles.0.preferredChargingTimes.0.day": "profile_preferred_time_day",
+    "chargingProfiles.profiles.0.preferredChargingTimes.0.days": "profile_preferred_time_days",
+    "chargingProfiles.profiles.0.preferredChargingTimes.0.recurrence": "profile_preferred_time_recurrence",
+    "chargingProfiles.profiles.0.preferredChargingTimes.0.recurrenceDays.0": "profile_preferred_time_recurrence_day",
+    "chargingProfiles.profiles.0.timers.0.enabled": "profile_timer_enabled",
+    "chargingProfiles.profiles.0.timers.0.id": "profile_timer_id",
+    "chargingProfiles.profiles.0.timers.0.time": "profile_timer_time",
+    "chargingProfiles.profiles.0.timers.0.type": "profile_timer_type",
+    "chargingProfiles.profiles.0.timers.0.recurrence": "profile_timer_recurrence",
+    "chargingProfiles.profiles.0.timers.0.recurrenceDays.0": "profile_timer_recurrence_day",
+    "chargingProfiles.profiles.0.timers.0.recurrentDays.0": "profile_timer_recurrence_day",
+    "chargingProfiles.profiles.0.timers.0.days.0": "profile_timer_recurrence_day",
+    "chargingProfiles.profiles.0.settings.minBatteryStateOfCharge": "profile_minimum_soc",
+    "chargingProfiles.profiles.0.settings.maxChargeCurrent": "profile_max_charge_current",
+})
+
 def field_translation_key(path: str, available_keys: set[str]) -> str:
     """Use a static key only when its translation exists for the platform."""
     # Numeric array indices must not create new translation keys for each profile.
@@ -217,3 +240,15 @@ def profile_number(path: str) -> str:
     """One-based profile number used by localized name templates."""
     match = re.search(r"(?<=\.profiles\.)\d+", path)
     return str(int(match.group()) + 1) if match else "1"
+
+
+def timer_number(path: str) -> str:
+    """One-based index for charging timer or preferred charging interval."""
+    match = re.search(r"\.(?:timers|preferredChargingTimes)\.(\d+)", path)
+    return str(int(match.group(1)) + 1) if match else "1"
+
+
+def day_number(path: str) -> str:
+    """One-based index for an indexed recurrence day."""
+    match = re.search(r"\.(?:recurrenceDays|recurrentDays|days)\.(\d+)", path)
+    return str(int(match.group(1)) + 1) if match else "1"
