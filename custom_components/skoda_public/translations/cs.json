@@ -344,6 +344,51 @@
       },
       "field_charging_profiles_profiles_0_settings_charging_mode": {
         "name": "Profil {profile}: Režim nabíjení profilu"
+      },
+      "profile_preferred_time_id": {
+        "name": "{profile}: ID preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_time": {
+        "name": "{profile}: Čas preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_type": {
+        "name": "{profile}: Typ preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_day": {
+        "name": "{profile}: Den preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_days": {
+        "name": "{profile}: Dny preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_recurrence": {
+        "name": "{profile}: Opakování preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_recurrence_day": {
+        "name": "{profile}: Den opakování {day} intervalu {timer}"
+      },
+      "profile_timer_enabled": {
+        "name": "{profile}: Časovač {timer} zapnut"
+      },
+      "profile_timer_id": {
+        "name": "{profile}: ID časovače {timer}"
+      },
+      "profile_timer_time": {
+        "name": "{profile}: Čas časovače {timer}"
+      },
+      "profile_timer_type": {
+        "name": "{profile}: Typ časovače {timer}"
+      },
+      "profile_timer_recurrence": {
+        "name": "{profile}: Opakování časovače {timer}"
+      },
+      "profile_timer_recurrence_day": {
+        "name": "{profile}: Den opakování {day} časovače {timer}"
+      },
+      "profile_minimum_soc": {
+        "name": "{profile}: Minimální nabití baterie"
+      },
+      "profile_max_charge_current": {
+        "name": "{profile}: Maximální nabíjecí proud"
       }
     },
     "binary_sensor": {
@@ -604,6 +649,51 @@
       },
       "field_charging_profiles_profiles_0_settings_charging_mode": {
         "name": "Profil {profile}: Režim nabíjení profilu"
+      },
+      "profile_preferred_time_id": {
+        "name": "{profile}: ID preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_time": {
+        "name": "{profile}: Čas preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_type": {
+        "name": "{profile}: Typ preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_day": {
+        "name": "{profile}: Den preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_days": {
+        "name": "{profile}: Dny preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_recurrence": {
+        "name": "{profile}: Opakování preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_recurrence_day": {
+        "name": "{profile}: Den opakování {day} intervalu {timer}"
+      },
+      "profile_timer_enabled": {
+        "name": "{profile}: Časovač {timer} zapnut"
+      },
+      "profile_timer_id": {
+        "name": "{profile}: ID časovače {timer}"
+      },
+      "profile_timer_time": {
+        "name": "{profile}: Čas časovače {timer}"
+      },
+      "profile_timer_type": {
+        "name": "{profile}: Typ časovače {timer}"
+      },
+      "profile_timer_recurrence": {
+        "name": "{profile}: Opakování časovače {timer}"
+      },
+      "profile_timer_recurrence_day": {
+        "name": "{profile}: Den opakování {day} časovače {timer}"
+      },
+      "profile_minimum_soc": {
+        "name": "{profile}: Minimální nabití baterie"
+      },
+      "profile_max_charge_current": {
+        "name": "{profile}: Maximální nabíjecí proud"
       }
     },
     "image": {
@@ -861,6 +951,51 @@
       },
       "field_charging_profiles_profiles_0_settings_charging_mode": {
         "name": "Profil {profile}: Režim nabíjení profilu"
+      },
+      "profile_preferred_time_id": {
+        "name": "{profile}: ID preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_time": {
+        "name": "{profile}: Čas preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_type": {
+        "name": "{profile}: Typ preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_day": {
+        "name": "{profile}: Den preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_days": {
+        "name": "{profile}: Dny preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_recurrence": {
+        "name": "{profile}: Opakování preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_recurrence_day": {
+        "name": "{profile}: Den opakování {day} intervalu {timer}"
+      },
+      "profile_timer_enabled": {
+        "name": "{profile}: Časovač {timer} zapnut"
+      },
+      "profile_timer_id": {
+        "name": "{profile}: ID časovače {timer}"
+      },
+      "profile_timer_time": {
+        "name": "{profile}: Čas časovače {timer}"
+      },
+      "profile_timer_type": {
+        "name": "{profile}: Typ časovače {timer}"
+      },
+      "profile_timer_recurrence": {
+        "name": "{profile}: Opakování časovače {timer}"
+      },
+      "profile_timer_recurrence_day": {
+        "name": "{profile}: Den opakování {day} časovače {timer}"
+      },
+      "profile_minimum_soc": {
+        "name": "{profile}: Minimální nabití baterie"
+      },
+      "profile_max_charge_current": {
+        "name": "{profile}: Maximální nabíjecí proud"
       }
     },
     "device_tracker": {
@@ -1118,6 +1253,51 @@
       },
       "field_charging_profiles_profiles_0_settings_charging_mode": {
         "name": "Profil {profile}: Režim nabíjení profilu"
+      },
+      "profile_preferred_time_id": {
+        "name": "{profile}: ID preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_time": {
+        "name": "{profile}: Čas preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_type": {
+        "name": "{profile}: Typ preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_day": {
+        "name": "{profile}: Den preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_days": {
+        "name": "{profile}: Dny preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_recurrence": {
+        "name": "{profile}: Opakování preferovaného intervalu {timer}"
+      },
+      "profile_preferred_time_recurrence_day": {
+        "name": "{profile}: Den opakování {day} intervalu {timer}"
+      },
+      "profile_timer_enabled": {
+        "name": "{profile}: Časovač {timer} zapnut"
+      },
+      "profile_timer_id": {
+        "name": "{profile}: ID časovače {timer}"
+      },
+      "profile_timer_time": {
+        "name": "{profile}: Čas časovače {timer}"
+      },
+      "profile_timer_type": {
+        "name": "{profile}: Typ časovače {timer}"
+      },
+      "profile_timer_recurrence": {
+        "name": "{profile}: Opakování časovače {timer}"
+      },
+      "profile_timer_recurrence_day": {
+        "name": "{profile}: Den opakování {day} časovače {timer}"
+      },
+      "profile_minimum_soc": {
+        "name": "{profile}: Minimální nabití baterie"
+      },
+      "profile_max_charge_current": {
+        "name": "{profile}: Maximální nabíjecí proud"
       }
     },
     "switch": {
