@@ -16,7 +16,7 @@ from .coordinator import SkodaConfigEntry, SkodaCoordinator
 from .entity import SkodaEntity
 from .groups import functional_group
 from .image_fields import is_image_field
-from .localization import localized_path, KNOWN_FIELD_KEYS, field_translation_key, profile_number
+from .localization import localized_path, KNOWN_FIELD_KEYS, field_translation_key, profile_number, timer_number, day_number
 
 _LOGGER = logging.getLogger(__name__)
 MAX_IMAGE_BYTES = 8 * 1024 * 1024
@@ -62,6 +62,8 @@ class SkodaFieldImage(SkodaEntity, ImageEntity):
             "field_cs": localized_path(path, "cs"),
             "field_en": localized_path(path, "en"),
             "profile": profile_number(path),
+            "timer": timer_number(path),
+            "day": day_number(path),
         }
         self._attr_image_last_updated = datetime.now().astimezone()
 
