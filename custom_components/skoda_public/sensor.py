@@ -267,7 +267,15 @@ class SkodaOmittedPartsSensor(SkodaEntity, SensorEntity):
 
     @property
     def extra_state_attributes(self) -> dict[str, Any]:
-        return {"errors": self.coordinator.data.errors}
+        untranslated = sorted(
+            path for path in self.coordinator.data.flat
+            if field_translation_key(path, set(KNOWN_FIELD_KEYS.values())) == "api_field"
+        )
+        return {
+            "errors": self.coordinator.data.errors,
+            "untranslated_api_path_count": len(untranslated),
+            "untranslated_api_paths": untranslated,
+        }
 
 
 class SkodaLastUpdateSensor(SkodaEntity, SensorEntity):
