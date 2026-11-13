@@ -113,6 +113,93 @@
       },
       "vehicle_capture_timestamp": {
         "name": "Čas pořízení údajů o vozidle"
+      },
+      "field_charging_car_captured_timestamp": {
+        "name": "Čas pořízení údajů o nabíjení"
+      },
+      "field_charging_is_vehicle_in_saved_location": {
+        "name": "Vozidlo na uloženém místě"
+      },
+      "field_charging_settings_available_charging_modes": {
+        "name": "Dostupné režimy nabíjení"
+      },
+      "field_charging_settings_battery_care_mode_target": {
+        "name": "Cílové nabití v režimu ochrany baterie"
+      },
+      "field_charging_settings_charging_care_mode": {
+        "name": "Režim šetrného nabíjení"
+      },
+      "field_charging_settings_max_charge_current": {
+        "name": "Maximální nabíjecí proud"
+      },
+      "field_charging_settings_preferred_charge_mode": {
+        "name": "Preferovaný režim nabíjení"
+      },
+      "field_charging_settings_target_state_of_charge_in_percent": {
+        "name": "Cílový stav nabití (%)"
+      },
+      "field_charging_status_battery_remaining_cruising_range_in_meters": {
+        "name": "Zbývající dojezd baterie (m)"
+      },
+      "field_charging_status_fully_charged_at": {
+        "name": "Předpokládaný čas plného nabití"
+      },
+      "field_charging_status_charge_power_in_kw": {
+        "name": "Nabíjecí výkon (kW)"
+      },
+      "field_charging_status_charge_type": {
+        "name": "Typ nabíjení"
+      },
+      "field_charging_status_charging_rate_in_kilometers_per_hour": {
+        "name": "Rychlost nabíjení (km/h)"
+      },
+      "field_charging_status_plug_connection_state": {
+        "name": "Stav připojení konektoru"
+      },
+      "field_charging_status_remaining_time_to_fully_charged_in_minutes": {
+        "name": "Zbývající čas do plného nabití (min)"
+      },
+      "field_air_conditioning_target_temperature_in_celsius": {
+        "name": "Cílová teplota klimatizace (°C)"
+      },
+      "field_air_conditioning_settings_window_heating_enabled": {
+        "name": "Vyhřívání oken"
+      },
+      "field_air_conditioning_settings_climatisation_at_unlock": {
+        "name": "Klimatizace při odemčení"
+      },
+      "field_vehicle_status_overall_status": {
+        "name": "Celkový stav vozidla"
+      },
+      "field_vehicle_status_doors_front_left": {
+        "name": "Levé přední dveře"
+      },
+      "field_vehicle_status_doors_front_right": {
+        "name": "Pravé přední dveře"
+      },
+      "field_vehicle_status_doors_rear_left": {
+        "name": "Levé zadní dveře"
+      },
+      "field_vehicle_status_doors_rear_right": {
+        "name": "Pravé zadní dveře"
+      },
+      "field_vehicle_status_windows_front_left": {
+        "name": "Levé přední okno"
+      },
+      "field_vehicle_status_windows_front_right": {
+        "name": "Pravé přední okno"
+      },
+      "field_vehicle_status_windows_rear_left": {
+        "name": "Levé zadní okno"
+      },
+      "field_vehicle_status_windows_rear_right": {
+        "name": "Pravé zadní okno"
+      },
+      "field_vehicle_status_lights": {
+        "name": "Stav osvětlení"
+      },
+      "field_vehicle_status_odometer_in_km": {
+        "name": "Stav tachometru (km)"
       }
     },
     "binary_sensor": {
@@ -142,6 +229,93 @@
       },
       "vehicle_capture_timestamp": {
         "name": "Čas pořízení údajů o vozidle"
+      },
+      "field_charging_car_captured_timestamp": {
+        "name": "Čas pořízení údajů o nabíjení"
+      },
+      "field_charging_is_vehicle_in_saved_location": {
+        "name": "Vozidlo na uloženém místě"
+      },
+      "field_charging_settings_available_charging_modes": {
+        "name": "Dostupné režimy nabíjení"
+      },
+      "field_charging_settings_battery_care_mode_target": {
+        "name": "Cílové nabití v režimu ochrany baterie"
+      },
+      "field_charging_settings_charging_care_mode": {
+        "name": "Režim šetrného nabíjení"
+      },
+      "field_charging_settings_max_charge_current": {
+        "name": "Maximální nabíjecí proud"
+      },
+      "field_charging_settings_preferred_charge_mode": {
+        "name": "Preferovaný režim nabíjení"
+      },
+      "field_charging_settings_target_state_of_charge_in_percent": {
+        "name": "Cílový stav nabití (%)"
+      },
+      "field_charging_status_battery_remaining_cruising_range_in_meters": {
+        "name": "Zbývající dojezd baterie (m)"
+      },
+      "field_charging_status_fully_charged_at": {
+        "name": "Předpokládaný čas plného nabití"
+      },
+      "field_charging_status_charge_power_in_kw": {
+        "name": "Nabíjecí výkon (kW)"
+      },
+      "field_charging_status_charge_type": {
+        "name": "Typ nabíjení"
+      },
+      "field_charging_status_charging_rate_in_kilometers_per_hour": {
+        "name": "Rychlost nabíjení (km/h)"
+      },
+      "field_charging_status_plug_connection_state": {
+        "name": "Stav připojení konektoru"
+      },
+      "field_charging_status_remaining_time_to_fully_charged_in_minutes": {
+        "name": "Zbývající čas do plného nabití (min)"
+      },
+      "field_air_conditioning_target_temperature_in_celsius": {
+        "name": "Cílová teplota klimatizace (°C)"
+      },
+      "field_air_conditioning_settings_window_heating_enabled": {
+        "name": "Vyhřívání oken"
+      },
+      "field_air_conditioning_settings_climatisation_at_unlock": {
+        "name": "Klimatizace při odemčení"
+      },
+      "field_vehicle_status_overall_status": {
+        "name": "Celkový stav vozidla"
+      },
+      "field_vehicle_status_doors_front_left": {
+        "name": "Levé přední dveře"
+      },
+      "field_vehicle_status_doors_front_right": {
+        "name": "Pravé přední dveře"
+      },
+      "field_vehicle_status_doors_rear_left": {
+        "name": "Levé zadní dveře"
+      },
+      "field_vehicle_status_doors_rear_right": {
+        "name": "Pravé zadní dveře"
+      },
+      "field_vehicle_status_windows_front_left": {
+        "name": "Levé přední okno"
+      },
+      "field_vehicle_status_windows_front_right": {
+        "name": "Pravé přední okno"
+      },
+      "field_vehicle_status_windows_rear_left": {
+        "name": "Levé zadní okno"
+      },
+      "field_vehicle_status_windows_rear_right": {
+        "name": "Pravé zadní okno"
+      },
+      "field_vehicle_status_lights": {
+        "name": "Stav osvětlení"
+      },
+      "field_vehicle_status_odometer_in_km": {
+        "name": "Stav tachometru (km)"
       }
     },
     "image": {
@@ -168,6 +342,93 @@
       },
       "vehicle_capture_timestamp": {
         "name": "Čas pořízení údajů o vozidle"
+      },
+      "field_charging_car_captured_timestamp": {
+        "name": "Čas pořízení údajů o nabíjení"
+      },
+      "field_charging_is_vehicle_in_saved_location": {
+        "name": "Vozidlo na uloženém místě"
+      },
+      "field_charging_settings_available_charging_modes": {
+        "name": "Dostupné režimy nabíjení"
+      },
+      "field_charging_settings_battery_care_mode_target": {
+        "name": "Cílové nabití v režimu ochrany baterie"
+      },
+      "field_charging_settings_charging_care_mode": {
+        "name": "Režim šetrného nabíjení"
+      },
+      "field_charging_settings_max_charge_current": {
+        "name": "Maximální nabíjecí proud"
+      },
+      "field_charging_settings_preferred_charge_mode": {
+        "name": "Preferovaný režim nabíjení"
+      },
+      "field_charging_settings_target_state_of_charge_in_percent": {
+        "name": "Cílový stav nabití (%)"
+      },
+      "field_charging_status_battery_remaining_cruising_range_in_meters": {
+        "name": "Zbývající dojezd baterie (m)"
+      },
+      "field_charging_status_fully_charged_at": {
+        "name": "Předpokládaný čas plného nabití"
+      },
+      "field_charging_status_charge_power_in_kw": {
+        "name": "Nabíjecí výkon (kW)"
+      },
+      "field_charging_status_charge_type": {
+        "name": "Typ nabíjení"
+      },
+      "field_charging_status_charging_rate_in_kilometers_per_hour": {
+        "name": "Rychlost nabíjení (km/h)"
+      },
+      "field_charging_status_plug_connection_state": {
+        "name": "Stav připojení konektoru"
+      },
+      "field_charging_status_remaining_time_to_fully_charged_in_minutes": {
+        "name": "Zbývající čas do plného nabití (min)"
+      },
+      "field_air_conditioning_target_temperature_in_celsius": {
+        "name": "Cílová teplota klimatizace (°C)"
+      },
+      "field_air_conditioning_settings_window_heating_enabled": {
+        "name": "Vyhřívání oken"
+      },
+      "field_air_conditioning_settings_climatisation_at_unlock": {
+        "name": "Klimatizace při odemčení"
+      },
+      "field_vehicle_status_overall_status": {
+        "name": "Celkový stav vozidla"
+      },
+      "field_vehicle_status_doors_front_left": {
+        "name": "Levé přední dveře"
+      },
+      "field_vehicle_status_doors_front_right": {
+        "name": "Pravé přední dveře"
+      },
+      "field_vehicle_status_doors_rear_left": {
+        "name": "Levé zadní dveře"
+      },
+      "field_vehicle_status_doors_rear_right": {
+        "name": "Pravé zadní dveře"
+      },
+      "field_vehicle_status_windows_front_left": {
+        "name": "Levé přední okno"
+      },
+      "field_vehicle_status_windows_front_right": {
+        "name": "Pravé přední okno"
+      },
+      "field_vehicle_status_windows_rear_left": {
+        "name": "Levé zadní okno"
+      },
+      "field_vehicle_status_windows_rear_right": {
+        "name": "Pravé zadní okno"
+      },
+      "field_vehicle_status_lights": {
+        "name": "Stav osvětlení"
+      },
+      "field_vehicle_status_odometer_in_km": {
+        "name": "Stav tachometru (km)"
       }
     },
     "device_tracker": {
@@ -194,6 +455,93 @@
       },
       "vehicle_capture_timestamp": {
         "name": "Čas pořízení údajů o vozidle"
+      },
+      "field_charging_car_captured_timestamp": {
+        "name": "Čas pořízení údajů o nabíjení"
+      },
+      "field_charging_is_vehicle_in_saved_location": {
+        "name": "Vozidlo na uloženém místě"
+      },
+      "field_charging_settings_available_charging_modes": {
+        "name": "Dostupné režimy nabíjení"
+      },
+      "field_charging_settings_battery_care_mode_target": {
+        "name": "Cílové nabití v režimu ochrany baterie"
+      },
+      "field_charging_settings_charging_care_mode": {
+        "name": "Režim šetrného nabíjení"
+      },
+      "field_charging_settings_max_charge_current": {
+        "name": "Maximální nabíjecí proud"
+      },
+      "field_charging_settings_preferred_charge_mode": {
+        "name": "Preferovaný režim nabíjení"
+      },
+      "field_charging_settings_target_state_of_charge_in_percent": {
+        "name": "Cílový stav nabití (%)"
+      },
+      "field_charging_status_battery_remaining_cruising_range_in_meters": {
+        "name": "Zbývající dojezd baterie (m)"
+      },
+      "field_charging_status_fully_charged_at": {
+        "name": "Předpokládaný čas plného nabití"
+      },
+      "field_charging_status_charge_power_in_kw": {
+        "name": "Nabíjecí výkon (kW)"
+      },
+      "field_charging_status_charge_type": {
+        "name": "Typ nabíjení"
+      },
+      "field_charging_status_charging_rate_in_kilometers_per_hour": {
+        "name": "Rychlost nabíjení (km/h)"
+      },
+      "field_charging_status_plug_connection_state": {
+        "name": "Stav připojení konektoru"
+      },
+      "field_charging_status_remaining_time_to_fully_charged_in_minutes": {
+        "name": "Zbývající čas do plného nabití (min)"
+      },
+      "field_air_conditioning_target_temperature_in_celsius": {
+        "name": "Cílová teplota klimatizace (°C)"
+      },
+      "field_air_conditioning_settings_window_heating_enabled": {
+        "name": "Vyhřívání oken"
+      },
+      "field_air_conditioning_settings_climatisation_at_unlock": {
+        "name": "Klimatizace při odemčení"
+      },
+      "field_vehicle_status_overall_status": {
+        "name": "Celkový stav vozidla"
+      },
+      "field_vehicle_status_doors_front_left": {
+        "name": "Levé přední dveře"
+      },
+      "field_vehicle_status_doors_front_right": {
+        "name": "Pravé přední dveře"
+      },
+      "field_vehicle_status_doors_rear_left": {
+        "name": "Levé zadní dveře"
+      },
+      "field_vehicle_status_doors_rear_right": {
+        "name": "Pravé zadní dveře"
+      },
+      "field_vehicle_status_windows_front_left": {
+        "name": "Levé přední okno"
+      },
+      "field_vehicle_status_windows_front_right": {
+        "name": "Pravé přední okno"
+      },
+      "field_vehicle_status_windows_rear_left": {
+        "name": "Levé zadní okno"
+      },
+      "field_vehicle_status_windows_rear_right": {
+        "name": "Pravé zadní okno"
+      },
+      "field_vehicle_status_lights": {
+        "name": "Stav osvětlení"
+      },
+      "field_vehicle_status_odometer_in_km": {
+        "name": "Stav tachometru (km)"
       }
     },
     "switch": {
