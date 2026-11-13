@@ -310,40 +310,40 @@
         "name": "Aktuální poloha vozidla"
       },
       "field_charging_profiles_profiles_0_id": {
-        "name": "ID nabíjecího profilu 1"
+        "name": "Profil {profile}: ID nabíjecího profilu"
       },
       "field_charging_profiles_profiles_0_name": {
-        "name": "Název nabíjecího profilu 1"
+        "name": "Profil {profile}: Název nabíjecího profilu"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_enabled": {
-        "name": "Preferovaný čas nabíjení aktivní"
+        "name": "Profil {profile}: Preferovaný čas nabíjení aktivní"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_start_time": {
-        "name": "Začátek preferovaného nabíjení"
+        "name": "Profil {profile}: Začátek preferovaného nabíjení"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_end_time": {
-        "name": "Konec preferovaného nabíjení"
+        "name": "Profil {profile}: Konec preferovaného nabíjení"
       },
       "field_charging_profiles_profiles_0_settings_auto_unlock_plug_when_charged": {
-        "name": "Automatické odemknutí konektoru"
+        "name": "Profil {profile}: Automatické odemknutí konektoru"
       },
       "field_charging_profiles_profiles_0_settings_max_charge_current": {
-        "name": "Maximální proud profilu"
+        "name": "Profil {profile}: Maximální proud profilu"
       },
       "field_charging_profiles_profiles_0_settings_min_battery_state_of_charge_in_percent": {
-        "name": "Minimální stav nabití profilu (%)"
+        "name": "Profil {profile}: Minimální stav nabití profilu (%)"
       },
       "field_charging_profiles_profiles_0_settings_target_state_of_charge_in_percent": {
-        "name": "Cílové nabití profilu (%)"
+        "name": "Profil {profile}: Cílové nabití profilu (%)"
       },
       "field_charging_profiles_profiles_0_settings_battery_care_mode": {
-        "name": "Ochrana baterie v profilu"
+        "name": "Profil {profile}: Ochrana baterie v profilu"
       },
       "field_charging_profiles_profiles_0_settings_preferred_charge_mode": {
-        "name": "Preferovaný režim profilu"
+        "name": "Profil {profile}: Preferovaný režim profilu"
       },
       "field_charging_profiles_profiles_0_settings_charging_mode": {
-        "name": "Režim nabíjení profilu"
+        "name": "Profil {profile}: Režim nabíjení profilu"
       }
     },
     "binary_sensor": {
@@ -570,40 +570,40 @@
         "name": "Aktuální poloha vozidla"
       },
       "field_charging_profiles_profiles_0_id": {
-        "name": "ID nabíjecího profilu 1"
+        "name": "Profil {profile}: ID nabíjecího profilu"
       },
       "field_charging_profiles_profiles_0_name": {
-        "name": "Název nabíjecího profilu 1"
+        "name": "Profil {profile}: Název nabíjecího profilu"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_enabled": {
-        "name": "Preferovaný čas nabíjení aktivní"
+        "name": "Profil {profile}: Preferovaný čas nabíjení aktivní"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_start_time": {
-        "name": "Začátek preferovaného nabíjení"
+        "name": "Profil {profile}: Začátek preferovaného nabíjení"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_end_time": {
-        "name": "Konec preferovaného nabíjení"
+        "name": "Profil {profile}: Konec preferovaného nabíjení"
       },
       "field_charging_profiles_profiles_0_settings_auto_unlock_plug_when_charged": {
-        "name": "Automatické odemknutí konektoru"
+        "name": "Profil {profile}: Automatické odemknutí konektoru"
       },
       "field_charging_profiles_profiles_0_settings_max_charge_current": {
-        "name": "Maximální proud profilu"
+        "name": "Profil {profile}: Maximální proud profilu"
       },
       "field_charging_profiles_profiles_0_settings_min_battery_state_of_charge_in_percent": {
-        "name": "Minimální stav nabití profilu (%)"
+        "name": "Profil {profile}: Minimální stav nabití profilu (%)"
       },
       "field_charging_profiles_profiles_0_settings_target_state_of_charge_in_percent": {
-        "name": "Cílové nabití profilu (%)"
+        "name": "Profil {profile}: Cílové nabití profilu (%)"
       },
       "field_charging_profiles_profiles_0_settings_battery_care_mode": {
-        "name": "Ochrana baterie v profilu"
+        "name": "Profil {profile}: Ochrana baterie v profilu"
       },
       "field_charging_profiles_profiles_0_settings_preferred_charge_mode": {
-        "name": "Preferovaný režim profilu"
+        "name": "Profil {profile}: Preferovaný režim profilu"
       },
       "field_charging_profiles_profiles_0_settings_charging_mode": {
-        "name": "Režim nabíjení profilu"
+        "name": "Profil {profile}: Režim nabíjení profilu"
       }
     },
     "image": {
@@ -827,40 +827,40 @@
         "name": "Aktuální poloha vozidla"
       },
       "field_charging_profiles_profiles_0_id": {
-        "name": "ID nabíjecího profilu 1"
+        "name": "Profil {profile}: ID nabíjecího profilu"
       },
       "field_charging_profiles_profiles_0_name": {
-        "name": "Název nabíjecího profilu 1"
+        "name": "Profil {profile}: Název nabíjecího profilu"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_enabled": {
-        "name": "Preferovaný čas nabíjení aktivní"
+        "name": "Profil {profile}: Preferovaný čas nabíjení aktivní"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_start_time": {
-        "name": "Začátek preferovaného nabíjení"
+        "name": "Profil {profile}: Začátek preferovaného nabíjení"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_end_time": {
-        "name": "Konec preferovaného nabíjení"
+        "name": "Profil {profile}: Konec preferovaného nabíjení"
       },
       "field_charging_profiles_profiles_0_settings_auto_unlock_plug_when_charged": {
-        "name": "Automatické odemknutí konektoru"
+        "name": "Profil {profile}: Automatické odemknutí konektoru"
       },
       "field_charging_profiles_profiles_0_settings_max_charge_current": {
-        "name": "Maximální proud profilu"
+        "name": "Profil {profile}: Maximální proud profilu"
       },
       "field_charging_profiles_profiles_0_settings_min_battery_state_of_charge_in_percent": {
-        "name": "Minimální stav nabití profilu (%)"
+        "name": "Profil {profile}: Minimální stav nabití profilu (%)"
       },
       "field_charging_profiles_profiles_0_settings_target_state_of_charge_in_percent": {
-        "name": "Cílové nabití profilu (%)"
+        "name": "Profil {profile}: Cílové nabití profilu (%)"
       },
       "field_charging_profiles_profiles_0_settings_battery_care_mode": {
-        "name": "Ochrana baterie v profilu"
+        "name": "Profil {profile}: Ochrana baterie v profilu"
       },
       "field_charging_profiles_profiles_0_settings_preferred_charge_mode": {
-        "name": "Preferovaný režim profilu"
+        "name": "Profil {profile}: Preferovaný režim profilu"
       },
       "field_charging_profiles_profiles_0_settings_charging_mode": {
-        "name": "Režim nabíjení profilu"
+        "name": "Profil {profile}: Režim nabíjení profilu"
       }
     },
     "device_tracker": {
@@ -1084,40 +1084,40 @@
         "name": "Aktuální poloha vozidla"
       },
       "field_charging_profiles_profiles_0_id": {
-        "name": "ID nabíjecího profilu 1"
+        "name": "Profil {profile}: ID nabíjecího profilu"
       },
       "field_charging_profiles_profiles_0_name": {
-        "name": "Název nabíjecího profilu 1"
+        "name": "Profil {profile}: Název nabíjecího profilu"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_enabled": {
-        "name": "Preferovaný čas nabíjení aktivní"
+        "name": "Profil {profile}: Preferovaný čas nabíjení aktivní"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_start_time": {
-        "name": "Začátek preferovaného nabíjení"
+        "name": "Profil {profile}: Začátek preferovaného nabíjení"
       },
       "field_charging_profiles_profiles_0_preferred_charging_times_0_end_time": {
-        "name": "Konec preferovaného nabíjení"
+        "name": "Profil {profile}: Konec preferovaného nabíjení"
       },
       "field_charging_profiles_profiles_0_settings_auto_unlock_plug_when_charged": {
-        "name": "Automatické odemknutí konektoru"
+        "name": "Profil {profile}: Automatické odemknutí konektoru"
       },
       "field_charging_profiles_profiles_0_settings_max_charge_current": {
-        "name": "Maximální proud profilu"
+        "name": "Profil {profile}: Maximální proud profilu"
       },
       "field_charging_profiles_profiles_0_settings_min_battery_state_of_charge_in_percent": {
-        "name": "Minimální stav nabití profilu (%)"
+        "name": "Profil {profile}: Minimální stav nabití profilu (%)"
       },
       "field_charging_profiles_profiles_0_settings_target_state_of_charge_in_percent": {
-        "name": "Cílové nabití profilu (%)"
+        "name": "Profil {profile}: Cílové nabití profilu (%)"
       },
       "field_charging_profiles_profiles_0_settings_battery_care_mode": {
-        "name": "Ochrana baterie v profilu"
+        "name": "Profil {profile}: Ochrana baterie v profilu"
       },
       "field_charging_profiles_profiles_0_settings_preferred_charge_mode": {
-        "name": "Preferovaný režim profilu"
+        "name": "Profil {profile}: Preferovaný režim profilu"
       },
       "field_charging_profiles_profiles_0_settings_charging_mode": {
-        "name": "Režim nabíjení profilu"
+        "name": "Profil {profile}: Režim nabíjení profilu"
       }
     },
     "switch": {
